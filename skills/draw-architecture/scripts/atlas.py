@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def catalog():
     result=[]
     for p in sorted((ROOT/'assets/atlas').glob('*/index.json')):
-        for row in json.loads(p.read_text()):
+        for row in json.loads(p.read_text(encoding='utf-8')):
             name=row['source_file']
             if Path(name).name!=name or not name.endswith('.tex'):raise ValueError('Invalid filename')
             result.append(row|{'path':str(p.parent/name)})

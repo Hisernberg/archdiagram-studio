@@ -267,7 +267,8 @@ def render_svg(spec,theme='paper'):
             out.append(f'<path d="M {f(x)} {f(y+10)} A {f(nw/2)} 10 0 0 1 {f(x+nw)} {f(y+10)} V {f(y+nh-10)} A {f(nw/2)} 10 0 0 1 {f(x)} {f(y+nh-10)} Z" fill="{fill}" stroke="{stroke}" stroke-width="1.6"/>')
             out.append(f'<ellipse cx="{f(x+nw/2)}" cy="{f(y+10)}" rx="{f(nw/2)}" ry="10" fill="{fill}" stroke="{stroke}" stroke-width="1.4"/>')
         else:
-            out.append(f'<rect x="{f(x)}" y="{f(y)}" width="{f(nw)}" height="{f(nh)}" rx="{0 if theme=='paper' else 10}" fill="{fill}" stroke="{stroke}" stroke-width="1.6"/>')
+            radius=0 if theme=='paper' else 10
+            out.append(f'<rect x="{f(x)}" y="{f(y)}" width="{f(nw)}" height="{f(nh)}" rx="{radius}" fill="{fill}" stroke="{stroke}" stroke-width="1.6"/>')
             out.append(f'<path d="M {f(x+12)} {f(y+14)} v {f(max(10,nh-28))}" stroke="{stroke}" stroke-width="3" stroke-linecap="round"/>')
         labels,details=node_lines(n);total=len(labels)*18+(8+len(details)*15 if details else 0)+(18 if n['tag'] else 0);baseline=y+(nh-total)/2+14
         if n['tag']: text(x+nw/2,baseline,n['tag'].upper(),8.5,stroke,600,'middle');baseline+=18

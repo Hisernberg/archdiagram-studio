@@ -27,7 +27,7 @@
   "shell_escape": false,
   "additional_json_scenes": 6,
   "additional_native_templates": 3,
-  "fresh_agent_tasks_completed": 2,
+  "fresh_agent_tasks_completed": 3,
   "family_author_agents": 6,
   "browser": {
     "page_errors": [],
@@ -60,5 +60,11 @@
     "jobs_passed": 5,
     "implementation_commit": "5e4c5d90bc71cbae4fdd4f8b06e217d28f7b100b",
     "note": "Historical v1 result. See Actions for the expanded v2 release build."
+  },
+  "v2_forward_task": {
+    "architecture": "Audio/video event scoring with separate temporal alignment and a missing-audio mask",
+    "atlas_starting_point": "multimodal-09-audiovisual-speech-fusion",
+    "result": "compiled, visually inspected, grayscale, self-contained TikZ",
+    "unspecified_training_branches_added": false
   }
 }

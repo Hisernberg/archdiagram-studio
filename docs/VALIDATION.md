@@ -31,6 +31,8 @@ Two agents used the initial skill with only a concrete task and the skill path. 
 1. **Query-time RAG with citation revision:** eight components/eight relationships, an existing document index, retrieval, reranking, generation, citation checking, and an explicit revision route. Strict lint reported zero issues; editable SVG/TikZ, PNG, and both SVG-derived and TeX-derived PDFs were produced.
 2. **Single-head cross-attention:** decoder states supplied Q, encoder states supplied K/V, with the scaled dot-product formula and appropriate sequence dimensions. No unrequested mask, residual, or output projection was introduced. Compiled one-page PDF and raster inspection passed; the reviewed source is included as a native template.
 
+A third fresh agent used the expanded v2 atlas on an **audio/video event-scoring architecture**. It searched and adapted the audiovisual template, removed its pretraining assumptions, drew separate temporal aligners and exactly three fusion inputs (including a missing-audio mask), and produced self-contained TikZ, PDF, SVG, and PNG. It corrected routing/text issues after inspecting full and 900 px renders; all nine endpoint relationships matched the task, all six PDF fonts were embedded, the one-page PDF compiled without text/glyph warnings, and every PNG pixel was grayscale. No unspecified training or residual branches were introduced.
+
 These are concrete transfer checks rather than a statistical benchmark. A figure still requires evidence and inspection for its actual task.
 
 ## Browser and distribution
