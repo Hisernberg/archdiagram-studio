@@ -157,7 +157,8 @@ for a,b in [("input","encoder"),("encoder","post"),("post","loss")]: f.edge(a,b)
 tokens = [r"\varnothing", "c", "c", r"\varnothing", "a", "a", "t", r"\varnothing"]
 for i,tok in enumerate(tokens):
     x = 1.4 + 1.85*i
-    f.raw(f"\\draw[ink,fill={'wash' if tok==r'\varnothing' else 'white'}] ({x-.68},4.15) rectangle ({x+.68},5.15);")
+    fill='wash' if tok==r'\varnothing' else 'white'
+    f.raw(f"\\draw[ink,fill={fill}] ({x-.68},4.15) rectangle ({x+.68},5.15);")
     label(f, f"${tok}$", x, 4.65, 1, "small")
     label(f, f"$t={i+1}$", x, 5.5, 1)
 arrow(f, [(9.4,2.65),(9.4,3.5),(7.9,3.5),(7.9,4.05)])

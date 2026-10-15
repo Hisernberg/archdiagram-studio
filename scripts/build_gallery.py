@@ -28,7 +28,8 @@ def main():
             result=subprocess.run(command,cwd=ROOT,capture_output=True,text=True)
             if result.returncode: raise RuntimeError(result.stderr+result.stdout)
         items.append(dict(id=spec.stem,title=raw['title'],description=raw['subtitle'],caption=raw['footer'],source=str(spec.relative_to(ROOT)),assumptions=raw.get('assumptions',[]),nodes=len(raw['nodes']),edges=len(raw['edges'])))
-        print(f'Built {spec.stem}: {'3 themes' if args.all_themes else 'monochrome'}, {len(raw["nodes"])} nodes, {len(raw["edges"])} edges')
+        theme_label='3 themes' if args.all_themes else 'monochrome'
+        print(f'Built {spec.stem}: {theme_label}, {len(raw["nodes"])} nodes, {len(raw["edges"])} edges')
     natives=[]
     if args.compile_tex:
         for template in sorted((SKILL/'assets/templates').glob('*.tex')):
