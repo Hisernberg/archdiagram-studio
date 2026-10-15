@@ -1,0 +1,24 @@
+{
+  "id": "vision-patch-merging",
+  "title": "Hierarchical patch merging: trade resolution for channels",
+  "family": "vision",
+  "description": "A hierarchical patch merging operation with a 2x2 neighborhood grid, 4C concatenation, normalization and 2C projection.",
+  "caption": "Four neighboring tokens are concatenated, normalized, and projected into one token at the next stage.",
+  "sources": [
+    "https://arxiv.org/abs/2103.14030"
+  ],
+  "assumptions": [
+    "H and W are even. The 4C-to-2C projection follows the original Swin patch-merging formulation."
+  ],
+  "tags": [
+    "transformer",
+    "swin",
+    "patch-merging",
+    "hierarchy"
+  ],
+  "nodes": 9,
+  "edges": 7,
+  "source_file": "vision-patch-merging.tex",
+  "width_cm": 18,
+  "height_cm": 10
+}

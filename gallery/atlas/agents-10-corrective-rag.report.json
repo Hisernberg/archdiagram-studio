@@ -1,0 +1,11 @@
+{
+  "id": "agents-10-corrective-rag",
+  "sha256": "93bf5beb439414c7ae3868dac64113a9c62b792fe1d83242c3dd84260c23103d",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-10-corrective-rag.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "text_11_sparse_moe",
+  "sha256": "30ea5450c3e92854149e9cc2385a67677c17b60374d14b08c590d310ea0e9018",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_11_sparse_moe.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "vision-siamese-similarity",
+  "sha256": "8fb86874434319592b1c11cd7a9763b713ea94502391a82b629ed1230685a919",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-siamese-similarity.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "vision-gan",
+  "sha256": "4df936bb38b6aaa6efcd487a193fcd94c600c4e2f219dcbbad2c12b4f931fe79",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-gan.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

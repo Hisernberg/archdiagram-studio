@@ -1,0 +1,11 @@
+{
+  "id": "text_06_multi_head_attention",
+  "sha256": "23be9d0aa688f057d38effb3f22b20f20018cc562444c960f4bb54a7266fcb6f",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_06_multi_head_attention.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-01-clip-dual-encoder",
+  "sha256": "5d4c6291d08886a7961c6229c78356179516bf13b83e93236a8b1d3f642b04bb",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-01-clip-dual-encoder.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,23 @@
+{
+  "id": "multimodal-02-visual-question-answering",
+  "title": "Visual question answering",
+  "family": "multimodal",
+  "description": "Region-based question answering with question-conditioned attention, weighted visual pooling, and answer supervision.",
+  "caption": "Question-conditioned weights pool region values; a separate question path preserves linguistic context.",
+  "sources": [
+    "https://openaccess.thecvf.com/content_cvpr_2018/html/Anderson_Bottom-Up_and_Top-Down_CVPR_2018_paper.html"
+  ],
+  "assumptions": [
+    "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+  ],
+  "tags": [
+    "VQA",
+    "attention",
+    "fusion"
+  ],
+  "nodes": 10,
+  "edges": 11,
+  "source_file": "multimodal-02-visual-question-answering.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

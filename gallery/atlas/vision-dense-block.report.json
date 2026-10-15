@@ -1,0 +1,11 @@
+{
+  "id": "vision-dense-block",
+  "sha256": "e8040181d682bef1aefac1837433207c83c4667a6397d5552c749d152635e271",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-dense-block.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

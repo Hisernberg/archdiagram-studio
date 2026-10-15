@@ -1,0 +1,23 @@
+{
+  "id": "vision-deterministic-autoencoder",
+  "title": "Deterministic autoencoder: compress and reconstruct",
+  "family": "vision",
+  "description": "A deterministic encoder-decoder bottleneck with reconstruction paths from input and output into the objective.",
+  "caption": "The compact code is a deterministic function of the input; reconstruction error trains both paths.",
+  "sources": [
+    "https://www.cs.toronto.edu/~hinton/absps/science.pdf"
+  ],
+  "assumptions": [
+    "This general image autoencoder concept does not reproduce the layer widths or pretraining of the cited work."
+  ],
+  "tags": [
+    "autoencoder",
+    "representation",
+    "reconstruction"
+  ],
+  "nodes": 6,
+  "edges": 6,
+  "source_file": "vision-deterministic-autoencoder.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

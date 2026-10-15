@@ -1,0 +1,11 @@
+{
+  "id": "agents-07-debate-adjudicator",
+  "sha256": "68dee02381497a8756d256d7de5042e4a68122a04af2387e0c35abf07afa7de3",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-07-debate-adjudicator.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

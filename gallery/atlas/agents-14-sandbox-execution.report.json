@@ -1,0 +1,11 @@
+{
+  "id": "agents-14-sandbox-execution",
+  "sha256": "9724bdd4dfd2125bbcaa7b086fab35104169feee3a304c122feccbed3b364730",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-14-sandbox-execution.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

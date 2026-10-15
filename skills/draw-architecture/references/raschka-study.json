@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-10-15",
+  "author": "Sebastian Raschka",
+  "gallery": "https://sebastianraschka.com/llm-architecture-gallery/",
+  "workflow_article": "https://sebastianraschka.com/blog/2026/llm-architecture-gallery.html",
+  "license_observation": "The LLMs-from-scratch LICENSE.txt explicitly excludes related books and images from its definition of licensed Source. No original images are redistributed.",
+  "license_source": "https://github.com/rasbt/LLMs-from-scratch/blob/main/LICENSE.txt",
+  "study_images": [
+    {
+      "name": "gpt-2-xl.webp",
+      "url": "https://sebastianraschka.com/llm-architecture-gallery/images/architectures/thumbnails/gpt-2-xl.webp"
+    },
+    {
+      "name": "deepseek-v3-r1-671-billion.webp",
+      "url": "https://sebastianraschka.com/llm-architecture-gallery/images/architectures/thumbnails/deepseek-v3-r1-671-billion.webp"
+    },
+    {
+      "name": "qwen3-235b-a22b.webp",
+      "url": "https://sebastianraschka.com/llm-architecture-gallery/images/architectures/thumbnails/qwen3-235b-a22b.webp"
+    }
+  ],
+  "principles": [
+    "Explicit main streams and residual origins",
+    "Repeat braces instead of duplicated blocks",
+    "Detail insets separated from data flow",
+    "Symbolic dimensions when exact facts are unavailable",
+    "Monochrome adaptation with thin rules and LaTeX type"
+  ],
+  "reuse": "Original schematics only; no author seal, watermark, signature, or original figure copied."
+}

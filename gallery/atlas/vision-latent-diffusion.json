@@ -1,0 +1,23 @@
+{
+  "id": "vision-latent-diffusion",
+  "title": "Latent diffusion: denoise a compressed image representation",
+  "family": "vision",
+  "description": "Distinct latent-diffusion training and sampling panels with image compression, conditioning, reverse iteration and decoding.",
+  "caption": "An autoencoder defines latent space; a conditioned denoiser learns there and its reverse process feeds the decoder.",
+  "sources": [
+    "https://arxiv.org/abs/2112.10752"
+  ],
+  "assumptions": [
+    "This is a generic latent diffusion concept, not a particular Stable Diffusion checkpoint or conditioning encoder."
+  ],
+  "tags": [
+    "diffusion",
+    "latent-diffusion",
+    "conditioning"
+  ],
+  "nodes": 13,
+  "edges": 11,
+  "source_file": "vision-latent-diffusion.tex",
+  "width_cm": 18,
+  "height_cm": 10
+}

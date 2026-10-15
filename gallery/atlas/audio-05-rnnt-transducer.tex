@@ -1,0 +1,76 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb}
+\usetikzlibrary{arrows.meta,calc,positioning,fit,backgrounds,shapes.geometric,matrix,decorations.pathreplacing,patterns}
+\definecolor{ink}{gray}{0.08}
+\definecolor{wash}{gray}{0.965}
+\definecolor{soft}{gray}{0.45}
+\tikzset{box/.style={draw=ink,line width=.65pt,fill=white,align=center,inner sep=4pt,outer sep=0pt,font=\small},flow/.style={draw=ink,line width=.65pt,-{Latex[length=1.8mm,width=1.3mm]},rounded corners=2pt},annotation/.style={font=\scriptsize,text=soft,align=center},groupbox/.style={draw=soft,dashed,line width=.45pt,fill=wash}}
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=-1cm,font=\rmfamily,text=ink]
+
+\path[use as bounding box] (0,0) rectangle (16,9);
+\node[anchor=west,font=\large\bfseries] at (.2,.4) {RNN-T transducer};
+\node[anchor=west,font=\footnotesize,text=soft] at (.2,.85) {Audio and speech atlas | Original conceptual schematic};
+\begin{pgfonlayer}{background}
+\end{pgfonlayer}
+\node[box,fill=wash,minimum width=2.6cm,minimum height=0.85cm,text width=2.35cm] (audio) at (1.9,2.2) {Acoustic frames\\$x_{1:T}$};
+\draw[ink,line width=.4pt] (0.6999999999999998,1.675) -- (3.3000000000000003,1.675) -- (3.3000000000000003,2.525);
+\node[box,minimum width=2.6cm,minimum height=0.85cm,text width=2.35cm] (encoder) at (5.2,2.2) {Encoder\\$h_t$};
+\node[box,fill=wash,minimum width=2.6cm,minimum height=0.85cm,text width=2.35cm] (prefix) at (1.9,4.2) {Label prefix\\$y_{<u}$};
+\draw[ink,line width=.4pt] (0.6999999999999998,3.6750000000000003) -- (3.3000000000000003,3.6750000000000003) -- (3.3000000000000003,4.525);
+\node[box,minimum width=2.6cm,minimum height=0.85cm,text width=2.35cm] (predict) at (5.2,4.2) {Prediction network\\$g_u$};
+\node[box,minimum width=2.6cm,minimum height=1.1cm,text width=2.35cm] (joint) at (8.9,3.2) {Joint network\\$h_t,g_u$};
+\node[box,minimum width=2.8cm,minimum height=1.1cm,text width=2.55cm] (dist) at (12.9,3.2) {Softmax\\$p(k\mid t,u)$};
+\begin{pgfonlayer}{background}
+\draw[flow] (audio.east) -- (encoder.west);
+\draw[flow] (prefix.east) -- (predict.west);
+\draw[flow] (encoder.east) -- (joint.west);
+\draw[flow] (predict.east) -- (joint.west);
+\draw[flow] (joint.east) -- (dist.west);
+\end{pgfonlayer}
+\node[align=center,anchor=center,font=\small,text=ink,text width=6.5cm] at (3.9,6.4) {Blank: advance acoustic time \mbox{$t$}\\Label: extend prefix, advance \mbox{$u$}};
+\fill[ink] (8.8,7.55) circle (.045);
+\draw[flow,draw=soft] (8.88,7.55) -- (9.97,7.55);
+\draw[flow,draw=soft] (8.8,7.47) -- (8.8,6.88);
+\fill[ink] (8.8,6.8) circle (.045);
+\draw[flow,draw=soft] (8.88,6.8) -- (9.97,6.8);
+\draw[flow,draw=soft] (8.8,6.72) -- (8.8,6.13);
+\fill[ink] (8.8,6.05) circle (.045);
+\draw[flow,draw=soft] (8.88,6.05) -- (9.97,6.05);
+\fill[ink] (10.05,7.55) circle (.045);
+\draw[flow,draw=soft] (10.13,7.55) -- (11.22,7.55);
+\draw[flow,draw=soft] (10.05,7.47) -- (10.05,6.88);
+\fill[ink] (10.05,6.8) circle (.045);
+\draw[flow,draw=soft] (10.13,6.8) -- (11.22,6.8);
+\draw[flow,draw=soft] (10.05,6.72) -- (10.05,6.13);
+\fill[ink] (10.05,6.05) circle (.045);
+\draw[flow,draw=soft] (10.13,6.05) -- (11.22,6.05);
+\fill[ink] (11.3,7.55) circle (.045);
+\draw[flow,draw=soft] (11.38,7.55) -- (12.47,7.55);
+\draw[flow,draw=soft] (11.3,7.47) -- (11.3,6.88);
+\fill[ink] (11.3,6.8) circle (.045);
+\draw[flow,draw=soft] (11.38,6.8) -- (12.47,6.8);
+\draw[flow,draw=soft] (11.3,6.72) -- (11.3,6.13);
+\fill[ink] (11.3,6.05) circle (.045);
+\draw[flow,draw=soft] (11.38,6.05) -- (12.47,6.05);
+\fill[ink] (12.55,7.55) circle (.045);
+\draw[flow,draw=soft] (12.63,7.55) -- (13.72,7.55);
+\draw[flow,draw=soft] (12.55,7.47) -- (12.55,6.88);
+\fill[ink] (12.55,6.8) circle (.045);
+\draw[flow,draw=soft] (12.63,6.8) -- (13.72,6.8);
+\draw[flow,draw=soft] (12.55,6.72) -- (12.55,6.13);
+\fill[ink] (12.55,6.05) circle (.045);
+\draw[flow,draw=soft] (12.63,6.05) -- (13.72,6.05);
+\fill[ink] (13.8,7.55) circle (.045);
+\draw[flow,draw=soft] (13.8,7.47) -- (13.8,6.88);
+\fill[ink] (13.8,6.8) circle (.045);
+\draw[flow,draw=soft] (13.8,6.72) -- (13.8,6.13);
+\fill[ink] (13.8,6.05) circle (.045);
+\draw[flow,line width=1.2pt] (8.8,7.55) -- (10.05,7.55) -- (10.05,6.8) -- (11.3,6.8) -- (12.55,6.8) -- (12.55,6.05) -- (13.8,6.05);
+\node[align=center,anchor=center,font=\scriptsize,text=ink,text width=3cm] at (11.3,8.05) {\mbox{$t\rightarrow$}};
+\node[align=center,anchor=center,font=\scriptsize,text=ink,text width=0.5cm] at (8.35,6.8) {\mbox{$u$}};
+\node[align=center,anchor=center,font=\scriptsize,text=soft,text width=6cm] at (11.4,5.45) {Alignment lattice (one path emphasized)};
+\node[anchor=west,align=left,font=\scriptsize,text=soft,text width=15.6cm] at (.2,8.75) {The joint distribution depends on both acoustic time and the emitted-label prefix.};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,489 @@
+[
+  {
+    "id": "text_01_token_embedding",
+    "title": "Subword tokenization and embedding lookup",
+    "family": "text",
+    "description": "Subword segmentation, vocabulary identifiers, learned embedding lookup, and additive position vectors.",
+    "caption": "Token boundaries and identifiers are illustrative; a learned table maps each token to a model-width vector.",
+    "sources": [
+      "https://arxiv.org/abs/1508.07909",
+      "https://arxiv.org/abs/1706.03762"
+    ],
+    "assumptions": [
+      "Illustrative segmentation is not the output of a particular trained tokenizer.",
+      "Additive position vectors are a chosen example; RoPE is a different mechanism."
+    ],
+    "tags": [
+      "tokenization",
+      "embedding",
+      "subword"
+    ],
+    "nodes": 9,
+    "edges": 9,
+    "source_file": "text_01_token_embedding.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_02_causal_decoder",
+    "title": "Causal decoder with pre-normalized residual blocks",
+    "family": "text",
+    "description": "Pre-normalized causal decoder block with two correctly originated identity residuals and a language-model readout.",
+    "caption": "Each residual starts before its normalization; the block repeats with distinct parameters across layers.",
+    "sources": [
+      "https://arxiv.org/abs/1706.03762",
+      "https://arxiv.org/abs/2002.04745"
+    ],
+    "assumptions": [
+      "Conceptual pre-normalized decoder; no particular model's layer count, norm type, or position method is implied."
+    ],
+    "tags": [
+      "decoder",
+      "causal",
+      "residual",
+      "pre-norm"
+    ],
+    "nodes": 11,
+    "edges": 11,
+    "source_file": "text_02_causal_decoder.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_03_encoder_decoder",
+    "title": "Encoder--decoder Transformer",
+    "family": "text",
+    "description": "Paired encoder and autoregressive decoder stacks with source memory connected only to decoder cross-attention keys and values.",
+    "caption": "Encoder memory supplies keys and values to every decoder cross-attention layer.",
+    "sources": [
+      "https://arxiv.org/abs/1706.03762"
+    ],
+    "assumptions": [
+      "Original post-norm ordering is summarized in labels; residual wires are not expanded.",
+      "Layer repeat counts are symbolic."
+    ],
+    "tags": [
+      "transformer",
+      "encoder-decoder",
+      "cross-attention"
+    ],
+    "nodes": 12,
+    "edges": 10,
+    "source_file": "text_03_encoder_decoder.tex",
+    "width_cm": 16,
+    "height_cm": 10
+  },
+  {
+    "id": "text_04_scaled_self_attention",
+    "title": "Scaled dot-product self-attention",
+    "family": "text",
+    "description": "Self-attention factorization with symbolic query/key/value shapes, correct attention axes, and an illustrative causal mask.",
+    "caption": "Rows are queries, columns are keys; normalization runs over allowed key positions for each query.",
+    "sources": [
+      "https://arxiv.org/abs/1706.03762"
+    ],
+    "assumptions": [
+      "Single attention head; the batch axis is omitted.",
+      "Causal masking is the selected example; full self-attention omits that mask."
+    ],
+    "tags": [
+      "attention",
+      "mask",
+      "tensor-shapes"
+    ],
+    "nodes": 9,
+    "edges": 9,
+    "source_file": "text_04_scaled_self_attention.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_05_cross_attention",
+    "title": "Cross-attention with a query-stream residual",
+    "family": "text",
+    "description": "Cross-attention with rectangular T-by-S weights and a residual that originates from the decoder query stream.",
+    "caption": "The output has the query length; the identity path starts at the decoder state, before query projection.",
+    "sources": [
+      "https://arxiv.org/abs/1706.03762"
+    ],
+    "assumptions": [
+      "Single head shown; output projection restores the query stream width d.",
+      "Normalization wrapper omitted to isolate attention and residual origin."
+    ],
+    "tags": [
+      "cross-attention",
+      "residual",
+      "query-memory"
+    ],
+    "nodes": 8,
+    "edges": 9,
+    "source_file": "text_05_cross_attention.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_06_multi_head_attention",
+    "title": "Multi-head attention: separate projections, joined outputs",
+    "family": "text",
+    "description": "Parallel head-specific query/key/value projections and attention maps followed by feature concatenation and output projection.",
+    "caption": "Each head computes its own attention map; concatenation precedes the shared output projection.",
+    "sources": [
+      "https://arxiv.org/abs/1706.03762"
+    ],
+    "assumptions": [
+      "Representative heads 1, i, and h stand for an arbitrary number of heads.",
+      "Feature widths are symbolic and need not be assigned numeric values."
+    ],
+    "tags": [
+      "multi-head",
+      "attention",
+      "parallel-branches"
+    ],
+    "nodes": 13,
+    "edges": 13,
+    "source_file": "text_06_multi_head_attention.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_07_grouped_query_attention",
+    "title": "Grouped-query attention: several queries share keys and values",
+    "family": "text",
+    "description": "Grouped-query attention shows explicitly shared K/V tensors within groups and distinct query-head attention computations.",
+    "caption": "A query head uses the key/value head of its assigned group; head outputs are then concatenated.",
+    "sources": [
+      "https://arxiv.org/abs/2305.13245"
+    ],
+    "assumptions": [
+      "Two representative groups with two representative queries each are a schematic partition, not a fixed model configuration.",
+      "All projections are from the same sequence X."
+    ],
+    "tags": [
+      "GQA",
+      "attention",
+      "shared-KV"
+    ],
+    "nodes": 11,
+    "edges": 8,
+    "source_file": "text_07_grouped_query_attention.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_08_kv_cache",
+    "title": "Autoregressive decoding with a per-layer KV cache",
+    "family": "text",
+    "description": "Single-step autoregressive attention with separate current Q and new K/V, explicit cache append, and cache read.",
+    "caption": "Only the current query is evaluated against the enlarged cache; past keys and values are reused.",
+    "sources": [
+      "https://arxiv.org/abs/1911.02150",
+      "https://arxiv.org/abs/1706.03762"
+    ],
+    "assumptions": [
+      "One layer and representative head shown; implementations may pack or page the cache differently.",
+      "Projection and attention normalization wrappers omitted."
+    ],
+    "tags": [
+      "KV-cache",
+      "decoding",
+      "storage"
+    ],
+    "nodes": 10,
+    "edges": 9,
+    "source_file": "text_08_kv_cache.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_09_rotary_positions",
+    "title": "Rotary positions act on query and key feature pairs",
+    "family": "text",
+    "description": "Separate position-indexed rotations of query and key feature pairs and their relative-position dot-product identity.",
+    "caption": "Position rotations change query--key dot products through relative position; values follow their ordinary projection path.",
+    "sources": [
+      "https://arxiv.org/abs/2104.09864"
+    ],
+    "assumptions": [
+      "Column-vector convention is used in this figure; model-wide row-vector notation is equivalent after transposition.",
+      "Pair-specific frequencies theta_a are symbolic; value rotation is not shown."
+    ],
+    "tags": [
+      "RoPE",
+      "position",
+      "rotation"
+    ],
+    "nodes": 9,
+    "edges": 6,
+    "source_file": "text_09_rotary_positions.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_10_swiglu_ffn",
+    "title": "SwiGLU feed-forward network",
+    "family": "text",
+    "description": "Two-branch SwiGLU feed-forward network with SiLU gate, elementwise multiplication, and output projection.",
+    "caption": "A SiLU-transformed gate modulates the parallel up-projection before the down-projection restores model width.",
+    "sources": [
+      "https://arxiv.org/abs/2002.05202"
+    ],
+    "assumptions": [
+      "Biases and residual/norm wrappers are omitted to isolate the feed-forward transformation.",
+      "The intermediate width d_f is symbolic."
+    ],
+    "tags": [
+      "SwiGLU",
+      "FFN",
+      "gating"
+    ],
+    "nodes": 8,
+    "edges": 7,
+    "source_file": "text_10_swiglu_ffn.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_11_sparse_moe",
+    "title": "Sparse mixture-of-experts decoder and routing detail",
+    "family": "text",
+    "description": "Per-token sparse expert selection, dispatch to active experts, and gate-weighted aggregation, with an explicitly inactive expert.",
+    "caption": "The router selects experts per token; only selected experts receive data and contribute weighted outputs.",
+    "sources": [
+      "https://arxiv.org/abs/1701.06538"
+    ],
+    "assumptions": [
+      "The two selected experts are illustrative, not a universal routing configuration.",
+      "Capacity limits, auxiliary losses, and distributed expert placement are outside this layer-level view."
+    ],
+    "tags": [
+      "MoE",
+      "routing",
+      "sparse"
+    ],
+    "nodes": 12,
+    "edges": 12,
+    "source_file": "text_11_sparse_moe.tex",
+    "width_cm": 16,
+    "height_cm": 10
+  },
+  {
+    "id": "text_12_lora",
+    "title": "LoRA: a frozen dense path plus a trainable low-rank update",
+    "family": "text",
+    "description": "Low-rank trainable matrices A and B operate in parallel with a frozen base layer, then add at the output.",
+    "caption": "The adapter branch has a rank bottleneck; its scaled output adds to the frozen base-layer output.",
+    "sources": [
+      "https://arxiv.org/abs/2106.09685"
+    ],
+    "assumptions": [
+      "Column-vector convention; A maps input width to rank r and B maps r to output width.",
+      "The common alpha/r scaling convention is shown; bias and optimizer details are omitted."
+    ],
+    "tags": [
+      "LoRA",
+      "adapter",
+      "low-rank"
+    ],
+    "nodes": 8,
+    "edges": 7,
+    "source_file": "text_12_lora.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_13_qlora",
+    "title": "QLoRA: quantized base storage, higher-precision computation",
+    "family": "text",
+    "description": "Conceptual QLoRA base-weight storage and dequantization path, alongside a trainable low-rank adapter branch.",
+    "caption": "Quantized base parameters stay frozen; adapters receive parameter updates while gradients can pass through the computation.",
+    "sources": [
+      "https://arxiv.org/abs/2305.14314"
+    ],
+    "assumptions": [
+      "Quantizer, storage bit width, compute dtype, and optimizer are unspecified in this conceptual view.",
+      "Frozen parameters do not mean that the base matmul blocks gradients to its inputs."
+    ],
+    "tags": [
+      "QLoRA",
+      "quantization",
+      "adapter"
+    ],
+    "nodes": 10,
+    "edges": 9,
+    "source_file": "text_13_qlora.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_14_beam_search",
+    "title": "Beam search expands prefixes, then prunes globally",
+    "family": "text",
+    "description": "A prefix tree with local candidate expansion and global top-B pruning, including a visibly discarded branch.",
+    "caption": "An illustrative beam of two prefixes survives each step; every expansion accumulates its parent prefix score.",
+    "sources": [
+      "https://arxiv.org/abs/1409.3215"
+    ],
+    "assumptions": [
+      "B=2 is an illustrative search setting, not an architecture claim.",
+      "The score is unnormalized cumulative log probability; length penalties and EOS bookkeeping are omitted."
+    ],
+    "tags": [
+      "beam-search",
+      "decoding",
+      "tree"
+    ],
+    "nodes": 12,
+    "edges": 13,
+    "source_file": "text_14_beam_search.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_15_speculative_decoding",
+    "title": "Speculative decoding: propose, verify, accept a prefix",
+    "family": "text",
+    "description": "Speculative sampling separates draft proposal, target verification, prefix acceptance, corrected rejection sampling, and next-round feedback.",
+    "caption": "Draft proposals are sequential; the target scores their conditional positions together, then corrected sampling preserves its distribution.",
+    "sources": [
+      "https://arxiv.org/abs/2211.17192"
+    ],
+    "assumptions": [
+      "This is the exact sampling form with normalized positive-part correction, rather than a greedy matching variant.",
+      "If all proposals are accepted, the extra token is sampled from p_(gamma+1)."
+    ],
+    "tags": [
+      "speculative",
+      "decoding",
+      "verification"
+    ],
+    "nodes": 9,
+    "edges": 9,
+    "source_file": "text_15_speculative_decoding.tex",
+    "width_cm": 16,
+    "height_cm": 9.5
+  },
+  {
+    "id": "text_16_selective_state_space",
+    "title": "Selective state-space recurrence",
+    "family": "text",
+    "description": "An unrolled input-selective state-space core with input-dependent discretization and readout parameters, plus a state carried across time.",
+    "caption": "Input-dependent selection changes the state transition across time; this view isolates the recurrence core.",
+    "sources": [
+      "https://arxiv.org/abs/2312.00752"
+    ],
+    "assumptions": [
+      "Channel mixing, convolution, gating, and output skip terms are omitted to isolate the selective recurrence.",
+      "Bars denote discretized transition/input parameters; the discretization scheme for B is not fixed in the drawing."
+    ],
+    "tags": [
+      "SSM",
+      "Mamba",
+      "recurrence",
+      "selectivity"
+    ],
+    "nodes": 13,
+    "edges": 17,
+    "source_file": "text_16_selective_state_space.tex",
+    "width_cm": 16,
+    "height_cm": 9.5
+  },
+  {
+    "id": "text_17_hybrid_attention_ssm",
+    "title": "Hybrid sequence layer: recurrence and local attention",
+    "family": "text",
+    "description": "Conceptual hybrid layer contrasts compressed recurrent state with a finite explicit KV attention window, with per-step updates of each memory.",
+    "caption": "Recurrent state summarizes the past; the local attention cache retains explicit recent key/value positions.",
+    "sources": [
+      "https://arxiv.org/abs/2402.19427",
+      "https://arxiv.org/abs/2312.00752"
+    ],
+    "assumptions": [
+      "Conceptual hybrid; this is not an exact reproduction of Griffin or any specified layer schedule.",
+      "The window width w is symbolic; residual/norm wrappers are omitted."
+    ],
+    "tags": [
+      "hybrid",
+      "SSM",
+      "local-attention",
+      "memory"
+    ],
+    "nodes": 10,
+    "edges": 10,
+    "source_file": "text_17_hybrid_attention_ssm.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_18_rnn_seq2seq",
+    "title": "Recurrent sequence-to-sequence model",
+    "family": "text",
+    "description": "Unrolled LSTM encoder-decoder model with final-state initialization of the decoder and explicitly shifted target inputs.",
+    "caption": "The encoder's final hidden and cell states initialize the decoder; target inputs are shifted by one position.",
+    "sources": [
+      "https://arxiv.org/abs/1409.3215"
+    ],
+    "assumptions": [
+      "Representative source positions and three illustrative target steps are drawn.",
+      "The source order is not prescribed; this schematic isolates the fixed-summary encoder-decoder topology."
+    ],
+    "tags": [
+      "RNN",
+      "LSTM",
+      "seq2seq"
+    ],
+    "nodes": 18,
+    "edges": 14,
+    "source_file": "text_18_rnn_seq2seq.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "text_19_bidirectional_lstm",
+    "title": "Bidirectional LSTM with aligned token readouts",
+    "family": "text",
+    "description": "Two oppositely directed LSTM state chains share aligned inputs and feed per-position concatenation/readout functions.",
+    "caption": "Forward and backward recurrences run in opposite directions; each readout combines states aligned to the same input.",
+    "sources": [
+      "https://www.cs.toronto.edu/~graves/nn_2005.pdf"
+    ],
+    "assumptions": [
+      "Representative positions are drawn; ellipsis edges summarize intermediate steps.",
+      "Cell states and LSTM gates are contained inside the LSTM blocks; this is a noncausal sequence encoder."
+    ],
+    "tags": [
+      "bidirectional",
+      "LSTM",
+      "sequence-labeling"
+    ],
+    "nodes": 16,
+    "edges": 22,
+    "source_file": "text_19_bidirectional_lstm.tex",
+    "width_cm": 16,
+    "height_cm": 10
+  },
+  {
+    "id": "text_20_cross_encoder_reranker",
+    "title": "Cross-encoder reranker jointly encodes query and document",
+    "family": "text",
+    "description": "BERT-style pair packing, joint bidirectional encoding, classification-state extraction, and a document-query relevance head.",
+    "caption": "A single encoder allows query--document token interactions; the classification position supplies a relevance score.",
+    "sources": [
+      "https://arxiv.org/abs/1901.04085",
+      "https://arxiv.org/abs/1810.04805"
+    ],
+    "assumptions": [
+      "Special-token count m+n+3 follows the explicitly shown two-segment BERT packing convention.",
+      "The relevance-head activation and loss are task choices; the displayed score is a pre-activation scalar."
+    ],
+    "tags": [
+      "reranking",
+      "cross-encoder",
+      "BERT"
+    ],
+    "nodes": 8,
+    "edges": 7,
+    "source_file": "text_20_cross_encoder_reranker.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  }
+]

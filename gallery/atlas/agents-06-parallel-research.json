@@ -1,0 +1,27 @@
+{
+  "id": "agents-06-parallel-research",
+  "title": "Parallel research with evidence reduction",
+  "family": "agents",
+  "description": "An original fan-out/fan-in research design with scoped parallel workers, explicit evidence packets, and a reducer before final synthesis.",
+  "caption": "Scoped research branches return source-linked claims; the reducer checks coverage and resolves conflicts before synthesis.",
+  "sources": [
+    "https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/",
+    "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "Applies map/reduce and orchestrator/worker ideas to research; this is not a reproduction of the MapReduce system architecture.",
+    "Coverage checks and conflict resolution are application steps; shared source bias can remain."
+  ],
+  "tags": [
+    "multi-agent",
+    "parallel",
+    "research",
+    "reducer"
+  ],
+  "nodes": 10,
+  "edges": 11,
+  "source_file": "agents-06-parallel-research.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

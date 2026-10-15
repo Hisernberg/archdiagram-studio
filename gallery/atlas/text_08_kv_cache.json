@@ -1,0 +1,25 @@
+{
+  "id": "text_08_kv_cache",
+  "title": "Autoregressive decoding with a per-layer KV cache",
+  "family": "text",
+  "description": "Single-step autoregressive attention with separate current Q and new K/V, explicit cache append, and cache read.",
+  "caption": "Only the current query is evaluated against the enlarged cache; past keys and values are reused.",
+  "sources": [
+    "https://arxiv.org/abs/1911.02150",
+    "https://arxiv.org/abs/1706.03762"
+  ],
+  "assumptions": [
+    "One layer and representative head shown; implementations may pack or page the cache differently.",
+    "Projection and attention normalization wrappers omitted."
+  ],
+  "tags": [
+    "KV-cache",
+    "decoding",
+    "storage"
+  ],
+  "nodes": 10,
+  "edges": 9,
+  "source_file": "text_08_kv_cache.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

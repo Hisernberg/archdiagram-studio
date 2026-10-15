@@ -1,0 +1,25 @@
+{
+  "id": "audio-13-tts-overview",
+  "title": "Text-to-speech: two-stage synthesis",
+  "family": "audio",
+  "description": "A two-stage text-to-speech overview with linguistic, acoustic, and waveform-generation interfaces.",
+  "caption": "A linguistic frontend and acoustic model predict an intermediate representation for a neural vocoder.",
+  "sources": [
+    "https://arxiv.org/abs/1712.05884",
+    "https://arxiv.org/abs/2006.04558"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "Phonemization and explicit prosody controls are common design choices, not claims about all TTS systems."
+  ],
+  "tags": [
+    "TTS",
+    "vocoder",
+    "conditioning"
+  ],
+  "nodes": 7,
+  "edges": 6,
+  "source_file": "audio-13-tts-overview.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

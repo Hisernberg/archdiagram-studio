@@ -1,0 +1,24 @@
+{
+  "id": "text_14_beam_search",
+  "title": "Beam search expands prefixes, then prunes globally",
+  "family": "text",
+  "description": "A prefix tree with local candidate expansion and global top-B pruning, including a visibly discarded branch.",
+  "caption": "An illustrative beam of two prefixes survives each step; every expansion accumulates its parent prefix score.",
+  "sources": [
+    "https://arxiv.org/abs/1409.3215"
+  ],
+  "assumptions": [
+    "B=2 is an illustrative search setting, not an architecture claim.",
+    "The score is unnormalized cumulative log probability; length penalties and EOS bookkeeping are omitted."
+  ],
+  "tags": [
+    "beam-search",
+    "decoding",
+    "tree"
+  ],
+  "nodes": 12,
+  "edges": 13,
+  "source_file": "text_14_beam_search.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

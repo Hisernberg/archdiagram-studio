@@ -1,0 +1,24 @@
+{
+  "id": "audio-07-conformer-block",
+  "title": "Conformer encoder block",
+  "family": "audio",
+  "description": "A Conformer block with explicit residual origins, half-step FFNs, and expanded convolution module.",
+  "caption": "Macaron feed-forward halves surround global self-attention and a local convolution module.",
+  "sources": [
+    "https://arxiv.org/abs/2005.08100"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "Pre-normalization is implicit in the attention and FFN boxes. The convolution callout omits dropout."
+  ],
+  "tags": [
+    "Conformer",
+    "residual",
+    "convolution"
+  ],
+  "nodes": 16,
+  "edges": 15,
+  "source_file": "audio-07-conformer-block.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

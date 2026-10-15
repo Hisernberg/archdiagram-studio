@@ -1,0 +1,11 @@
+{
+  "id": "vision-shifted-windows",
+  "sha256": "e3dce4d6b8f5316aaeb2e860bf5a23c60677c21ef4615c8d27e2c040c8e6c95e",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-shifted-windows.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

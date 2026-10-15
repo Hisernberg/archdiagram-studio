@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-08-video-temporal-encoder",
+  "sha256": "f0dd9aed8ce168d45ffc6cc55215fb3f51c5f66bb24e59d784b976d94c11ef24",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-08-video-temporal-encoder.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

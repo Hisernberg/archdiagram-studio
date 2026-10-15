@@ -1,0 +1,25 @@
+{
+  "id": "text_01_token_embedding",
+  "title": "Subword tokenization and embedding lookup",
+  "family": "text",
+  "description": "Subword segmentation, vocabulary identifiers, learned embedding lookup, and additive position vectors.",
+  "caption": "Token boundaries and identifiers are illustrative; a learned table maps each token to a model-width vector.",
+  "sources": [
+    "https://arxiv.org/abs/1508.07909",
+    "https://arxiv.org/abs/1706.03762"
+  ],
+  "assumptions": [
+    "Illustrative segmentation is not the output of a particular trained tokenizer.",
+    "Additive position vectors are a chosen example; RoPE is a different mechanism."
+  ],
+  "tags": [
+    "tokenization",
+    "embedding",
+    "subword"
+  ],
+  "nodes": 9,
+  "edges": 9,
+  "source_file": "text_01_token_embedding.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

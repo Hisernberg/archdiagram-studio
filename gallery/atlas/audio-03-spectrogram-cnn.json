@@ -1,0 +1,24 @@
+{
+  "id": "audio-03-spectrogram-cnn",
+  "title": "Spectrogram convolutional classifier",
+  "family": "audio",
+  "description": "A conceptual PANNs-inspired spectrogram CNN for multilabel audio tagging.",
+  "caption": "Local time--frequency filters feed progressively pooled features and clip-level tags.",
+  "sources": [
+    "https://arxiv.org/abs/1912.10211"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "This is a generic spectrogram CNN, not the exact CNN14 layer inventory. Tensor depths are illustrative."
+  ],
+  "tags": [
+    "CNN",
+    "audio tagging",
+    "receptive field"
+  ],
+  "nodes": 6,
+  "edges": 5,
+  "source_file": "audio-03-spectrogram-cnn.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

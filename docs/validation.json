@@ -1,26 +1,64 @@
 {
-  "release": "1.0.0",
+  "release": "2.0.0",
   "checked_on": "2026-10-15",
   "local_python": "3.12",
-  "unit_tests_passed": 37,
+  "unit_tests_passed": 40,
   "skill_metadata": "passed",
-  "themed_scenes": 18,
-  "strict_scene_issues": 0,
-  "paper_tikz_compiles": 6,
-  "native_tikz_compiles": 3,
+  "atlas": {
+    "figures": 100,
+    "families": {
+      "vision": 20,
+      "text": 20,
+      "audio": 20,
+      "multimodal": 15,
+      "agents": 15,
+      "robotics-graphs": 10
+    },
+    "all_source_hashes_match": true,
+    "all_previews_grayscale": true,
+    "compile_warnings": 0,
+    "assets_verified": 500,
+    "png_crc_and_streams": "passed",
+    "svg_xml": "passed",
+    "pdf_end_markers": "passed"
+  },
+  "atlas_native_tikz_compiles": 100,
   "successful_tex_engine": "pdflatex",
+  "shell_escape": false,
+  "additional_json_scenes": 6,
+  "additional_native_templates": 3,
   "fresh_agent_tasks_completed": 2,
+  "family_author_agents": 6,
   "browser": {
     "page_errors": [],
     "failed_responses": [],
     "mobile_overflow": false,
-    "examples": 6,
-    "themes": 3,
-    "download_assets_checked": 72,
-    "clipboard": "install commands and skill prompt copied"
+    "examples": 100,
+    "family_filters": {
+      "vision": 20,
+      "text": 20,
+      "audio": 20,
+      "multimodal": 15,
+      "agents": 15,
+      "robotics-graphs": 10
+    },
+    "search": "matching and empty results checked",
+    "keyboard": "Home and End selection checked",
+    "download_assets_checked": 400,
+    "clipboard": "install commands and skill prompt copied",
+    "zoom": "125% and Fit checked"
   },
   "limits": [
-    "Local rendering and review do not prove architecture correctness.",
-    "Hosted CI status must be checked on GitHub; the workflow file alone is not a passing result."
-  ]
+    "Conceptual schematics require implementation-specific verification.",
+    "Native atlas SVG previews contain outlined glyphs; edit the TikZ master.",
+    "Raster waveforms, grids, and spectrograms are illustrative rather than measured data."
+  ],
+  "hosted_ci": {
+    "release": "1.0.0",
+    "url": "https://github.com/Hisernberg/archdiagram-studio/actions/runs/38686980040",
+    "result": "success",
+    "jobs_passed": 5,
+    "implementation_commit": "5e4c5d90bc71cbae4fdd4f8b06e217d28f7b100b",
+    "note": "Historical v1 result. See Actions for the expanded v2 release build."
+  }
 }

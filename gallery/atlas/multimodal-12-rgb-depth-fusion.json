@@ -1,0 +1,26 @@
+{
+  "id": "multimodal-12-rgb-depth-fusion",
+  "title": "RGB-depth fusion at multiple scales",
+  "family": "multimodal",
+  "description": "Registered RGB and depth encoders with repeated same-scale additive feature fusion and a dense semantic decoder.",
+  "caption": "Depth and RGB features are summed at corresponding scales; the fused appearance stream supplies a dense decoder.",
+  "sources": [
+    "https://github.com/tum-vision/fusenet",
+    "https://cvai.cit.tum.de/_media/spezial/bib/hazirbasma2016fusenet.pdf"
+  ],
+  "assumptions": [
+    "Conceptual FuseNet-style pattern with three representative scales; the source architecture contains additional stages and decoder detail.",
+    "RGB and depth are assumed registered; symbolic feature channels are compatible at each sum."
+  ],
+  "tags": [
+    "RGB-D",
+    "FuseNet",
+    "dense-prediction",
+    "multiscale-fusion"
+  ],
+  "nodes": 13,
+  "edges": 14,
+  "source_file": "multimodal-12-rgb-depth-fusion.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

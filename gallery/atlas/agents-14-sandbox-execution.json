@@ -1,0 +1,27 @@
+{
+  "id": "agents-14-sandbox-execution",
+  "title": "Sandboxed code execution with explicit result capture",
+  "family": "agents",
+  "description": "An original execution-service workflow with request validation, configured runtime launch, resource/access policy, sandboxed process, ephemeral files, and captured-result feedback.",
+  "caption": "Validate and launch code under an explicit runtime policy; return captured outputs and deliberately exported artifacts.",
+  "sources": [
+    "https://gvisor.dev/docs/architecture_guide/intro/",
+    "https://gvisor.dev/docs/user_guide/quick_start/docker/"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "The generic workflow is informed by gVisor's runtime isolation boundary; it is not a diagram of the Sentry/Gofer internals.",
+    "Resource limits, mounts, network access, and artifact export are illustrative configured controls; no perfect-containment guarantee is implied."
+  ],
+  "tags": [
+    "agent",
+    "sandbox",
+    "code execution",
+    "security boundary"
+  ],
+  "nodes": 7,
+  "edges": 9,
+  "source_file": "agents-14-sandbox-execution.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

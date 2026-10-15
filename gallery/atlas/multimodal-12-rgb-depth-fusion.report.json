@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-12-rgb-depth-fusion",
+  "sha256": "8a7cf6a93f030eaff05caa15ad71987873090a4d0a61725ae93ba485e20576c1",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-12-rgb-depth-fusion.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

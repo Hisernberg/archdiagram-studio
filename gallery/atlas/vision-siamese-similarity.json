@@ -1,0 +1,23 @@
+{
+  "id": "vision-siamese-similarity",
+  "title": "Siamese image similarity: compare two shared representations",
+  "family": "vision",
+  "description": "A Siamese image pair architecture with tied CNN weights, absolute feature difference, learned similarity and pair supervision.",
+  "caption": "Both images pass through the same encoder; a learned comparison maps their absolute feature difference to similarity.",
+  "sources": [
+    "https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf"
+  ],
+  "assumptions": [
+    "Conceptual schematic; dimensions and details vary by implementation."
+  ],
+  "tags": [
+    "siamese",
+    "metric-learning",
+    "similarity"
+  ],
+  "nodes": 11,
+  "edges": 11,
+  "source_file": "vision-siamese-similarity.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

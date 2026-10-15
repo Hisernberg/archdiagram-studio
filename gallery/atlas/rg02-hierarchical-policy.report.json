@@ -1,0 +1,11 @@
+{
+  "id": "rg02-hierarchical-policy",
+  "sha256": "0cf4c64e1d978fe83770788575e9b0aabddcb7a087c39730242968369bebf11e",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg02-hierarchical-policy.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

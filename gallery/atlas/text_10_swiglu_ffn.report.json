@@ -1,0 +1,11 @@
+{
+  "id": "text_10_swiglu_ffn",
+  "sha256": "a1c8d45c275616e0cdb78675a35a7801f907b2d50376307a6037f05c52d292c6",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_10_swiglu_ffn.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

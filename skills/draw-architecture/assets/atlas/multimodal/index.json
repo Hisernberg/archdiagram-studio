@@ -1,0 +1,380 @@
+[
+  {
+    "id": "multimodal-01-clip-dual-encoder",
+    "title": "CLIP contrastive dual encoder",
+    "family": "multimodal",
+    "description": "Dual encoder contrastive pretraining with normalized embeddings, a batch similarity matrix, and symmetric losses.",
+    "caption": "The diagonal of the cross-modal similarity matrix supplies positives for two directional classification losses.",
+    "sources": [
+      "https://proceedings.mlr.press/v139/radford21a.html"
+    ],
+    "assumptions": [
+      "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+    ],
+    "tags": [
+      "contrastive",
+      "dual-encoder",
+      "CLIP",
+      "training"
+    ],
+    "nodes": 10,
+    "edges": 10,
+    "source_file": "multimodal-01-clip-dual-encoder.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-02-visual-question-answering",
+    "title": "Visual question answering",
+    "family": "multimodal",
+    "description": "Region-based question answering with question-conditioned attention, weighted visual pooling, and answer supervision.",
+    "caption": "Question-conditioned weights pool region values; a separate question path preserves linguistic context.",
+    "sources": [
+      "https://openaccess.thecvf.com/content_cvpr_2018/html/Anderson_Bottom-Up_and_Top-Down_CVPR_2018_paper.html"
+    ],
+    "assumptions": [
+      "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+    ],
+    "tags": [
+      "VQA",
+      "attention",
+      "fusion"
+    ],
+    "nodes": 10,
+    "edges": 11,
+    "source_file": "multimodal-02-visual-question-answering.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-03-image-captioning",
+    "title": "Attention-based image captioning",
+    "family": "multimodal",
+    "description": "Image captioning with recurrent visual attention, a token likelihood objective, and an autoregressive word feedback loop.",
+    "caption": "Visual memory is reused at each token step; the hidden state controls attention and sampled words feed the decoder.",
+    "sources": [
+      "https://proceedings.mlr.press/v37/xuc15.html"
+    ],
+    "assumptions": [
+      "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+    ],
+    "tags": [
+      "captioning",
+      "autoregressive",
+      "visual-attention"
+    ],
+    "nodes": 9,
+    "edges": 10,
+    "source_file": "multimodal-03-image-captioning.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-04-vision-language-projector",
+    "title": "Vision-language projection bridge",
+    "family": "multimodal",
+    "description": "LLaVA-style alignment of image encoder patch features with a causal language model through a learned projection.",
+    "caption": "Projected image tokens and text embeddings enter one causal sequence; response tokens carry the language objective.",
+    "sources": [
+      "https://arxiv.org/abs/2304.08485",
+      "https://github.com/haotian-liu/LLaVA"
+    ],
+    "assumptions": [
+      "Conceptual LLaVA-style bridge; the linear projector follows the initial formulation, while later versions may use an MLP.",
+      "Visual token counts and embedding widths are symbolic; the diagram does not fix training-stage freeze policies."
+    ],
+    "tags": [
+      "LLaVA",
+      "projector",
+      "vision-language",
+      "causal-LM"
+    ],
+    "nodes": 9,
+    "edges": 8,
+    "source_file": "multimodal-04-vision-language-projector.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-05-resampler-cross-attention",
+    "title": "Resampling with gated visual cross-attention",
+    "family": "multimodal",
+    "description": "Flamingo-style learned visual resampling and gated cross-attention inserted between language model blocks.",
+    "caption": "Learned latent queries resample vision features; text queries read those latents through a gated residual path.",
+    "sources": [
+      "https://arxiv.org/abs/2204.14198"
+    ],
+    "assumptions": [
+      "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+    ],
+    "tags": [
+      "Flamingo",
+      "Perceiver",
+      "cross-attention",
+      "gated-residual"
+    ],
+    "nodes": 11,
+    "edges": 11,
+    "source_file": "multimodal-05-resampler-cross-attention.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-06-clap-audio-text",
+    "title": "Audio-text contrastive learning and zero-shot scoring",
+    "family": "multimodal",
+    "description": "Audio-text contrastive pretraining with duration pooling and a distinct zero-shot text-label retrieval panel.",
+    "caption": "Training aligns paired audio and descriptions; zero-shot inference ranks candidate text embeddings by cosine similarity.",
+    "sources": [
+      "https://arxiv.org/abs/2206.04769",
+      "https://www.microsoft.com/en-us/research/publication/clap-learning-audio-concepts-from-natural-language-supervision/"
+    ],
+    "assumptions": [
+      "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+    ],
+    "tags": [
+      "CLAP",
+      "audio-text",
+      "contrastive",
+      "zero-shot"
+    ],
+    "nodes": 11,
+    "edges": 9,
+    "source_file": "multimodal-06-clap-audio-text.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-07-speech-language-bridge",
+    "title": "Speech-to-language-model bridge",
+    "family": "multimodal",
+    "description": "SALMONN-style speech and audio encoder fusion through a window-level query adapter into a language model.",
+    "caption": "A windowed query adapter compresses aligned encoder features; prompt embeddings and audio tokens condition text generation.",
+    "sources": [
+      "https://arxiv.org/abs/2310.13289",
+      "https://github.com/bytedance/SALMONN"
+    ],
+    "assumptions": [
+      "Conceptual SALMONN-style bridge, shown for transcription; encoder alignment, query counts, and widths remain symbolic.",
+      "The figure omits low-rank adaptation and detailed training stages."
+    ],
+    "tags": [
+      "speech",
+      "audio",
+      "Q-Former",
+      "language-model",
+      "adapter"
+    ],
+    "nodes": 9,
+    "edges": 9,
+    "source_file": "multimodal-07-speech-language-bridge.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-08-video-temporal-encoder",
+    "title": "Video temporal encoder",
+    "family": "multimodal",
+    "description": "A factorized video encoder with shared spatial frame encoders, frame summaries, temporal positions, and temporal attention.",
+    "caption": "Each frame contributes a spatial summary; temporal position codes preserve order before the video-level readout.",
+    "sources": [
+      "https://openaccess.thecvf.com/content/ICCV2021/html/Arnab_ViViT_A_Video_Vision_Transformer_ICCV_2021_paper.html"
+    ],
+    "assumptions": [
+      "Conceptual frame-level factorized encoder inspired by ViViT; temporal tubelets and other ViViT variants are not shown.",
+      "All frame counts, sequence lengths, and channel widths are symbolic."
+    ],
+    "tags": [
+      "video",
+      "temporal-attention",
+      "factorized-encoder",
+      "ViViT"
+    ],
+    "nodes": 11,
+    "edges": 10,
+    "source_file": "multimodal-08-video-temporal-encoder.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-09-audiovisual-speech-fusion",
+    "title": "Audio-visual speech fusion",
+    "family": "multimodal",
+    "description": "Synchronized audio-visual speech fusion with masked multimodal representations and discrete cluster prediction.",
+    "caption": "Aligned audio and visual streams feed a masked joint encoder; discrete cluster targets supervise only selected positions.",
+    "sources": [
+      "https://arxiv.org/abs/2201.02184",
+      "https://github.com/facebookresearch/av_hubert"
+    ],
+    "assumptions": [
+      "Conceptual AV-HuBERT-style pretraining; clean fused features represent the offline target pipeline, whose clustering is refined across iterations.",
+      "Frontends, temporal resampling, and fusion widths are symbolic."
+    ],
+    "tags": [
+      "audio-visual",
+      "speech",
+      "AV-HuBERT",
+      "masked-prediction"
+    ],
+    "nodes": 10,
+    "edges": 10,
+    "source_file": "multimodal-09-audiovisual-speech-fusion.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-10-early-versus-late-fusion",
+    "title": "Early fusion versus late fusion",
+    "family": "multimodal",
+    "description": "Side-by-side comparison of aligned input fusion before a joint model and weighted probability fusion after unimodal models.",
+    "caption": "Early fusion exposes cross-modal interactions to one model; late fusion combines independently produced decision values.",
+    "sources": [
+      "https://arxiv.org/abs/1705.09406",
+      "https://ai.stanford.edu/~ang/papers/icml11-MultimodalDeepLearning.pdf"
+    ],
+    "assumptions": [
+      "Conceptual fusion comparison; concatenation and weighted averaging are illustrative design choices, with 0 <= lambda <= 1.",
+      "Inputs are assumed aligned when early concatenation requires correspondence."
+    ],
+    "tags": [
+      "early-fusion",
+      "late-fusion",
+      "comparison"
+    ],
+    "nodes": 10,
+    "edges": 8,
+    "source_file": "multimodal-10-early-versus-late-fusion.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-11-vision-language-action",
+    "title": "Vision-language-action policy",
+    "family": "multimodal",
+    "description": "A closed-loop vision-language-action policy with visual and language branches, action-token decoding, and environment feedback.",
+    "caption": "The policy emits discrete action tokens, which are decoded into a control command before the next observation arrives.",
+    "sources": [
+      "https://arxiv.org/abs/2307.15818",
+      "https://proceedings.mlr.press/v229/zitkovich23a.html"
+    ],
+    "assumptions": [
+      "Conceptual RT-2-style inference loop; action symbols are schematic and do not specify exact tokenization or robot degrees of freedom.",
+      "Web-data co-fine-tuning and robotics training trajectories are outside this inference view."
+    ],
+    "tags": [
+      "VLA",
+      "RT-2",
+      "robotics",
+      "closed-loop"
+    ],
+    "nodes": 8,
+    "edges": 8,
+    "source_file": "multimodal-11-vision-language-action.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-12-rgb-depth-fusion",
+    "title": "RGB-depth fusion at multiple scales",
+    "family": "multimodal",
+    "description": "Registered RGB and depth encoders with repeated same-scale additive feature fusion and a dense semantic decoder.",
+    "caption": "Depth and RGB features are summed at corresponding scales; the fused appearance stream supplies a dense decoder.",
+    "sources": [
+      "https://github.com/tum-vision/fusenet",
+      "https://cvai.cit.tum.de/_media/spezial/bib/hazirbasma2016fusenet.pdf"
+    ],
+    "assumptions": [
+      "Conceptual FuseNet-style pattern with three representative scales; the source architecture contains additional stages and decoder detail.",
+      "RGB and depth are assumed registered; symbolic feature channels are compatible at each sum."
+    ],
+    "tags": [
+      "RGB-D",
+      "FuseNet",
+      "dense-prediction",
+      "multiscale-fusion"
+    ],
+    "nodes": 13,
+    "edges": 14,
+    "source_file": "multimodal-12-rgb-depth-fusion.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-13-document-layout-language-vision",
+    "title": "Document language-layout-vision fusion",
+    "family": "multimodal",
+    "description": "OCR words and segment boxes plus linear image patches are fused by a shared document transformer with three pretraining heads.",
+    "caption": "Text, patch, and word-patch objectives train one multimodal encoder while layout coordinates remain available.",
+    "sources": [
+      "https://arxiv.org/abs/2204.08387",
+      "https://arxiv.org/html/2204.08387v3"
+    ],
+    "assumptions": [
+      "Conceptual LayoutLMv3-style graph; image targets are discrete visual tokens and WPA predicts corresponding patch masking.",
+      "Mask selection and visual tokenizer target generation are omitted; all dimensions are symbolic."
+    ],
+    "tags": [
+      "document-AI",
+      "LayoutLMv3",
+      "layout",
+      "pretraining"
+    ],
+    "nodes": 10,
+    "edges": 11,
+    "source_file": "multimodal-13-document-layout-language-vision.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-14-retrieval-augmented-generation",
+    "title": "Retrieval-augmented multimodal generation",
+    "family": "multimodal",
+    "description": "Multimodal retrieval-augmented generation with offline memory keys, payload storage, top-k search, and a direct query context path.",
+    "caption": "Offline keys support nearest-neighbor search; retrieved identifiers fetch multimodal evidence for query-conditioned generation.",
+    "sources": [
+      "https://aclanthology.org/2022.emnlp-main.375/",
+      "https://arxiv.org/abs/2210.02928"
+    ],
+    "assumptions": [
+      "Conceptual MuRAG-inspired system; the key index and payload store are logical roles and may share one implementation.",
+      "The figure describes inference and memory construction; contrastive and generative pretraining objectives are omitted."
+    ],
+    "tags": [
+      "multimodal-RAG",
+      "retrieval",
+      "MuRAG",
+      "memory"
+    ],
+    "nodes": 10,
+    "edges": 11,
+    "source_file": "multimodal-14-retrieval-augmented-generation.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "multimodal-15-mixture-of-experts",
+    "title": "Multimodal mixture-of-experts routing",
+    "family": "multimodal",
+    "description": "Shared multimodal token processing with sparse content-dependent routing, a common expert bank, routing regularization, and residual recombination.",
+    "caption": "A sparse router dispatches each token to selected experts; weighted outputs rejoin the residual stream.",
+    "sources": [
+      "https://arxiv.org/abs/2206.02770",
+      "https://proceedings.neurips.cc/paper_files/paper/2022/file/3e67e84abf900bb2c7cbd5759bfce62d-Paper-Conference.pdf"
+    ],
+    "assumptions": [
+      "Conceptual LIMoE-inspired expert block; the expert count and top-k selection are illustrative and not asserted as an exact model configuration.",
+      "Image and text sequences can be encoded separately through shared weights; the display juxtaposes token sources rather than asserting cross-modal joint attention."
+    ],
+    "tags": [
+      "MoE",
+      "LIMoE",
+      "sparse-routing",
+      "shared-experts"
+    ],
+    "nodes": 10,
+    "edges": 12,
+    "source_file": "multimodal-15-mixture-of-experts.tex",
+    "width_cm": 19,
+    "height_cm": 9
+  }
+]

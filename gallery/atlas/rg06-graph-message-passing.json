@@ -1,0 +1,25 @@
+{
+  "id": "rg06-graph-message-passing",
+  "title": "Graph message passing",
+  "family": "robotics-graphs",
+  "description": "A true local graph neighborhood accompanies explicit edge-message, symmetric aggregation, and node-update equations.",
+  "caption": "Conceptual MPNN update after Gilmer et al. (2017); the same local rule is applied across graph nodes.",
+  "sources": [
+    "https://arxiv.org/abs/1704.01212"
+  ],
+  "assumptions": [
+    "The small graph and sum aggregator are illustrative instances of the MPNN framework.",
+    "Undirected context edges are shown without arrows; directed arrows indicate messages into the selected node only."
+  ],
+  "tags": [
+    "graph-learning",
+    "message-passing",
+    "aggregation",
+    "gnn"
+  ],
+  "nodes": 8,
+  "edges": 8,
+  "source_file": "rg06-graph-message-passing.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

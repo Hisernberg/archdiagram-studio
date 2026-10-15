@@ -1,0 +1,11 @@
+{
+  "id": "text_09_rotary_positions",
+  "sha256": "c0c4be7325816971b5849981cd1548b48097a3c10bcb7575557da5d3f2c8ed42",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_09_rotary_positions.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

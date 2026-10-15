@@ -1,0 +1,11 @@
+{
+  "id": "rg06-graph-message-passing",
+  "sha256": "071c90a1aa7ab643d55541f685665d83abf777e3fa98f94e2d55717fb69d1490",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg06-graph-message-passing.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

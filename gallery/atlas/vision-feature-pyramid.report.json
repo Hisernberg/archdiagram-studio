@@ -1,0 +1,11 @@
+{
+  "id": "vision-feature-pyramid",
+  "sha256": "4b99250f018d72b552fb0d1c94a07335e89b5b94350a2548ad87d5ed5fb38900",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-feature-pyramid.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

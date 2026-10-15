@@ -1,0 +1,11 @@
+{
+  "id": "text_08_kv_cache",
+  "sha256": "06c3c7e5e681fddac049d600c42e62956585320342390718dc79ce5096f4a722",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_08_kv_cache.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

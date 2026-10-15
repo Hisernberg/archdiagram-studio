@@ -1,0 +1,24 @@
+{
+  "id": "audio-14-tacotron-attention-tts",
+  "title": "Tacotron-style attention TTS",
+  "family": "audio",
+  "description": "Text-memory attention, recurrent mel decoding, pre-net feedback, and post-net refinement.",
+  "caption": "An autoregressive acoustic decoder attends to text memory and feeds back the preceding mel frame.",
+  "sources": [
+    "https://arxiv.org/abs/1712.05884"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "Stop-token prediction, decoder frame grouping, and the downstream vocoder are omitted."
+  ],
+  "tags": [
+    "TTS",
+    "Tacotron",
+    "autoregressive"
+  ],
+  "nodes": 10,
+  "edges": 11,
+  "source_file": "audio-14-tacotron-attention-tts.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

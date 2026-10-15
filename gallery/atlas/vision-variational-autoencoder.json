@@ -1,0 +1,23 @@
+{
+  "id": "vision-variational-autoencoder",
+  "title": "Variational autoencoder: a distribution at the bottleneck",
+  "family": "vision",
+  "description": "A VAE with posterior parameters, noise reparameterization, reconstruction likelihood and KL objective paths.",
+  "caption": "Reparameterized samples connect reconstruction learning to a posterior regularized toward the prior.",
+  "sources": [
+    "https://arxiv.org/abs/1312.6114"
+  ],
+  "assumptions": [
+    "A diagonal Gaussian posterior and standard-normal prior are shown; decoder likelihood is abstract."
+  ],
+  "tags": [
+    "vae",
+    "generative",
+    "latent-variable"
+  ],
+  "nodes": 11,
+  "edges": 14,
+  "source_file": "vision-variational-autoencoder.tex",
+  "width_cm": 18,
+  "height_cm": 10
+}

@@ -1,0 +1,26 @@
+{
+  "id": "rg07-graph-attention",
+  "title": "Graph attention",
+  "family": "robotics-graphs",
+  "description": "A masked graph neighborhood, self-attention loop, local softmax, and parallel attention-head fanout/merge.",
+  "caption": "Conceptual GAT layer after Veli\u010dkovi\u0107 et al. (2018); each head normalizes attention over the permitted neighborhood.",
+  "sources": [
+    "https://arxiv.org/abs/1710.10903"
+  ],
+  "assumptions": [
+    "The depicted layer uses concatenated heads; the source also describes head averaging in a final layer.",
+    "Self-loops are included in the conceptual permitted neighborhood.",
+    "Head count and graph size are symbolic rather than a reported benchmark configuration."
+  ],
+  "tags": [
+    "graph-learning",
+    "attention",
+    "gat",
+    "multihead"
+  ],
+  "nodes": 10,
+  "edges": 9,
+  "source_file": "rg07-graph-attention.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

@@ -1,0 +1,11 @@
+{
+  "id": "rg10-spatiotemporal-graph",
+  "sha256": "ccfd2dc014a401ed0165e7cc577dc4ee79e248840418cd9feaddbf9fe1afe74a",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg10-spatiotemporal-graph.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

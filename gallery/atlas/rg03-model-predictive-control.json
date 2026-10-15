@@ -1,0 +1,25 @@
+{
+  "id": "rg03-model-predictive-control",
+  "title": "Model-predictive control",
+  "family": "robotics-graphs",
+  "description": "An MPC feedback loop paired with a time-indexed planned-input strip that distinguishes first-action execution from future controls.",
+  "caption": "Conceptual MPC after Rawlings, Mayne, and Diehl: optimize a horizon, execute its first input, and replan from the next estimate.",
+  "sources": [
+    "https://sites.engineering.ucsb.edu/~jbraw/mpc/"
+  ],
+  "assumptions": [
+    "The state estimator, objective, constraints, dynamics, and horizon are problem-specific and shown abstractly.",
+    "Feasibility, closed-loop stability, runtime, and safety are not established by this schematic."
+  ],
+  "tags": [
+    "robotics",
+    "mpc",
+    "optimization",
+    "receding-horizon"
+  ],
+  "nodes": 4,
+  "edges": 4,
+  "source_file": "rg03-model-predictive-control.tex",
+  "width_cm": 16,
+  "height_cm": 9.3
+}

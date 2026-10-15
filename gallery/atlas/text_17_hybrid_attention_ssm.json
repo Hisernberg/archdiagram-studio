@@ -1,0 +1,26 @@
+{
+  "id": "text_17_hybrid_attention_ssm",
+  "title": "Hybrid sequence layer: recurrence and local attention",
+  "family": "text",
+  "description": "Conceptual hybrid layer contrasts compressed recurrent state with a finite explicit KV attention window, with per-step updates of each memory.",
+  "caption": "Recurrent state summarizes the past; the local attention cache retains explicit recent key/value positions.",
+  "sources": [
+    "https://arxiv.org/abs/2402.19427",
+    "https://arxiv.org/abs/2312.00752"
+  ],
+  "assumptions": [
+    "Conceptual hybrid; this is not an exact reproduction of Griffin or any specified layer schedule.",
+    "The window width w is symbolic; residual/norm wrappers are omitted."
+  ],
+  "tags": [
+    "hybrid",
+    "SSM",
+    "local-attention",
+    "memory"
+  ],
+  "nodes": 10,
+  "edges": 10,
+  "source_file": "text_17_hybrid_attention_ssm.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

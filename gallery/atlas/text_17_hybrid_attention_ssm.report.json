@@ -1,0 +1,11 @@
+{
+  "id": "text_17_hybrid_attention_ssm",
+  "sha256": "3359e2db4f6879f014dd3a219d7e4c8f0a9409aa5eb2eaf006a96a491e795c92",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_17_hybrid_attention_ssm.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

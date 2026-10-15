@@ -1,0 +1,26 @@
+{
+  "id": "agents-08-rag-lifecycles",
+  "title": "RAG: separate indexing from per-query generation",
+  "family": "agents",
+  "description": "An original two-lane RAG architecture separating document indexing from query-time encoding, retrieval, and generation, including an explicit query-to-generator path.",
+  "caption": "Indexing writes document representations; a query retrieves passages that condition the generator alongside the query.",
+  "sources": [
+    "https://arxiv.org/abs/2005.11401"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "Uses a dense retrieval abstraction; training, index refresh, ranking, and passage storage implementations are omitted.",
+    "Linked passages are included in the retrieval-index abstraction; no index size or exact tensor dimension is asserted."
+  ],
+  "tags": [
+    "RAG",
+    "indexing",
+    "retrieval",
+    "generation"
+  ],
+  "nodes": 9,
+  "edges": 11,
+  "source_file": "agents-08-rag-lifecycles.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

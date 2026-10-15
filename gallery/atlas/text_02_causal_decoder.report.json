@@ -1,0 +1,11 @@
+{
+  "id": "text_02_causal_decoder",
+  "sha256": "9fb9344388d4414c81cae9abc633ff729fd1531279c533ba9f7429a576b0b3ed",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_02_causal_decoder.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

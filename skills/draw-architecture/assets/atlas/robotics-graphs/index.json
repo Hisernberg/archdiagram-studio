@@ -1,0 +1,259 @@
+[
+  {
+    "id": "rg01-perception-action-loop",
+    "title": "Perception--action closed loop",
+    "family": "robotics-graphs",
+    "description": "A closed physical feedback cycle with an external task reference and an explicit actuation boundary.",
+    "caption": "Conceptual sensing, estimation, control, and physical feedback; ROS control documentation informs the control interface.",
+    "sources": [
+      "https://control.ros.org/jazzy/doc/getting_started/getting_started.html"
+    ],
+    "assumptions": [
+      "Perception and estimation are conceptual additions around the documented controller/hardware interface.",
+      "Discrete-time notation is illustrative; no timing, stability, or safety guarantee is implied."
+    ],
+    "tags": [
+      "robotics",
+      "feedback",
+      "perception",
+      "control"
+    ],
+    "nodes": 6,
+    "edges": 5,
+    "source_file": "rg01-perception-action-loop.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "rg02-hierarchical-policy",
+    "title": "Hierarchical robot policy",
+    "family": "robotics-graphs",
+    "description": "A three-skill options hierarchy showing discrete option selection, primitive action emission, and termination feedback.",
+    "caption": "Conceptual options hierarchy after Sutton, Precup, and Singh (1999); only the selected option emits primitive actions.",
+    "sources": [
+      "https://doi.org/10.1016/S0004-3702(99)00052-1"
+    ],
+    "assumptions": [
+      "Navigate, Reach, and Grasp are illustrative robot skill names, not a reported system from the source.",
+      "State input to each option is implicit; arrows from options denote mutually exclusive active-option routing."
+    ],
+    "tags": [
+      "robotics",
+      "hierarchical-policy",
+      "options",
+      "temporal-abstraction"
+    ],
+    "nodes": 6,
+    "edges": 8,
+    "source_file": "rg02-hierarchical-policy.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "rg03-model-predictive-control",
+    "title": "Model-predictive control",
+    "family": "robotics-graphs",
+    "description": "An MPC feedback loop paired with a time-indexed planned-input strip that distinguishes first-action execution from future controls.",
+    "caption": "Conceptual MPC after Rawlings, Mayne, and Diehl: optimize a horizon, execute its first input, and replan from the next estimate.",
+    "sources": [
+      "https://sites.engineering.ucsb.edu/~jbraw/mpc/"
+    ],
+    "assumptions": [
+      "The state estimator, objective, constraints, dynamics, and horizon are problem-specific and shown abstractly.",
+      "Feasibility, closed-loop stability, runtime, and safety are not established by this schematic."
+    ],
+    "tags": [
+      "robotics",
+      "mpc",
+      "optimization",
+      "receding-horizon"
+    ],
+    "nodes": 4,
+    "edges": 4,
+    "source_file": "rg03-model-predictive-control.tex",
+    "width_cm": 16,
+    "height_cm": 9.3
+  },
+  {
+    "id": "rg04-sim-to-real",
+    "title": "Simulation training and robot deployment",
+    "family": "robotics-graphs",
+    "description": "A grid of randomized simulators feeds a learner; only a checkpoint crosses into the isolated physical deployment loop.",
+    "caption": "Conceptual sim-to-real separation after Peng et al. (2018); randomized training does not guarantee successful physical transfer.",
+    "sources": [
+      "https://arxiv.org/abs/1710.06537"
+    ],
+    "assumptions": [
+      "Parallel simulator grid and a frozen checkpoint are conceptual implementation choices.",
+      "The figure omits the source method's recurrent policy, omniscient critic, and task-specific training details.",
+      "No physical transfer, reliability, timing, or safety guarantee is implied."
+    ],
+    "tags": [
+      "robotics",
+      "sim-to-real",
+      "domain-randomization",
+      "training-deployment"
+    ],
+    "nodes": 9,
+    "edges": 12,
+    "source_file": "rg04-sim-to-real.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "rg05-sensor-fusion",
+    "title": "Robot sensor fusion",
+    "family": "robotics-graphs",
+    "description": "Three measurement streams converge into a recursive prediction/correction estimator and expose both state and uncertainty.",
+    "caption": "Conceptual predict--correct fusion informed by robot_localization documentation; frame and covariance treatment are essential.",
+    "sources": [
+      "https://github.com/cra-ros-pkg/robot_localization/blob/rolling-devel/doc/state_estimation_nodes.rst",
+      "https://index.ros.org/p/robot_localization/"
+    ],
+    "assumptions": [
+      "The three selected sensor sources and the layout are illustrative, not a package launch configuration.",
+      "Time/frame handling is conceptual; the diagram does not require simultaneous arrival or claim an explicit synchronization node.",
+      "The estimator may use an EKF or UKF; equations intentionally omit filter-specific details."
+    ],
+    "tags": [
+      "robotics",
+      "sensor-fusion",
+      "state-estimation",
+      "uncertainty"
+    ],
+    "nodes": 9,
+    "edges": 9,
+    "source_file": "rg05-sensor-fusion.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "rg06-graph-message-passing",
+    "title": "Graph message passing",
+    "family": "robotics-graphs",
+    "description": "A true local graph neighborhood accompanies explicit edge-message, symmetric aggregation, and node-update equations.",
+    "caption": "Conceptual MPNN update after Gilmer et al. (2017); the same local rule is applied across graph nodes.",
+    "sources": [
+      "https://arxiv.org/abs/1704.01212"
+    ],
+    "assumptions": [
+      "The small graph and sum aggregator are illustrative instances of the MPNN framework.",
+      "Undirected context edges are shown without arrows; directed arrows indicate messages into the selected node only."
+    ],
+    "tags": [
+      "graph-learning",
+      "message-passing",
+      "aggregation",
+      "gnn"
+    ],
+    "nodes": 8,
+    "edges": 8,
+    "source_file": "rg06-graph-message-passing.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "rg07-graph-attention",
+    "title": "Graph attention",
+    "family": "robotics-graphs",
+    "description": "A masked graph neighborhood, self-attention loop, local softmax, and parallel attention-head fanout/merge.",
+    "caption": "Conceptual GAT layer after Veli\u010dkovi\u0107 et al. (2018); each head normalizes attention over the permitted neighborhood.",
+    "sources": [
+      "https://arxiv.org/abs/1710.10903"
+    ],
+    "assumptions": [
+      "The depicted layer uses concatenated heads; the source also describes head averaging in a final layer.",
+      "Self-loops are included in the conceptual permitted neighborhood.",
+      "Head count and graph size are symbolic rather than a reported benchmark configuration."
+    ],
+    "tags": [
+      "graph-learning",
+      "attention",
+      "gat",
+      "multihead"
+    ],
+    "nodes": 10,
+    "edges": 9,
+    "source_file": "rg07-graph-attention.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "rg08-graph-readout",
+    "title": "Graph-level readout",
+    "family": "robotics-graphs",
+    "description": "An encoded graph is treated as an unordered set of node states and pooled into a graph embedding and graph-level output.",
+    "caption": "Conceptual graph readout after Gilmer et al. (2017); a symmetric set aggregation produces one graph representation.",
+    "sources": [
+      "https://arxiv.org/abs/1704.01212"
+    ],
+    "assumptions": [
+      "The sum-of-transformed-states readout is an illustrative invariant instance, not the complete readout used in every MPNN.",
+      "Only node states are visualized; tasks may also use edge or global attributes."
+    ],
+    "tags": [
+      "graph-learning",
+      "readout",
+      "graph-level",
+      "permutation-invariance"
+    ],
+    "nodes": 12,
+    "edges": 12,
+    "source_file": "rg08-graph-readout.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "rg09-heterogeneous-graph",
+    "title": "Heterogeneous graph network",
+    "family": "robotics-graphs",
+    "description": "A typed author/paper/venue graph is paired with three relation-specific message channels and a self-term node update.",
+    "caption": "Conceptual relational GNN after Schlichtkrull et al. (2018); each relation has its own transform before node aggregation.",
+    "sources": [
+      "https://arxiv.org/abs/1703.06103"
+    ],
+    "assumptions": [
+      "The author/paper/venue schema is an original illustrative graph, not a source benchmark.",
+      "Inverse published-in relations are explicitly assumed to permit venue-to-paper messages.",
+      "Relation normalization c_(i,r) is symbolic and each sum is restricted to the named incoming relation; basis decomposition and training objectives are omitted."
+    ],
+    "tags": [
+      "graph-learning",
+      "heterogeneous-graph",
+      "relations",
+      "rgcn"
+    ],
+    "nodes": 9,
+    "edges": 8,
+    "source_file": "rg09-heterogeneous-graph.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "rg10-spatiotemporal-graph",
+    "title": "Spatiotemporal graph forecasting",
+    "family": "robotics-graphs",
+    "description": "A graph-by-time lattice feeds an encoder state, a recurrent decoder, and a node-by-horizon forecast grid.",
+    "caption": "Conceptual graph-recurrent forecasting after Li et al. (2018); topology and temporal state inform node forecasts.",
+    "sources": [
+      "https://arxiv.org/abs/1707.01926"
+    ],
+    "assumptions": [
+      "The three-node chain, three observed times, and two forecast steps are illustrative and not DCRNN's reported dimensions.",
+      "Cells denote hidden states; per-time observation injection, diffusion filters, gates, and scheduled sampling are omitted.",
+      "Undirected vertical lines abstract spatial neighborhoods; the source DCRNN uses directed-graph diffusion.",
+      "This is a conceptual family diagram rather than an exact DCRNN computational graph."
+    ],
+    "tags": [
+      "graph-learning",
+      "spatiotemporal",
+      "forecasting",
+      "graph-recurrent"
+    ],
+    "nodes": 17,
+    "edges": 16,
+    "source_file": "rg10-spatiotemporal-graph.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  }
+]

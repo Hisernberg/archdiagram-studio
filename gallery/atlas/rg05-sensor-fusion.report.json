@@ -1,0 +1,11 @@
+{
+  "id": "rg05-sensor-fusion",
+  "sha256": "2436d825d825da6b8cd8011abef1ed4fc9842b2a81030fff68e109d605dd5b05",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg05-sensor-fusion.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

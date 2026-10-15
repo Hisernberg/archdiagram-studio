@@ -1,0 +1,11 @@
+{
+  "id": "rg03-model-predictive-control",
+  "sha256": "8d9fb72077722ad4b4af665fc6c68b17ec49a153e3fc10063d6c8378cd9b1ef8",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg03-model-predictive-control.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

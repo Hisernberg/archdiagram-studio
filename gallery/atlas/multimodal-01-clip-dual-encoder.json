@@ -1,0 +1,24 @@
+{
+  "id": "multimodal-01-clip-dual-encoder",
+  "title": "CLIP contrastive dual encoder",
+  "family": "multimodal",
+  "description": "Dual encoder contrastive pretraining with normalized embeddings, a batch similarity matrix, and symmetric losses.",
+  "caption": "The diagonal of the cross-modal similarity matrix supplies positives for two directional classification losses.",
+  "sources": [
+    "https://proceedings.mlr.press/v139/radford21a.html"
+  ],
+  "assumptions": [
+    "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+  ],
+  "tags": [
+    "contrastive",
+    "dual-encoder",
+    "CLIP",
+    "training"
+  ],
+  "nodes": 10,
+  "edges": 10,
+  "source_file": "multimodal-01-clip-dual-encoder.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

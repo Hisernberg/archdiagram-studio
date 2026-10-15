@@ -1,0 +1,11 @@
+{
+  "id": "text_13_qlora",
+  "sha256": "4eebde147bc27baea9e7e12fd4c7939cda0b6ffb0ba433a1b574e3e19880d5a9",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_13_qlora.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

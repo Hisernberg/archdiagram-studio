@@ -1,0 +1,26 @@
+{
+  "id": "agents-07-debate-adjudicator",
+  "title": "Debate with an explicit adjudicator",
+  "family": "agents",
+  "description": "An original two-round debate topology with transcript exchange followed by a distinct adjudicator, rather than assuming consensus is correct.",
+  "caption": "Agents revise after reading both arguments; a separate adjudicator records a decision and any unresolved disagreement.",
+  "sources": [
+    "https://arxiv.org/abs/2305.14325"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "A separate adjudicator and explicit disagreement output are design additions inspired by the debate pattern.",
+    "Two rounds are illustrative; correlated mistakes and adjudicator errors remain possible."
+  ],
+  "tags": [
+    "multi-agent",
+    "debate",
+    "adjudication",
+    "transcript"
+  ],
+  "nodes": 7,
+  "edges": 8,
+  "source_file": "agents-07-debate-adjudicator.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

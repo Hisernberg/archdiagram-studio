@@ -1,0 +1,24 @@
+{
+  "id": "audio-05-rnnt-transducer",
+  "title": "RNN-T transducer",
+  "family": "audio",
+  "description": "Acoustic encoder and label-prefix predictor meet at a joint distribution over blank and labels.",
+  "caption": "The joint distribution depends on both acoustic time and the emitted-label prefix.",
+  "sources": [
+    "https://arxiv.org/abs/1211.3711"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "The small lattice is illustrative. Blank transitions move right and label transitions move upward."
+  ],
+  "tags": [
+    "ASR",
+    "RNN-T",
+    "lattice"
+  ],
+  "nodes": 6,
+  "edges": 5,
+  "source_file": "audio-05-rnnt-transducer.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

@@ -1,0 +1,11 @@
+{
+  "id": "rg01-perception-action-loop",
+  "sha256": "29dd8ddcd64af8a2a4f8a1328226756e07bd7a934931a0866f30829b76cb6b90",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg01-perception-action-loop.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

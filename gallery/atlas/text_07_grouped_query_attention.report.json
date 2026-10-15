@@ -1,0 +1,11 @@
+{
+  "id": "text_07_grouped_query_attention",
+  "sha256": "73682e4390ef372e447a3f7c1c1bfcfd61439753936cd9604d72bf1066e2a8e8",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_07_grouped_query_attention.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

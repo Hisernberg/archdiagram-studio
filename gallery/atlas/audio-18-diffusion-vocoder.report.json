@@ -1,0 +1,11 @@
+{
+  "id": "audio-18-diffusion-vocoder",
+  "sha256": "ec67e528b024530cbbfffae966a26c7272217301f9dd6071bd60042c9ce1a3b0",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/audio/audio-18-diffusion-vocoder.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

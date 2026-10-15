@@ -1,0 +1,24 @@
+{
+  "id": "text_05_cross_attention",
+  "title": "Cross-attention with a query-stream residual",
+  "family": "text",
+  "description": "Cross-attention with rectangular T-by-S weights and a residual that originates from the decoder query stream.",
+  "caption": "The output has the query length; the identity path starts at the decoder state, before query projection.",
+  "sources": [
+    "https://arxiv.org/abs/1706.03762"
+  ],
+  "assumptions": [
+    "Single head shown; output projection restores the query stream width d.",
+    "Normalization wrapper omitted to isolate attention and residual origin."
+  ],
+  "tags": [
+    "cross-attention",
+    "residual",
+    "query-memory"
+  ],
+  "nodes": 8,
+  "edges": 9,
+  "source_file": "text_05_cross_attention.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

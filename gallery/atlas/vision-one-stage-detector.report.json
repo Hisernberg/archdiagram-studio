@@ -1,0 +1,11 @@
+{
+  "id": "vision-one-stage-detector",
+  "sha256": "9fe65ca211049620b5763ef7e4daf8b6668b8ae42fb8aba19abfdea12c2b79f1",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-one-stage-detector.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

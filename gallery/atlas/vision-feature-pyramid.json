@@ -1,0 +1,23 @@
+{
+  "id": "vision-feature-pyramid",
+  "title": "Feature pyramid: bottom-up detail, top-down semantics",
+  "family": "vision",
+  "description": "A four-scale FPN with lateral 1x1 projections, top-down upsampling, addition, and 3x3 smoothing.",
+  "caption": "Lateral projections combine backbone features with upsampled coarse features before spatial smoothing.",
+  "sources": [
+    "https://arxiv.org/abs/1612.03144"
+  ],
+  "assumptions": [
+    "Conceptual schematic; dimensions and details vary by implementation."
+  ],
+  "tags": [
+    "detection",
+    "fpn",
+    "multiscale"
+  ],
+  "nodes": 16,
+  "edges": 18,
+  "source_file": "vision-feature-pyramid.tex",
+  "width_cm": 18,
+  "height_cm": 10.5
+}

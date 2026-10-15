@@ -1,0 +1,11 @@
+{
+  "id": "agents-08-rag-lifecycles",
+  "sha256": "3919a679b556f5ef60a66422c26b7ce22532814d1175242e1649ff0af4459042",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-08-rag-lifecycles.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

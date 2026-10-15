@@ -1,0 +1,11 @@
+{
+  "id": "vision-two-stage-detector",
+  "sha256": "dea48ccd3b7fa7360264d20cfbe0d9309425651ab09b4d6db227ddecf6096445",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-two-stage-detector.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

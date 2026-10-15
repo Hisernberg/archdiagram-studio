@@ -1,0 +1,11 @@
+{
+  "id": "vision-depthwise-separable",
+  "sha256": "32362620e3dbcfadbfa17180ad418bd64239507203cc5cdc801e2f9289a2cefb",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-depthwise-separable.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

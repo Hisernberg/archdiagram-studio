@@ -1,0 +1,65 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb}
+\usetikzlibrary{arrows.meta,calc,positioning,fit,backgrounds,shapes.geometric,matrix,decorations.pathreplacing,patterns}
+\definecolor{ink}{gray}{0.08}
+\definecolor{wash}{gray}{0.965}
+\definecolor{soft}{gray}{0.45}
+\tikzset{box/.style={draw=ink,line width=.65pt,fill=white,align=center,inner sep=4pt,outer sep=0pt,font=\small},flow/.style={draw=ink,line width=.65pt,-{Latex[length=1.8mm,width=1.3mm]},rounded corners=2pt},annotation/.style={font=\scriptsize,text=soft,align=center},groupbox/.style={draw=soft,dashed,line width=.45pt,fill=wash}}
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=-1cm,font=\rmfamily,text=ink]
+
+\path[use as bounding box] (0,0) rectangle (18,10);
+\node[anchor=west,font=\large\bfseries] at (.2,.4) {Masked autoencoder: encode only visible image patches};
+\node[anchor=west,font=\footnotesize,text=soft] at (.2,.85) {Conceptual architecture | original schematic | symbolic dimensions};
+\begin{pgfonlayer}{background}
+\end{pgfonlayer}
+\node[align=center,inner sep=0pt,outer sep=0pt,font=\small,minimum width=2.0cm,minimum height=2.0cm,text width=1.75cm] (img) at (1.5,3.3) {};
+\node[box,minimum width=2.3cm,minimum height=1.0cm,text width=2.05cm] (keep) at (4.2,3.3) {Select visible\\patch tokens};
+\node[box,minimum width=2.5cm,minimum height=1.1cm,text width=2.25cm] (enc) at (7.2,3.3) {Large encoder\\visible tokens only};
+\node[box,minimum width=2.5cm,minimum height=1.1cm,text width=2.25cm] (restore) at (10.3,3.3) {Restore positions\\+ mask tokens};
+\node[box,minimum width=2.5cm,minimum height=1.1cm,text width=2.25cm] (dec) at (13.3,3.3) {Small decoder\\all token positions};
+\node[box,fill=wash,minimum width=2.3cm,minimum height=1.1cm,text width=2.05cm] (pred) at (16.3,3.3) {Predict\\patch pixels};
+\draw[ink,line width=.4pt] (15.25,2.65) -- (17.55,2.65) -- (17.55,3.7499999999999996);
+\node[box,minimum width=2.6cm,minimum height=0.65cm,text width=2.35cm] (mask) at (10.3,1.7) {Learned mask token};
+\node[box,fill=wash,minimum width=3.1cm,minimum height=1.0cm,text width=2.85cm] (target) at (4.2,7.4) {Original pixels\\at masked positions};
+\draw[ink,line width=.4pt] (2.7500000000000004,6.800000000000001) -- (5.85,6.800000000000001) -- (5.85,7.800000000000001);
+\node[box,minimum width=5.2cm,minimum height=1.2cm,text width=4.95cm] (loss) at (12.1,7.4) {Masked-patch loss\\$\sum_{i\in\mathcal M}\|\hat x_i-x_i\|^2$};
+\begin{pgfonlayer}{background}
+\draw[flow] (img.east) -- (keep.west);
+\draw[flow] (keep.east) -- (enc.west);
+\draw[flow] (enc.east) -- (restore.west);
+\draw[flow] (restore.east) -- (dec.west);
+\draw[flow] (dec.east) -- (pred.west);
+\draw[flow] (mask.south) -- (restore.north);
+\draw[flow] (img.south) -- (1.5,7.4) -- (target.west);
+\draw[flow] (target.east) -- (loss.west);
+\draw[flow] (pred.south) -- (16.3,7.4) -- (loss.east);
+\end{pgfonlayer}
+\fill[black!0] (0.5,2.3) rectangle (1.0,2.8);
+\fill[black!55] (1.0,2.3) rectangle (1.5,2.8);
+\fill[black!55] (1.5,2.3) rectangle (2.0,2.8);
+\fill[black!55] (2.0,2.3) rectangle (2.5,2.8);
+\fill[black!55] (0.5,2.8) rectangle (1.0,3.3);
+\fill[black!55] (1.0,2.8) rectangle (1.5,3.3);
+\fill[black!0] (1.5,2.8) rectangle (2.0,3.3);
+\fill[black!55] (2.0,2.8) rectangle (2.5,3.3);
+\fill[black!55] (0.5,3.3) rectangle (1.0,3.8);
+\fill[black!0] (1.0,3.3) rectangle (1.5,3.8);
+\fill[black!55] (1.5,3.3) rectangle (2.0,3.8);
+\fill[black!55] (2.0,3.3) rectangle (2.5,3.8);
+\fill[black!55] (0.5,3.8) rectangle (1.0,4.3);
+\fill[black!55] (1.0,3.8) rectangle (1.5,4.3);
+\fill[black!55] (1.5,3.8) rectangle (2.0,4.3);
+\fill[black!0] (2.0,3.8) rectangle (2.5,4.3);
+\draw[ink,line width=.45pt] (0.5,2.3) rectangle (2.5,4.3);
+\draw[ink,line width=.45pt] (1.0,2.3) -- (1.0,4.3);
+\draw[ink,line width=.45pt] (1.5,2.3) -- (1.5,4.3);
+\draw[ink,line width=.45pt] (2.0,2.3) -- (2.0,4.3);
+\draw[ink,line width=.45pt] (0.5,2.8) -- (2.5,2.8);
+\draw[ink,line width=.45pt] (0.5,3.3) -- (2.5,3.3);
+\draw[ink,line width=.45pt] (0.5,3.8) -- (2.5,3.8);
+\node[annotation,text width=3.0cm] at (1.6,1.75) {Image patches: white visible, gray masked};
+\node[anchor=west,align=left,font=\scriptsize,text=soft,text width=17.6cm] at (.2,9.75) {A lightweight decoder restores missing positions; reconstruction loss is evaluated on masked patches.};
+\end{tikzpicture}
+\end{document}

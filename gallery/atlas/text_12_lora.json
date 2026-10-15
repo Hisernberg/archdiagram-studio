@@ -1,0 +1,24 @@
+{
+  "id": "text_12_lora",
+  "title": "LoRA: a frozen dense path plus a trainable low-rank update",
+  "family": "text",
+  "description": "Low-rank trainable matrices A and B operate in parallel with a frozen base layer, then add at the output.",
+  "caption": "The adapter branch has a rank bottleneck; its scaled output adds to the frozen base-layer output.",
+  "sources": [
+    "https://arxiv.org/abs/2106.09685"
+  ],
+  "assumptions": [
+    "Column-vector convention; A maps input width to rank r and B maps r to output width.",
+    "The common alpha/r scaling convention is shown; bias and optimizer details are omitted."
+  ],
+  "tags": [
+    "LoRA",
+    "adapter",
+    "low-rank"
+  ],
+  "nodes": 8,
+  "edges": 7,
+  "source_file": "text_12_lora.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

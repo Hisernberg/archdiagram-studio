@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-02-visual-question-answering",
+  "sha256": "0af4308fdc1049d4b201e5f6bee4c5ef63aa06648455737e7de879ea95c5fd8a",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-02-visual-question-answering.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

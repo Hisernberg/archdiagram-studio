@@ -1,0 +1,26 @@
+{
+  "id": "multimodal-15-mixture-of-experts",
+  "title": "Multimodal mixture-of-experts routing",
+  "family": "multimodal",
+  "description": "Shared multimodal token processing with sparse content-dependent routing, a common expert bank, routing regularization, and residual recombination.",
+  "caption": "A sparse router dispatches each token to selected experts; weighted outputs rejoin the residual stream.",
+  "sources": [
+    "https://arxiv.org/abs/2206.02770",
+    "https://proceedings.neurips.cc/paper_files/paper/2022/file/3e67e84abf900bb2c7cbd5759bfce62d-Paper-Conference.pdf"
+  ],
+  "assumptions": [
+    "Conceptual LIMoE-inspired expert block; the expert count and top-k selection are illustrative and not asserted as an exact model configuration.",
+    "Image and text sequences can be encoded separately through shared weights; the display juxtaposes token sources rather than asserting cross-modal joint attention."
+  ],
+  "tags": [
+    "MoE",
+    "LIMoE",
+    "sparse-routing",
+    "shared-experts"
+  ],
+  "nodes": 10,
+  "edges": 12,
+  "source_file": "multimodal-15-mixture-of-experts.tex",
+  "width_cm": 19,
+  "height_cm": 9
+}

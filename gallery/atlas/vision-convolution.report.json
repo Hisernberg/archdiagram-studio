@@ -1,0 +1,11 @@
+{
+  "id": "vision-convolution",
+  "sha256": "3d35f321f2eb669bf178ea32635e742fa2b82f3c77ad3bb2306ba153d249dffb",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-convolution.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

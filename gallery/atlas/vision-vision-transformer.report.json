@@ -1,0 +1,11 @@
+{
+  "id": "vision-vision-transformer",
+  "sha256": "ac70c32c4645fda571ec17f3e8cacfd1ae240606efd1139777310c319707c623",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-vision-transformer.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

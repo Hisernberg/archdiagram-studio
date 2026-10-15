@@ -1,0 +1,11 @@
+{
+  "id": "agents-06-parallel-research",
+  "sha256": "74e39efe8960e8976648d7869a166fb3c61fb461308cd32e5bfb44be2d60e83d",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-06-parallel-research.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

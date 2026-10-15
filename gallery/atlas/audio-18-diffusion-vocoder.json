@@ -1,0 +1,24 @@
+{
+  "id": "audio-18-diffusion-vocoder",
+  "title": "Diffusion vocoder",
+  "family": "audio",
+  "description": "A DiffWave-inspired conditional waveform diffusion process with forward and reverse lanes.",
+  "caption": "Forward training noise and reverse conditional denoising run in opposite directions.",
+  "sources": [
+    "https://arxiv.org/abs/2009.09761"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "Only the high-level diffusion schedule is shown; step counts and numerical sampler coefficients are unspecified."
+  ],
+  "tags": [
+    "vocoder",
+    "diffusion",
+    "DiffWave"
+  ],
+  "nodes": 10,
+  "edges": 8,
+  "source_file": "audio-18-diffusion-vocoder.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

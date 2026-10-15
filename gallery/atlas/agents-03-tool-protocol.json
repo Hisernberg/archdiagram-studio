@@ -1,0 +1,26 @@
+{
+  "id": "agents-03-tool-protocol",
+  "title": "Tool-call and result protocol",
+  "family": "agents",
+  "description": "An original three-lane sequence diagram of the OpenAI function-call/output contract, with application-side execution authority and call-id linkage.",
+  "caption": "The application executes the function and returns output linked to the model's call identifier.",
+  "sources": [
+    "https://developers.openai.com/api/docs/guides/function-calling"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "Uses generic names for a single illustrative function call; concrete API item types differ by API.",
+    "Validation and execution policy are application responsibilities and are shown as explicit application steps."
+  ],
+  "tags": [
+    "protocol",
+    "tool calling",
+    "sequence",
+    "application boundary"
+  ],
+  "nodes": 3,
+  "edges": 6,
+  "source_file": "agents-03-tool-protocol.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

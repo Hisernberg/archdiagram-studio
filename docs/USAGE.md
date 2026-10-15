@@ -12,6 +12,10 @@ The installer uses `$CODEX_HOME/skills` when configured, otherwise `~/.codex/ski
 
 For another assistant, make `skills/draw-architecture/SKILL.md` available along with its scripts, assets, and reference directory. A standalone SKILL.md without those resources is incomplete. The workflow does not require any particular LLM provider or an API key. It improves instructions and tooling; it does not train or replace the agent's model.
 
+## Search the 100 original TikZ figures
+
+Use scripts/atlas.py find "cross attention" to locate a native master, or list --family vision for a family inventory. Copy a chosen ID with copy --id FIGURE_ID --out output/figure.tex. Compile the standalone file with pdfLaTeX and inspect the actual PDF/PNG. See [all 100 figures](ATLAS.md) and [native authoring](../skills/draw-architecture/references/atlas-authoring.md). The default style is black and white with spare gray fills. Atlas SVGs are outlined vector previews; native TikZ is their editable master.
+
 ## Ask your agent
 
 > Use $draw-architecture to diagram the architecture in these source files. Target technical documentation, keep the text editable, label unknown tensor sizes symbolically, and provide SVG, JSON, TikZ, and a verified preview. Inspect the rendered figure before delivering it.
@@ -47,4 +51,4 @@ python -m unittest discover -s tests -v
 python scripts/build_gallery.py --compile-tex
 ```
 
-`--svg-only` builds source files without Inkscape, but the full hosted gallery needs the full build to provide PNG/PDF downloads. `--compile-tex` also builds the three native mathematical/neuron templates. Open `index.html` directly or serve the repository locally with `python -m http.server 8000`. The viewer and prompt builder run locally in the browser; it does not send your architecture to an inference service.
+`--svg-only` builds source files without Inkscape, but the full hosted gallery needs the full build to provide PNG/PDF downloads. `--compile-tex` also builds the three additional mathematical/neuron templates. Run python scripts/build_atlas.py to build the 100-figure atlas; contact sheets additionally need Pillow. Optional legacy color themes require --all-themes; monochrome is the default. Open `index.html` directly or serve the repository locally with `python -m http.server 8000`. The viewer and prompt builder run locally in the browser; it does not send your architecture to an inference service.

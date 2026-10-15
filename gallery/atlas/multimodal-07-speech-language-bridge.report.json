@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-07-speech-language-bridge",
+  "sha256": "f4951aff9fa3065b151193138ab364b7d624e630b95dc2fb2e94d51b10d3e896",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-07-speech-language-bridge.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

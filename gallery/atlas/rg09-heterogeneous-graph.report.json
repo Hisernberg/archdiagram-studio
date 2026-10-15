@@ -1,0 +1,11 @@
+{
+  "id": "rg09-heterogeneous-graph",
+  "sha256": "7651af1ee7fe70c012f6ad4362d283ebd5593388c213242e14b460f0304ba4c9",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg09-heterogeneous-graph.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

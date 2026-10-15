@@ -1,0 +1,27 @@
+{
+  "id": "multimodal-07-speech-language-bridge",
+  "title": "Speech-to-language-model bridge",
+  "family": "multimodal",
+  "description": "SALMONN-style speech and audio encoder fusion through a window-level query adapter into a language model.",
+  "caption": "A windowed query adapter compresses aligned encoder features; prompt embeddings and audio tokens condition text generation.",
+  "sources": [
+    "https://arxiv.org/abs/2310.13289",
+    "https://github.com/bytedance/SALMONN"
+  ],
+  "assumptions": [
+    "Conceptual SALMONN-style bridge, shown for transcription; encoder alignment, query counts, and widths remain symbolic.",
+    "The figure omits low-rank adaptation and detailed training stages."
+  ],
+  "tags": [
+    "speech",
+    "audio",
+    "Q-Former",
+    "language-model",
+    "adapter"
+  ],
+  "nodes": 9,
+  "edges": 9,
+  "source_file": "multimodal-07-speech-language-bridge.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

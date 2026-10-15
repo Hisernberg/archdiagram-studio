@@ -1,0 +1,23 @@
+{
+  "id": "vision-masked-autoencoder",
+  "title": "Masked autoencoder: encode only visible image patches",
+  "family": "vision",
+  "description": "An asymmetric masked autoencoder with visible-token encoding, mask-token restoration, and masked-pixel objective.",
+  "caption": "A lightweight decoder restores missing positions; reconstruction loss is evaluated on masked patches.",
+  "sources": [
+    "https://arxiv.org/abs/2111.06377"
+  ],
+  "assumptions": [
+    "Conceptual schematic; dimensions and details vary by implementation."
+  ],
+  "tags": [
+    "self-supervised",
+    "mae",
+    "masking"
+  ],
+  "nodes": 9,
+  "edges": 9,
+  "source_file": "vision-masked-autoencoder.tex",
+  "width_cm": 18,
+  "height_cm": 10
+}

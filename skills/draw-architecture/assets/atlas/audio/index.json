@@ -1,0 +1,484 @@
+[
+  {
+    "id": "audio-01-waveform-framing",
+    "title": "Waveform framing and windowing",
+    "family": "audio",
+    "description": "Overlapping sampled frames and a shared window in local frame coordinates.",
+    "caption": "Overlapping slices preserve local time structure before spectral analysis.",
+    "sources": [
+      "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "Displayed waveforms and windows are illustrative; no sampling rate or frame length is asserted."
+    ],
+    "tags": [
+      "waveform",
+      "framing",
+      "window"
+    ],
+    "nodes": 3,
+    "edges": 0,
+    "source_file": "audio-01-waveform-framing.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-02-stft-spectrogram",
+    "title": "Short-time Fourier transform",
+    "family": "audio",
+    "description": "Windowed Fourier analysis maps time samples into a spectrogram grid.",
+    "caption": "One DFT per windowed frame becomes one column in a time--frequency array.",
+    "sources": [
+      "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "The energy grid is synthetic. The exponent p may be 1 (magnitude) or 2 (power)."
+    ],
+    "tags": [
+      "STFT",
+      "spectrogram",
+      "Fourier"
+    ],
+    "nodes": 3,
+    "edges": 2,
+    "source_file": "audio-02-stft-spectrogram.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-03-spectrogram-cnn",
+    "title": "Spectrogram convolutional classifier",
+    "family": "audio",
+    "description": "A conceptual PANNs-inspired spectrogram CNN for multilabel audio tagging.",
+    "caption": "Local time--frequency filters feed progressively pooled features and clip-level tags.",
+    "sources": [
+      "https://arxiv.org/abs/1912.10211"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "This is a generic spectrogram CNN, not the exact CNN14 layer inventory. Tensor depths are illustrative."
+    ],
+    "tags": [
+      "CNN",
+      "audio tagging",
+      "receptive field"
+    ],
+    "nodes": 6,
+    "edges": 5,
+    "source_file": "audio-03-spectrogram-cnn.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-04-ctc-recognition",
+    "title": "CTC speech recognition",
+    "family": "audio",
+    "description": "Framewise CTC probabilities, an explicit repeated-and-blank path, and the collapse map.",
+    "caption": "CTC sums frame paths during training; a collapse map removes repeats and blank symbols.",
+    "sources": [
+      "https://www.cs.toronto.edu/~graves/icml_2006.pdf"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "The displayed path is illustrative; recognition may use beam search rather than greedy decoding."
+    ],
+    "tags": [
+      "ASR",
+      "CTC",
+      "alignment"
+    ],
+    "nodes": 6,
+    "edges": 4,
+    "source_file": "audio-04-ctc-recognition.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-05-rnnt-transducer",
+    "title": "RNN-T transducer",
+    "family": "audio",
+    "description": "Acoustic encoder and label-prefix predictor meet at a joint distribution over blank and labels.",
+    "caption": "The joint distribution depends on both acoustic time and the emitted-label prefix.",
+    "sources": [
+      "https://arxiv.org/abs/1211.3711"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "The small lattice is illustrative. Blank transitions move right and label transitions move upward."
+    ],
+    "tags": [
+      "ASR",
+      "RNN-T",
+      "lattice"
+    ],
+    "nodes": 6,
+    "edges": 5,
+    "source_file": "audio-05-rnnt-transducer.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-06-attention-asr",
+    "title": "Attention-based speech recognition",
+    "family": "audio",
+    "description": "A LAS-inspired listener, attention memory, and recurrent character speller.",
+    "caption": "A listener encodes audio; the speller queries its memory for each output character.",
+    "sources": [
+      "https://arxiv.org/abs/1508.01211"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "The listener is conceptual; its pyramid depth and temporal reduction factor are omitted."
+    ],
+    "tags": [
+      "ASR",
+      "attention",
+      "LAS"
+    ],
+    "nodes": 8,
+    "edges": 9,
+    "source_file": "audio-06-attention-asr.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-07-conformer-block",
+    "title": "Conformer encoder block",
+    "family": "audio",
+    "description": "A Conformer block with explicit residual origins, half-step FFNs, and expanded convolution module.",
+    "caption": "Macaron feed-forward halves surround global self-attention and a local convolution module.",
+    "sources": [
+      "https://arxiv.org/abs/2005.08100"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "Pre-normalization is implicit in the attention and FFN boxes. The convolution callout omits dropout."
+    ],
+    "tags": [
+      "Conformer",
+      "residual",
+      "convolution"
+    ],
+    "nodes": 16,
+    "edges": 15,
+    "source_file": "audio-07-conformer-block.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-08-whisper-encoder-decoder",
+    "title": "Whisper-style encoder--decoder",
+    "family": "audio",
+    "description": "A conceptual Whisper-style audio encoder and autoregressive task-conditioned text decoder.",
+    "caption": "Audio memory conditions a causal text decoder; task tokens select the decoding objective.",
+    "sources": [
+      "https://cdn.openai.com/papers/whisper.pdf"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "This is an architecture overview. Exact model sizes and positional-embedding choices are omitted."
+    ],
+    "tags": [
+      "Whisper",
+      "ASR",
+      "encoder-decoder"
+    ],
+    "nodes": 8,
+    "edges": 8,
+    "source_file": "audio-08-whisper-encoder-decoder.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-09-wav2vec2-pretraining",
+    "title": "wav2vec 2.0 pretraining",
+    "family": "audio",
+    "description": "Latent masking, contextual representations, product-quantized contrastive targets, and diversity regularization.",
+    "caption": "Latent span masking feeds contextual prediction; an unmasked branch supplies learned quantized targets.",
+    "sources": [
+      "https://arxiv.org/abs/2006.11477"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "Only the pretraining graph is shown. Codebook counts and distractor-sampling details are omitted."
+    ],
+    "tags": [
+      "self-supervised",
+      "wav2vec2",
+      "contrastive"
+    ],
+    "nodes": 8,
+    "edges": 8,
+    "source_file": "audio-09-wav2vec2-pretraining.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-10-hubert-pretraining",
+    "title": "HuBERT masked-unit pretraining",
+    "family": "audio",
+    "description": "Offline discrete-unit clustering and masked student prediction with optional iterative reclustering.",
+    "caption": "An offline clustering teacher supplies discrete units; the student predicts masked units from context.",
+    "sources": [
+      "https://arxiv.org/abs/2106.07447"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "The teacher feature type changes across training iterations; one generic offline lane represents these choices."
+    ],
+    "tags": [
+      "HuBERT",
+      "self-supervised",
+      "masked prediction"
+    ],
+    "nodes": 9,
+    "edges": 9,
+    "source_file": "audio-10-hubert-pretraining.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-11-speaker-embedding",
+    "title": "Speaker embedding with statistics pooling",
+    "family": "audio",
+    "description": "An x-vector-style TDNN, temporal statistics pooling, segment embedding, and scoring backend.",
+    "caption": "Frame-level representations become a fixed-size segment embedding through mean and standard-deviation pooling.",
+    "sources": [
+      "https://www.danielpovey.com/files/2018_icassp_xvectors.pdf"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "The diagram does not prescribe a particular scoring backend. The classifier is training-only."
+    ],
+    "tags": [
+      "speaker recognition",
+      "x-vector",
+      "statistics pooling"
+    ],
+    "nodes": 10,
+    "edges": 10,
+    "source_file": "audio-11-speaker-embedding.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-12-speaker-diarization",
+    "title": "Speaker diarization by embedding clustering",
+    "family": "audio",
+    "description": "A conceptual embedding-clustering diarization pipeline and speaker activity timeline.",
+    "caption": "Speech turns are segmented, embedded, clustered, and placed back on the recording timeline.",
+    "sources": [
+      "https://arxiv.org/abs/2012.14952"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "The timeline is invented. Overlapping speech handling is outside this simplified clustering schematic."
+    ],
+    "tags": [
+      "diarization",
+      "timeline",
+      "clustering"
+    ],
+    "nodes": 5,
+    "edges": 5,
+    "source_file": "audio-12-speaker-diarization.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-13-tts-overview",
+    "title": "Text-to-speech: two-stage synthesis",
+    "family": "audio",
+    "description": "A two-stage text-to-speech overview with linguistic, acoustic, and waveform-generation interfaces.",
+    "caption": "A linguistic frontend and acoustic model predict an intermediate representation for a neural vocoder.",
+    "sources": [
+      "https://arxiv.org/abs/1712.05884",
+      "https://arxiv.org/abs/2006.04558"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "Phonemization and explicit prosody controls are common design choices, not claims about all TTS systems."
+    ],
+    "tags": [
+      "TTS",
+      "vocoder",
+      "conditioning"
+    ],
+    "nodes": 7,
+    "edges": 6,
+    "source_file": "audio-13-tts-overview.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-14-tacotron-attention-tts",
+    "title": "Tacotron-style attention TTS",
+    "family": "audio",
+    "description": "Text-memory attention, recurrent mel decoding, pre-net feedback, and post-net refinement.",
+    "caption": "An autoregressive acoustic decoder attends to text memory and feeds back the preceding mel frame.",
+    "sources": [
+      "https://arxiv.org/abs/1712.05884"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "Stop-token prediction, decoder frame grouping, and the downstream vocoder are omitted."
+    ],
+    "tags": [
+      "TTS",
+      "Tacotron",
+      "autoregressive"
+    ],
+    "nodes": 10,
+    "edges": 11,
+    "source_file": "audio-14-tacotron-attention-tts.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-15-fastspeech2-variance",
+    "title": "FastSpeech 2-style variance adaptor",
+    "family": "audio",
+    "description": "Parallel duration, pitch, and energy prediction with explicit length expansion.",
+    "caption": "Duration expands token states into frames; pitch and energy embeddings enrich the acoustic representation.",
+    "sources": [
+      "https://arxiv.org/abs/2006.04558"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "This phoneme-level variance-adaptor abstraction does not prescribe every pitch or energy granularity choice."
+    ],
+    "tags": [
+      "TTS",
+      "FastSpeech2",
+      "duration"
+    ],
+    "nodes": 11,
+    "edges": 13,
+    "source_file": "audio-15-fastspeech2-variance.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-16-vits-conceptual",
+    "title": "VITS conceptual training and inference",
+    "family": "audio",
+    "description": "Separate training and inference graphs for a variational flow-based end-to-end TTS model.",
+    "caption": "A text-conditioned prior is matched to a speech posterior; inference samples the prior and inverts the flow.",
+    "sources": [
+      "https://arxiv.org/abs/2106.06103"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "Training losses and alignment dependencies are aggregated; no specific flow family or decoder depth is asserted."
+    ],
+    "tags": [
+      "TTS",
+      "VITS",
+      "normalizing flow"
+    ],
+    "nodes": 15,
+    "edges": 14,
+    "source_file": "audio-16-vits-conceptual.tex",
+    "width_cm": 16,
+    "height_cm": 9.6
+  },
+  {
+    "id": "audio-17-hifigan-vocoder",
+    "title": "HiFi-GAN neural vocoder",
+    "family": "audio",
+    "description": "Upsampling generator, parallel MRF receptive fields, and multi-period/multi-scale training discriminators.",
+    "caption": "Upsampling and multi-receptive-field fusion generate audio; period and scale discriminator families supervise training.",
+    "sources": [
+      "https://arxiv.org/abs/2010.05646"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "The MRF branch widths and number of upsampling stages are schematic; discriminator internals are omitted."
+    ],
+    "tags": [
+      "vocoder",
+      "HiFi-GAN",
+      "GAN"
+    ],
+    "nodes": 13,
+    "edges": 15,
+    "source_file": "audio-17-hifigan-vocoder.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-18-diffusion-vocoder",
+    "title": "Diffusion vocoder",
+    "family": "audio",
+    "description": "A DiffWave-inspired conditional waveform diffusion process with forward and reverse lanes.",
+    "caption": "Forward training noise and reverse conditional denoising run in opposite directions.",
+    "sources": [
+      "https://arxiv.org/abs/2009.09761"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "Only the high-level diffusion schedule is shown; step counts and numerical sampler coefficients are unspecified."
+    ],
+    "tags": [
+      "vocoder",
+      "diffusion",
+      "DiffWave"
+    ],
+    "nodes": 10,
+    "edges": 8,
+    "source_file": "audio-18-diffusion-vocoder.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-19-speech-enhancement",
+    "title": "Complex-mask speech enhancement",
+    "family": "audio",
+    "description": "DCCRN-inspired complex spectral masking with encoder skips and a mixture-spectrum multiplication bypass.",
+    "caption": "A complex convolution--recurrent network estimates a mask, then reconstructs the enhanced waveform.",
+    "sources": [
+      "https://arxiv.org/abs/2008.00264",
+      "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "A single recurrent bottleneck and one skip path stand for repeated implementation-specific layers."
+    ],
+    "tags": [
+      "enhancement",
+      "complex mask",
+      "DCCRN"
+    ],
+    "nodes": 8,
+    "edges": 9,
+    "source_file": "audio-19-speech-enhancement.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "audio-20-residual-vq-codec",
+    "title": "Residual vector-quantized audio codec",
+    "family": "audio",
+    "description": "A SoundStream-inspired neural codec with expanded residual quantization, subtraction paths, and code-vector summation.",
+    "caption": "Each codebook quantizes the previous residual; summed code vectors reconstruct the encoder latent.",
+    "sources": [
+      "https://arxiv.org/abs/2107.03312"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+      "Three codebooks illustrate the recurrence. Codec bandwidth, codebook size, and actual number of stages are unspecified."
+    ],
+    "tags": [
+      "codec",
+      "residual VQ",
+      "SoundStream"
+    ],
+    "nodes": 13,
+    "edges": 14,
+    "source_file": "audio-20-residual-vq-codec.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  }
+]

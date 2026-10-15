@@ -1,0 +1,11 @@
+{
+  "id": "audio-06-attention-asr",
+  "sha256": "07470d567edb5e135893616be54dbbb36c19f42bde5ae8a9c192a9a60c9bde4b",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/audio/audio-06-attention-asr.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

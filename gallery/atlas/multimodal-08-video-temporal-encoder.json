@@ -1,0 +1,25 @@
+{
+  "id": "multimodal-08-video-temporal-encoder",
+  "title": "Video temporal encoder",
+  "family": "multimodal",
+  "description": "A factorized video encoder with shared spatial frame encoders, frame summaries, temporal positions, and temporal attention.",
+  "caption": "Each frame contributes a spatial summary; temporal position codes preserve order before the video-level readout.",
+  "sources": [
+    "https://openaccess.thecvf.com/content/ICCV2021/html/Arnab_ViViT_A_Video_Vision_Transformer_ICCV_2021_paper.html"
+  ],
+  "assumptions": [
+    "Conceptual frame-level factorized encoder inspired by ViViT; temporal tubelets and other ViViT variants are not shown.",
+    "All frame counts, sequence lengths, and channel widths are symbolic."
+  ],
+  "tags": [
+    "video",
+    "temporal-attention",
+    "factorized-encoder",
+    "ViViT"
+  ],
+  "nodes": 11,
+  "edges": 10,
+  "source_file": "multimodal-08-video-temporal-encoder.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

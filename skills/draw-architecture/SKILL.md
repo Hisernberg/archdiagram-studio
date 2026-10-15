@@ -1,6 +1,6 @@
 ---
 name: draw-architecture
-description: Create, revise, and verify precise architecture diagrams for agentic AI, RAG, software systems, robotics, transformers, CNNs, GNNs, and neural networks. Use for architecture figures, research-paper diagrams, model schematics, TikZ/LaTeX figures, editable SVGs, tensor and data-flow diagrams, and code-to-architecture documentation. Produce editable source plus a rendered figure; check semantics, routing, text, and provenance.
+description: Create, revise, and verify precise architecture diagrams for agentic AI, RAG, software systems, robotics, transformers, CNNs, GNNs, audio/speech, video, multimodal systems, and neural networks. Use for architecture figures, research-paper diagrams, model schematics, TikZ/LaTeX figures, editable SVGs, tensor and data-flow diagrams, and code-to-architecture documentation. Produce editable source plus a rendered figure; check semantics, routing, text, and provenance.
 ---
 
 # ArchDiagram Studio
@@ -19,9 +19,19 @@ Inspect the supplied code, paper, configuration, or description. Record:
 - Training versus inference, optional paths, repeats, and shared parameters.
 - Evidence locations and assumptions; mark unknown values rather than inventing them.
 
-Default to a white background, one dominant reading direction, concise labels, and a diagram that remains readable at the target width. Keep system overview and layer detail in separate panels when their abstraction levels differ.
+Default to black-and-white LaTeX typography with restrained gray fills; use color only when requested. Read references/monochrome-design.md. Keep one dominant reading direction, concise labels, and a diagram that remains readable at the target width. Keep system overview and layer detail in separate panels when their abstraction levels differ.
 
-## 2. Choose a route
+## 2. Search the 100-figure atlas first
+
+Run the portable search to find a relevant original TikZ master:
+
+    python "$SKILL_ROOT/scripts/atlas.py" find "cross attention"
+    python "$SKILL_ROOT/scripts/atlas.py" list --family vision
+    python "$SKILL_ROOT/scripts/atlas.py" copy --id FIGURE_ID --out output/figure.tex
+
+Read the chosen family index for sources and assumptions. Adapt the architecture from the task evidence, then compile and inspect it. The atlas covers vision (20), text (20), audio (20), multimodal (15), agents (15), and robotics/graphs (10). Each figure is conceptual; do not infer checkpoint dimensions from its geometry. Atlas SVGs are PDF-derived previews with outlined glyphs; the native TikZ is the editable master. Read references/atlas-authoring.md when composing with atlaslib.py.
+
+## 3. Choose a route
 
 | Need | Route |
 |---|---|
@@ -34,7 +44,7 @@ Default to a white background, one dominant reading direction, concise labels, a
 
 Do not require TeX for SVG. Keep text editable in the master. Do not claim the skill trains a model, infers arbitrary code perfectly, or reproduces every upstream backend.
 
-## 3. Build an editable source
+## 4. Build an editable source
 
 Locate this skill's directory as `SKILL_ROOT`; do not assume the current working directory is the skill directory. Copy the nearest JSON from `assets/examples/` to the task's output directory. Keep paths portable.
 
@@ -48,7 +58,7 @@ Read `references/specification.md` before adding fields. Use explicit `x`, `y`, 
 
 Use `--formats svg,tex,png,pdf` when Inkscape is installed. Request `--compile-tex` to verify generated TikZ with a local TeX engine. Read `references/tikz.md` for native math, non-Latin text, Overleaf, and compilation limits.
 
-## 4. Run semantic and visual review
+## 5. Run semantic and visual review
 
 Follow `references/quality.md`. Validate, render, and inspect the actual image at full size and at its intended display width. Use the environment's image viewer when available. Never equate a clean validator result with visual approval.
 
@@ -56,7 +66,7 @@ Resolve overlapping nodes, clipped text, routes through unrelated nodes, ambiguo
 
 Compare the result with the original evidence: count branches, confirm residual origins and merges, distinguish tool calls from results, and check tensor dimension conventions. Label optional or assumed parts. Do not infer absent components from a generic template.
 
-## 5. Deliver the figure and source
+## 6. Deliver the figure and source
 
 Return the rendered preview, editable `.svg`, source `.json` or native `.tex`, and requested PDF/PNG exports. Supply a caption, evidence/assumptions note, and material limitations. Preserve source identities when editing an existing figure. Save deliverables through the host's normal persistence mechanism.
 
@@ -66,6 +76,8 @@ Use this concise handoff:
 
 ## Read on demand
 
+- [Monochrome design](references/monochrome-design.md): typography, structure, restrained gray, and reference-study policy.
+- [Atlas authoring](references/atlas-authoring.md): original TikZ primitives and template search/copy.
 - [Specification](references/specification.md): supported fields and CLI.
 - [Quality](references/quality.md): semantics, layout, accessibility, final-width review.
 - [Architecture recipes](references/recipes.md): agents, RAG, transformers, CNNs, robotics, GNNs.

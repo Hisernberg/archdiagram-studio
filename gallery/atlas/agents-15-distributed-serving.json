@@ -1,0 +1,28 @@
+{
+  "id": "agents-15-distributed-serving",
+  "title": "Distributed inference with tensor-parallel serving",
+  "family": "agents",
+  "description": "An original distributed inference serving topology with a request queue, active-batch scheduler, a two-rank tensor-parallel replica, per-rank KV state, collective communication, and a client response stream.",
+  "caption": "A scheduler dispatches active sequences to a tensor-parallel replica; local KV state supports iterative token generation.",
+  "sources": [
+    "https://docs.vllm.ai/en/latest/serving/parallelism_scaling/",
+    "https://arxiv.org/abs/2309.06180"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "Two ranks are illustrative; exact placement, parallelism degree, batch policy, and KV-cache management vary.",
+    "A representative leader output path is shown; sampling/detokenization and backend-specific control/data exchange are abstracted.",
+    "KV state arrows indicate state access, not a claim that one rank only reads while another only writes."
+  ],
+  "tags": [
+    "serving",
+    "distributed inference",
+    "tensor parallelism",
+    "KV cache"
+  ],
+  "nodes": 9,
+  "edges": 11,
+  "source_file": "agents-15-distributed-serving.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

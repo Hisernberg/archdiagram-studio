@@ -1,0 +1,28 @@
+{
+  "id": "agents-10-corrective-rag",
+  "title": "Corrective RAG with route-dependent evidence",
+  "family": "agents",
+  "description": "An original CRAG logic view with a retrieval evaluator controlling refined-corpus, web-search, and combined-evidence paths into generation.",
+  "caption": "The evaluator selects refined retrieved evidence, web evidence, or both; its routing decisions can still be wrong.",
+  "sources": [
+    "https://arxiv.org/abs/2401.15884",
+    "https://arxiv.org/html/2401.15884v3"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "Correct/incorrect/ambiguous route semantics follow CRAG; evaluator internals and knowledge-refinement internals are abstracted.",
+    "The query is shared request context for evaluation, rewriting, and generation; branch arrows emphasize evidence and route control.",
+    "Evidence assembly consumes only route-selected inputs; it does not wait for a branch that was not executed."
+  ],
+  "tags": [
+    "RAG",
+    "CRAG",
+    "corrective retrieval",
+    "conditional control"
+  ],
+  "nodes": 8,
+  "edges": 8,
+  "source_file": "agents-10-corrective-rag.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

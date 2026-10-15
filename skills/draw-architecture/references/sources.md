@@ -27,3 +27,7 @@ Prefer original implementation and links. If a future contribution copies/adapts
 ## Scope of validation
 
 Local tests cover this repository's renderer, installer, and example builds. They do not validate the upstream libraries, their maintenance status, or compatibility with every future TeX/PyTorch version. The examples are illustrative rather than diagrams of an audited deployed system.
+
+## Sebastian Raschka study
+
+The [LLM Architecture Gallery](https://sebastianraschka.com/llm-architecture-gallery/) and its [workflow article](https://sebastianraschka.com/blog/2026/llm-architecture-gallery.html) were studied for main-stream hierarchy, residual lanes, repeated blocks, and detail callouts. Three representative architecture thumbnails and the public contact sheet were downloaded for private inspection. They are not part of this repository. The [LLMs-from-scratch license](https://github.com/rasbt/LLMs-from-scratch/blob/main/LICENSE.txt) explicitly excludes related books and images from its licensed software Source. Original diagrams in this atlas are not an official Raschka collection and do not use his seal, signature, or watermark. See raschka-study.json for the study manifest. Each atlas figure separately records primary technical sources in its family index.

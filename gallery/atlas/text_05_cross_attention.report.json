@@ -1,0 +1,11 @@
+{
+  "id": "text_05_cross_attention",
+  "sha256": "0aa2d055a090e15623ef63f5e6d9ad42c32f842efd9ccd63097bbf8615a99ec5",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_05_cross_attention.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

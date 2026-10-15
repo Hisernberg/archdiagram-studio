@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-05-resampler-cross-attention",
+  "sha256": "1ad7abef05855dbefafa350d7f0ea93eb10d1178e69e2bba14e457b2bdb94618",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-05-resampler-cross-attention.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

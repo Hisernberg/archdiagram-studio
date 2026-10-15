@@ -1,0 +1,24 @@
+{
+  "id": "text_11_sparse_moe",
+  "title": "Sparse mixture-of-experts decoder and routing detail",
+  "family": "text",
+  "description": "Per-token sparse expert selection, dispatch to active experts, and gate-weighted aggregation, with an explicitly inactive expert.",
+  "caption": "The router selects experts per token; only selected experts receive data and contribute weighted outputs.",
+  "sources": [
+    "https://arxiv.org/abs/1701.06538"
+  ],
+  "assumptions": [
+    "The two selected experts are illustrative, not a universal routing configuration.",
+    "Capacity limits, auxiliary losses, and distributed expert placement are outside this layer-level view."
+  ],
+  "tags": [
+    "MoE",
+    "routing",
+    "sparse"
+  ],
+  "nodes": 12,
+  "edges": 12,
+  "source_file": "text_11_sparse_moe.tex",
+  "width_cm": 16,
+  "height_cm": 10
+}

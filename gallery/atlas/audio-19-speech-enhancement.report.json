@@ -1,0 +1,11 @@
+{
+  "id": "audio-19-speech-enhancement",
+  "sha256": "553232eb847ca8b56423ef03d819db31c2076578738ce267933959db1fb67d21",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/audio/audio-19-speech-enhancement.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

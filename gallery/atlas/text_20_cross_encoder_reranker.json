@@ -1,0 +1,25 @@
+{
+  "id": "text_20_cross_encoder_reranker",
+  "title": "Cross-encoder reranker jointly encodes query and document",
+  "family": "text",
+  "description": "BERT-style pair packing, joint bidirectional encoding, classification-state extraction, and a document-query relevance head.",
+  "caption": "A single encoder allows query--document token interactions; the classification position supplies a relevance score.",
+  "sources": [
+    "https://arxiv.org/abs/1901.04085",
+    "https://arxiv.org/abs/1810.04805"
+  ],
+  "assumptions": [
+    "Special-token count m+n+3 follows the explicitly shown two-segment BERT packing convention.",
+    "The relevance-head activation and loss are task choices; the displayed score is a pre-activation scalar."
+  ],
+  "tags": [
+    "reranking",
+    "cross-encoder",
+    "BERT"
+  ],
+  "nodes": 8,
+  "edges": 7,
+  "source_file": "text_20_cross_encoder_reranker.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

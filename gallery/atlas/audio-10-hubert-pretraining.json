@@ -1,0 +1,24 @@
+{
+  "id": "audio-10-hubert-pretraining",
+  "title": "HuBERT masked-unit pretraining",
+  "family": "audio",
+  "description": "Offline discrete-unit clustering and masked student prediction with optional iterative reclustering.",
+  "caption": "An offline clustering teacher supplies discrete units; the student predicts masked units from context.",
+  "sources": [
+    "https://arxiv.org/abs/2106.07447"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "The teacher feature type changes across training iterations; one generic offline lane represents these choices."
+  ],
+  "tags": [
+    "HuBERT",
+    "self-supervised",
+    "masked prediction"
+  ],
+  "nodes": 9,
+  "edges": 9,
+  "source_file": "audio-10-hubert-pretraining.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

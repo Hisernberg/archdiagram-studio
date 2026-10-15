@@ -1,0 +1,24 @@
+{
+  "id": "audio-16-vits-conceptual",
+  "title": "VITS conceptual training and inference",
+  "family": "audio",
+  "description": "Separate training and inference graphs for a variational flow-based end-to-end TTS model.",
+  "caption": "A text-conditioned prior is matched to a speech posterior; inference samples the prior and inverts the flow.",
+  "sources": [
+    "https://arxiv.org/abs/2106.06103"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "Training losses and alignment dependencies are aggregated; no specific flow family or decoder depth is asserted."
+  ],
+  "tags": [
+    "TTS",
+    "VITS",
+    "normalizing flow"
+  ],
+  "nodes": 15,
+  "edges": 14,
+  "source_file": "audio-16-vits-conceptual.tex",
+  "width_cm": 16,
+  "height_cm": 9.6
+}

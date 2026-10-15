@@ -1,0 +1,23 @@
+{
+  "id": "vision-shifted-windows",
+  "title": "Shifted-window attention: connect neighboring windows",
+  "family": "vision",
+  "description": "Regular and shifted window grids linked to alternating Swin attention blocks and boundary masking.",
+  "caption": "Alternating regular and shifted partitions creates cross-window communication without global attention.",
+  "sources": [
+    "https://arxiv.org/abs/2103.14030"
+  ],
+  "assumptions": [
+    "An eight-by-eight token grid with four-token windows illustrates the two-token partition shift."
+  ],
+  "tags": [
+    "transformer",
+    "swin",
+    "window-attention"
+  ],
+  "nodes": 4,
+  "edges": 2,
+  "source_file": "vision-shifted-windows.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

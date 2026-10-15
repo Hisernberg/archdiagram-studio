@@ -1,0 +1,26 @@
+{
+  "id": "multimodal-09-audiovisual-speech-fusion",
+  "title": "Audio-visual speech fusion",
+  "family": "multimodal",
+  "description": "Synchronized audio-visual speech fusion with masked multimodal representations and discrete cluster prediction.",
+  "caption": "Aligned audio and visual streams feed a masked joint encoder; discrete cluster targets supervise only selected positions.",
+  "sources": [
+    "https://arxiv.org/abs/2201.02184",
+    "https://github.com/facebookresearch/av_hubert"
+  ],
+  "assumptions": [
+    "Conceptual AV-HuBERT-style pretraining; clean fused features represent the offline target pipeline, whose clustering is refined across iterations.",
+    "Frontends, temporal resampling, and fusion widths are symbolic."
+  ],
+  "tags": [
+    "audio-visual",
+    "speech",
+    "AV-HuBERT",
+    "masked-prediction"
+  ],
+  "nodes": 10,
+  "edges": 10,
+  "source_file": "multimodal-09-audiovisual-speech-fusion.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

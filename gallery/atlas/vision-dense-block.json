@@ -1,0 +1,23 @@
+{
+  "id": "vision-dense-block",
+  "title": "Dense block: accumulate earlier feature maps",
+  "family": "vision",
+  "description": "A three-layer DenseNet concept with explicit growing feature banks and reuse routes.",
+  "caption": "Each transform reads the complete feature bank; concatenation appends its new channels.",
+  "sources": [
+    "https://arxiv.org/abs/1608.06993"
+  ],
+  "assumptions": [
+    "Conceptual schematic; dimensions and details vary by implementation."
+  ],
+  "tags": [
+    "cnn",
+    "densenet",
+    "concatenation"
+  ],
+  "nodes": 7,
+  "edges": 9,
+  "source_file": "vision-dense-block.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

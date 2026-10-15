@@ -1,0 +1,11 @@
+{
+  "id": "vision-residual-block",
+  "sha256": "5f7d2b17355e66c8723f1de8909941000681e70fa9c2918b5e4019ad5bd25960",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-residual-block.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

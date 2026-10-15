@@ -1,0 +1,11 @@
+{
+  "id": "text_12_lora",
+  "sha256": "44aee08a8cfa1f65a69011216d439ffa70a13af0c88c69b6e74e30633fe91215",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_12_lora.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,81 +1,81 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="diagram-title diagram-description">
 <title id="diagram-title">Agentic research system</title>
 <desc id="diagram-description">A bounded plan / act / verify loop with explicit context and tool results.. request: Research request Goal and constraints; planner: Planner / reasoner Decompose and draft; tools: Tool executor Search, code, APIs; memory: Context store Retrieved evidence; verifier: Evidence verifier Check claims and stop; answer: Grounded answer Citations and limits. request to planner: goal (data); planner to tools: call (control); tools to planner: tool results (data); memory to planner: context (data); planner to verifier: draft (data); verifier to answer: validated (data); verifier to planner: revise (feedback)</desc>
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#52627A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#303030" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <rect width="100%" height="100%" fill="#FFFFFF"/>
-<g font-family="Inter, DejaVu Sans, Arial, sans-serif">
-<text x="48" y="50" fill="#14263D" font-size="29" font-weight="700" text-anchor="start">Agentic research system</text>
-<text x="48" y="77" fill="#52627A" font-size="13" font-weight="400" text-anchor="start">A bounded plan / act / verify loop with explicit context and tool results.</text>
-<path d="M 48 104 h 28" stroke="#52627A" stroke-width="1.7" fill="none" stroke-dasharray=""/>
-<text x="84" y="108" fill="#52627A" font-size="10.5" font-weight="400" text-anchor="start">Data flow</text>
-<path d="M 188 104 h 28" stroke="#52627A" stroke-width="1.7" fill="none" stroke-dasharray="7 5"/>
-<text x="224" y="108" fill="#52627A" font-size="10.5" font-weight="400" text-anchor="start">Control</text>
-<path d="M 316 104 h 28" stroke="#52627A" stroke-width="1.7" fill="none" stroke-dasharray="2 5"/>
-<text x="352" y="108" fill="#52627A" font-size="10.5" font-weight="400" text-anchor="start">Feedback</text>
-<g data-group="runtime"><rect x="310" y="140" width="675" height="530" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-dasharray="5 5"/>
-<text x="328" y="165" fill="#52627A" font-size="11" font-weight="600" text-anchor="start">Agent runtime</text>
+<g font-family="Latin Modern Roman, Times New Roman, serif">
+<text x="48" y="50" fill="#141414" font-size="29" font-weight="700" text-anchor="start">Agentic research system</text>
+<text x="48" y="77" fill="#505050" font-size="13" font-weight="400" text-anchor="start">A bounded plan / act / verify loop with explicit context and tool results.</text>
+<path d="M 48 104 h 28" stroke="#303030" stroke-width="1.7" fill="none" stroke-dasharray=""/>
+<text x="84" y="108" fill="#505050" font-size="10.5" font-weight="400" text-anchor="start">Data flow</text>
+<path d="M 188 104 h 28" stroke="#303030" stroke-width="1.7" fill="none" stroke-dasharray="7 5"/>
+<text x="224" y="108" fill="#505050" font-size="10.5" font-weight="400" text-anchor="start">Control</text>
+<path d="M 316 104 h 28" stroke="#303030" stroke-width="1.7" fill="none" stroke-dasharray="2 5"/>
+<text x="352" y="108" fill="#505050" font-size="10.5" font-weight="400" text-anchor="start">Feedback</text>
+<g data-group="runtime"><rect x="310" y="140" width="675" height="530" rx="14" fill="#FAFAFA" stroke="#AAAAAA" stroke-dasharray="5 5"/>
+<text x="328" y="165" fill="#505050" font-size="11" font-weight="600" text-anchor="start">Agent runtime</text>
 </g>
-<path d="M 260 273 L 312.5 273 L 365 273" stroke="#52627A" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 585 273 L 637.5 273 L 690 273" stroke="#52627A" stroke-width="1.8" fill="none" stroke-dasharray="7 5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 745 225 L 745 205 L 519 205 L 519 225" stroke="#52627A" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 365 513 L 332 513 L 332 297 L 365 297" stroke="#52627A" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 585 273 L 635 273 L 635 513 L 690 513" stroke="#52627A" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 910 513 L 960 513 L 1010 513" stroke="#52627A" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 800 561 L 800 625 L 958 625 L 958 180 L 475 180 L 475 225" stroke="#52627A" stroke-width="1.8" fill="none" stroke-dasharray="2 5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 260 273 L 312.5 273 L 365 273" stroke="#303030" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 585 273 L 637.5 273 L 690 273" stroke="#303030" stroke-width="1.8" fill="none" stroke-dasharray="7 5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 745 225 L 745 205 L 519 205 L 519 225" stroke="#303030" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 365 513 L 332 513 L 332 297 L 365 297" stroke="#303030" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 585 273 L 635 273 L 635 513 L 690 513" stroke="#303030" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 910 513 L 960 513 L 1010 513" stroke="#303030" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 800 561 L 800 625 L 958 625 L 958 180 L 475 180 L 475 225" stroke="#303030" stroke-width="1.8" fill="none" stroke-dasharray="2 5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <g id="node-request" data-role="input"><title>Research request: Goal and constraints</title>
-<rect x="60" y="225" width="200" height="96" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.6"/>
-<path d="M 72 239 v 68" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
-<text x="160" y="257.5" fill="#2563EB" font-size="8.5" font-weight="600" text-anchor="middle">INPUT</text>
-<text x="160" y="275.5" fill="#14263D" font-size="15" font-weight="600" text-anchor="middle">Research request</text>
-<text x="160" y="299.5" fill="#52627A" font-size="11.5" font-weight="400" text-anchor="middle">Goal and constraints</text>
+<rect x="60" y="225" width="200" height="96" rx="0" fill="#FFFFFF" stroke="#222222" stroke-width="1.6"/>
+<path d="M 72 239 v 68" stroke="#222222" stroke-width="3" stroke-linecap="round"/>
+<text x="160" y="257.5" fill="#222222" font-size="8.5" font-weight="600" text-anchor="middle">INPUT</text>
+<text x="160" y="275.5" fill="#141414" font-size="15" font-weight="600" text-anchor="middle">Research request</text>
+<text x="160" y="299.5" fill="#505050" font-size="11.5" font-weight="400" text-anchor="middle">Goal and constraints</text>
 </g>
 <g id="node-planner" data-role="model"><title>Planner / reasoner: Decompose and draft</title>
-<rect x="365" y="225" width="220" height="96" rx="10" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
-<path d="M 377 239 v 68" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
-<text x="475" y="257.5" fill="#6D28D9" font-size="8.5" font-weight="600" text-anchor="middle">AGENT</text>
-<text x="475" y="275.5" fill="#14263D" font-size="15" font-weight="600" text-anchor="middle">Planner / reasoner</text>
-<text x="475" y="299.5" fill="#52627A" font-size="11.5" font-weight="400" text-anchor="middle">Decompose and draft</text>
+<rect x="365" y="225" width="220" height="96" rx="0" fill="#F7F7F7" stroke="#222222" stroke-width="1.6"/>
+<path d="M 377 239 v 68" stroke="#222222" stroke-width="3" stroke-linecap="round"/>
+<text x="475" y="257.5" fill="#222222" font-size="8.5" font-weight="600" text-anchor="middle">AGENT</text>
+<text x="475" y="275.5" fill="#141414" font-size="15" font-weight="600" text-anchor="middle">Planner / reasoner</text>
+<text x="475" y="299.5" fill="#505050" font-size="11.5" font-weight="400" text-anchor="middle">Decompose and draft</text>
 </g>
 <g id="node-tools" data-role="tool"><title>Tool executor: Search, code, APIs</title>
-<rect x="690" y="225" width="220" height="96" rx="10" fill="#FFFBEB" stroke="#B45309" stroke-width="1.6"/>
-<path d="M 702 239 v 68" stroke="#B45309" stroke-width="3" stroke-linecap="round"/>
-<text x="800" y="257.5" fill="#B45309" font-size="8.5" font-weight="600" text-anchor="middle">ACTIONS</text>
-<text x="800" y="275.5" fill="#14263D" font-size="15" font-weight="600" text-anchor="middle">Tool executor</text>
-<text x="800" y="299.5" fill="#52627A" font-size="11.5" font-weight="400" text-anchor="middle">Search, code, APIs</text>
+<rect x="690" y="225" width="220" height="96" rx="0" fill="#FFFFFF" stroke="#222222" stroke-width="1.6"/>
+<path d="M 702 239 v 68" stroke="#222222" stroke-width="3" stroke-linecap="round"/>
+<text x="800" y="257.5" fill="#222222" font-size="8.5" font-weight="600" text-anchor="middle">ACTIONS</text>
+<text x="800" y="275.5" fill="#141414" font-size="15" font-weight="600" text-anchor="middle">Tool executor</text>
+<text x="800" y="299.5" fill="#505050" font-size="11.5" font-weight="400" text-anchor="middle">Search, code, APIs</text>
 </g>
 <g id="node-memory" data-role="memory"><title>Context store: Retrieved evidence</title>
-<path d="M 365 475 A 110 10 0 0 1 585 475 V 551 A 110 10 0 0 1 365 551 Z" fill="#F0F9FF" stroke="#0369A1" stroke-width="1.6"/>
-<ellipse cx="475" cy="475" rx="110" ry="10" fill="#F0F9FF" stroke="#0369A1" stroke-width="1.4"/>
-<text x="475" y="506.5" fill="#14263D" font-size="15" font-weight="600" text-anchor="middle">Context store</text>
-<text x="475" y="530.5" fill="#52627A" font-size="11.5" font-weight="400" text-anchor="middle">Retrieved evidence</text>
+<path d="M 365 475 A 110 10 0 0 1 585 475 V 551 A 110 10 0 0 1 365 551 Z" fill="#F7F7F7" stroke="#222222" stroke-width="1.6"/>
+<ellipse cx="475" cy="475" rx="110" ry="10" fill="#F7F7F7" stroke="#222222" stroke-width="1.4"/>
+<text x="475" y="506.5" fill="#141414" font-size="15" font-weight="600" text-anchor="middle">Context store</text>
+<text x="475" y="530.5" fill="#505050" font-size="11.5" font-weight="400" text-anchor="middle">Retrieved evidence</text>
 </g>
 <g id="node-verifier" data-role="control"><title>Evidence verifier: Check claims and stop</title>
-<rect x="690" y="465" width="220" height="96" rx="10" fill="#F1F5F9" stroke="#475569" stroke-width="1.6"/>
-<path d="M 702 479 v 68" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
-<text x="800" y="497.5" fill="#475569" font-size="8.5" font-weight="600" text-anchor="middle">REVIEW</text>
-<text x="800" y="515.5" fill="#14263D" font-size="15" font-weight="600" text-anchor="middle">Evidence verifier</text>
-<text x="800" y="539.5" fill="#52627A" font-size="11.5" font-weight="400" text-anchor="middle">Check claims and stop</text>
+<rect x="690" y="465" width="220" height="96" rx="0" fill="#FFFFFF" stroke="#222222" stroke-width="1.6"/>
+<path d="M 702 479 v 68" stroke="#222222" stroke-width="3" stroke-linecap="round"/>
+<text x="800" y="497.5" fill="#222222" font-size="8.5" font-weight="600" text-anchor="middle">REVIEW</text>
+<text x="800" y="515.5" fill="#141414" font-size="15" font-weight="600" text-anchor="middle">Evidence verifier</text>
+<text x="800" y="539.5" fill="#505050" font-size="11.5" font-weight="400" text-anchor="middle">Check claims and stop</text>
 </g>
 <g id="node-answer" data-role="output"><title>Grounded answer: Citations and limits</title>
-<rect x="1010" y="465" width="210" height="96" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.6"/>
-<path d="M 1022 479 v 68" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
-<text x="1115" y="497.5" fill="#047857" font-size="8.5" font-weight="600" text-anchor="middle">OUTPUT</text>
-<text x="1115" y="515.5" fill="#14263D" font-size="15" font-weight="600" text-anchor="middle">Grounded answer</text>
-<text x="1115" y="539.5" fill="#52627A" font-size="11.5" font-weight="400" text-anchor="middle">Citations and limits</text>
+<rect x="1010" y="465" width="210" height="96" rx="0" fill="#FFFFFF" stroke="#222222" stroke-width="1.6"/>
+<path d="M 1022 479 v 68" stroke="#222222" stroke-width="3" stroke-linecap="round"/>
+<text x="1115" y="497.5" fill="#222222" font-size="8.5" font-weight="600" text-anchor="middle">OUTPUT</text>
+<text x="1115" y="515.5" fill="#141414" font-size="15" font-weight="600" text-anchor="middle">Grounded answer</text>
+<text x="1115" y="539.5" fill="#505050" font-size="11.5" font-weight="400" text-anchor="middle">Citations and limits</text>
 </g>
 <rect x="288.4" y="246" width="41.2" height="20" rx="5" fill="#FFFFFF"/>
-<text x="309" y="260" fill="#52627A" font-size="11" font-weight="500" text-anchor="middle">goal</text>
+<text x="309" y="260" fill="#505050" font-size="11" font-weight="500" text-anchor="middle">goal</text>
 <rect x="617.4" y="246" width="41.2" height="20" rx="5" fill="#FFFFFF"/>
-<text x="638" y="260" fill="#52627A" font-size="11" font-weight="500" text-anchor="middle">call</text>
+<text x="638" y="260" fill="#505050" font-size="11" font-weight="500" text-anchor="middle">call</text>
 <rect x="589.2" y="184" width="91.6" height="20" rx="5" fill="#FFFFFF"/>
-<text x="635" y="198" fill="#52627A" font-size="11" font-weight="500" text-anchor="middle">tool results</text>
+<text x="635" y="198" fill="#505050" font-size="11" font-weight="500" text-anchor="middle">tool results</text>
 <rect x="301.95" y="408" width="60.1" height="20" rx="5" fill="#FFFFFF"/>
-<text x="332" y="422" fill="#52627A" font-size="11" font-weight="500" text-anchor="middle">context</text>
+<text x="332" y="422" fill="#505050" font-size="11" font-weight="500" text-anchor="middle">context</text>
 <rect x="611.25" y="424" width="47.5" height="20" rx="5" fill="#FFFFFF"/>
-<text x="635" y="438" fill="#52627A" font-size="11" font-weight="500" text-anchor="middle">draft</text>
+<text x="635" y="438" fill="#505050" font-size="11" font-weight="500" text-anchor="middle">draft</text>
 <rect x="923.65" y="486" width="72.7" height="20" rx="5" fill="#FFFFFF"/>
-<text x="960" y="500" fill="#52627A" font-size="11" font-weight="500" text-anchor="middle">validated</text>
+<text x="960" y="500" fill="#505050" font-size="11" font-weight="500" text-anchor="middle">validated</text>
 <rect x="931.1" y="415" width="53.8" height="20" rx="5" fill="#FFFFFF"/>
-<text x="958" y="429" fill="#52627A" font-size="11" font-weight="500" text-anchor="middle">revise</text>
-<text x="48" y="738" fill="#52627A" font-size="11" font-weight="400" text-anchor="start">Illustrative architecture. A verifier supports review; it does not guarantee correctness.</text>
+<text x="958" y="429" fill="#505050" font-size="11" font-weight="500" text-anchor="middle">revise</text>
+<text x="48" y="738" fill="#505050" font-size="11" font-weight="400" text-anchor="start">Illustrative architecture. A verifier supports review; it does not guarantee correctness.</text>
 </g></svg>

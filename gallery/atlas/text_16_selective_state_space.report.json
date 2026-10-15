@@ -1,0 +1,11 @@
+{
+  "id": "text_16_selective_state_space",
+  "sha256": "e923aebd78c5de7e161483193501299e4624f8b00893feed07cd651a4b70e358",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_16_selective_state_space.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "audio-01-waveform-framing",
+  "title": "Waveform framing and windowing",
+  "family": "audio",
+  "description": "Overlapping sampled frames and a shared window in local frame coordinates.",
+  "caption": "Overlapping slices preserve local time structure before spectral analysis.",
+  "sources": [
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "Displayed waveforms and windows are illustrative; no sampling rate or frame length is asserted."
+  ],
+  "tags": [
+    "waveform",
+    "framing",
+    "window"
+  ],
+  "nodes": 3,
+  "edges": 0,
+  "source_file": "audio-01-waveform-framing.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-06-clap-audio-text",
+  "sha256": "878bdee7827020b841b6a922c0979a5f16563c83c3eb1ec2c729d12cbb672940",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-06-clap-audio-text.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "text_16_selective_state_space",
+  "title": "Selective state-space recurrence",
+  "family": "text",
+  "description": "An unrolled input-selective state-space core with input-dependent discretization and readout parameters, plus a state carried across time.",
+  "caption": "Input-dependent selection changes the state transition across time; this view isolates the recurrence core.",
+  "sources": [
+    "https://arxiv.org/abs/2312.00752"
+  ],
+  "assumptions": [
+    "Channel mixing, convolution, gating, and output skip terms are omitted to isolate the selective recurrence.",
+    "Bars denote discretized transition/input parameters; the discretization scheme for B is not fixed in the drawing."
+  ],
+  "tags": [
+    "SSM",
+    "Mamba",
+    "recurrence",
+    "selectivity"
+  ],
+  "nodes": 13,
+  "edges": 17,
+  "source_file": "text_16_selective_state_space.tex",
+  "width_cm": 16,
+  "height_cm": 9.5
+}

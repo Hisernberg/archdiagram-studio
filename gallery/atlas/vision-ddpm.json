@@ -1,0 +1,23 @@
+{
+  "id": "vision-ddpm",
+  "title": "Denoising diffusion: corrupt forward, learn the reverse",
+  "family": "vision",
+  "description": "A DDPM forward/reverse timeline and noise-prediction training graph with sampled noise and time.",
+  "caption": "Training predicts the sampled noise at a random time; generation repeatedly applies the learned reverse transition.",
+  "sources": [
+    "https://arxiv.org/abs/2006.11239"
+  ],
+  "assumptions": [
+    "Conceptual schematic; dimensions and details vary by implementation."
+  ],
+  "tags": [
+    "diffusion",
+    "ddpm",
+    "denoising"
+  ],
+  "nodes": 10,
+  "edges": 12,
+  "source_file": "vision-ddpm.tex",
+  "width_cm": 18,
+  "height_cm": 10
+}

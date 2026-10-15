@@ -1,0 +1,23 @@
+{
+  "id": "vision-one-stage-detector",
+  "title": "One-stage dense detection: predictions at every pyramid level",
+  "family": "vision",
+  "description": "A RetinaNet concept with per-level shared dense heads and separate classification/focal and box-regression objectives.",
+  "caption": "Shared classification and box subnets are applied separately to each feature level; focal loss addresses class imbalance.",
+  "sources": [
+    "https://arxiv.org/abs/1708.02002"
+  ],
+  "assumptions": [
+    "Three pyramid levels illustrate the repeated mapping; they are not the complete RetinaNet scale configuration."
+  ],
+  "tags": [
+    "detection",
+    "retinanet",
+    "focal-loss"
+  ],
+  "nodes": 8,
+  "edges": 11,
+  "source_file": "vision-one-stage-detector.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

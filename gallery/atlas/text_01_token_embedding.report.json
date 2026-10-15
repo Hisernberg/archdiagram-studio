@@ -1,0 +1,11 @@
+{
+  "id": "text_01_token_embedding",
+  "sha256": "9e5dcfb414e9e606461e7ad00ecdd75c9e40810e17ee88b9abc4afd7e0259be1",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_01_token_embedding.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

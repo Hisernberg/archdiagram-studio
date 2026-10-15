@@ -1,0 +1,24 @@
+{
+  "id": "text_18_rnn_seq2seq",
+  "title": "Recurrent sequence-to-sequence model",
+  "family": "text",
+  "description": "Unrolled LSTM encoder-decoder model with final-state initialization of the decoder and explicitly shifted target inputs.",
+  "caption": "The encoder's final hidden and cell states initialize the decoder; target inputs are shifted by one position.",
+  "sources": [
+    "https://arxiv.org/abs/1409.3215"
+  ],
+  "assumptions": [
+    "Representative source positions and three illustrative target steps are drawn.",
+    "The source order is not prescribed; this schematic isolates the fixed-summary encoder-decoder topology."
+  ],
+  "tags": [
+    "RNN",
+    "LSTM",
+    "seq2seq"
+  ],
+  "nodes": 18,
+  "edges": 14,
+  "source_file": "text_18_rnn_seq2seq.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

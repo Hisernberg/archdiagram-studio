@@ -1,0 +1,11 @@
+{
+  "id": "vision-atrous-segmentation",
+  "sha256": "e31bc818cc607adfa90d1e21ddbd56d2fb8fed6cff46cfc21e0fbd40b37339ed",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-atrous-segmentation.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

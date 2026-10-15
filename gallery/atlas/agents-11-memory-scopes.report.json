@@ -1,0 +1,11 @@
+{
+  "id": "agents-11-memory-scopes",
+  "sha256": "2ce091aafd7cbe93f65d9a77af381de1c4f0b3172e6ca19a6583650655771ad7",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-11-memory-scopes.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

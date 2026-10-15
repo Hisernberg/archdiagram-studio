@@ -1,0 +1,23 @@
+{
+  "id": "vision-gan",
+  "title": "Adversarial generation: two models, one learning game",
+  "family": "vision",
+  "description": "A two-player GAN with shared discriminator calls, real and generated data paths, and generator update feedback.",
+  "caption": "The discriminator shares parameters across real and generated examples; gradient feedback updates both players.",
+  "sources": [
+    "https://arxiv.org/abs/1406.2661"
+  ],
+  "assumptions": [
+    "The original minimax objective is shown; practical generator losses can differ."
+  ],
+  "tags": [
+    "gan",
+    "adversarial",
+    "training"
+  ],
+  "nodes": 9,
+  "edges": 11,
+  "source_file": "vision-gan.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

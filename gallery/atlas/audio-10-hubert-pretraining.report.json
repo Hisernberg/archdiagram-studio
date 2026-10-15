@@ -1,0 +1,11 @@
+{
+  "id": "audio-10-hubert-pretraining",
+  "sha256": "1869bf295508ccf7dd19e1af798e2293961e061b99b2028d249a6c951bfc0e6b",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/audio/audio-10-hubert-pretraining.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

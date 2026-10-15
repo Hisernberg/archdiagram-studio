@@ -1,0 +1,11 @@
+{
+  "id": "vision-latent-diffusion",
+  "sha256": "979e3e7807d050b750b7fb4f113b723727056b2d2c827c1b17e5d420c2da767a",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-latent-diffusion.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "agents-09-hybrid-fusion",
+  "title": "Hybrid retrieval with reciprocal rank fusion",
+  "family": "agents",
+  "description": "An original two-branch hybrid retrieval diagram that fuses lexical and vector rank lists with the reciprocal-rank formula and a document-id merge.",
+  "caption": "Fuse document ranks from lexical and dense retrieval, deduplicate by document id, then select the context window.",
+  "sources": [
+    "https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion",
+    "https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "Two equal-weight child lists and illustrative document ids are shown; retrieval scores are not added directly.",
+    "The rank constant and rank-window sizes are implementation choices; no quality guarantee is implied."
+  ],
+  "tags": [
+    "retrieval",
+    "hybrid",
+    "RRF",
+    "fusion"
+  ],
+  "nodes": 9,
+  "edges": 9,
+  "source_file": "agents-09-hybrid-fusion.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

@@ -1,0 +1,11 @@
+{
+  "id": "agents-13-human-approval",
+  "sha256": "4f64af39ea76e2cdca9b590478908d9591034f453e9109c252fc915870c67d43",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-13-human-approval.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

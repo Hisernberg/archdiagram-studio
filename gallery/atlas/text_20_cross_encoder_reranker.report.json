@@ -1,0 +1,11 @@
+{
+  "id": "text_20_cross_encoder_reranker",
+  "sha256": "e30fd4f99f52722aee239b56af0f4e071d55049ecf3a31f94068a17dfcd7c41b",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_20_cross_encoder_reranker.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

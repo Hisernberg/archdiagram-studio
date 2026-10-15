@@ -1,119 +1,204 @@
 # ArchDiagram Studio
 
-**An installable agent skill for precise, editable AI architecture diagrams.**
+[![Validate skill and diagrams](https://github.com/Hisernberg/archdiagram-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/Hisernberg/archdiagram-studio/actions/workflows/ci.yml)
 
-Turn model code, papers, and architecture briefs into figures with clear data flow, accurate boundaries, explicit assumptions, and reproducible source. Built for agentic AI, RAG, transformers, CNNs, graph networks, robotics, and software systems.
+**100 original monochrome TikZ architecture diagrams, with an installable skill for creating your own.**
 
-[Explore the live gallery](https://huggingface.co/spaces/Nabidnur/archdiagram-studio) · [Install and use](docs/USAGE.md) · [Skill instructions](skills/draw-architecture/SKILL.md) · [Scene specification](skills/draw-architecture/references/specification.md) · [Reference catalog](skills/draw-architecture/references/sources.md)
+Vision, language, audio, video, multimodal systems, agents, robotics, and graph learning. Real LaTeX typography, thin black rules, restrained gray fills, meaningful equations, and editable source. No generated raster artwork is used for technical geometry.
 
-![Agentic research architecture with tool calls, evidence context, verification, and revision](gallery/agentic-research.png)
+[Live searchable gallery](https://huggingface.co/spaces/Nabidnur/archdiagram-studio) · [All 100 figures and downloads](docs/ATLAS.md) · [Install and use](docs/USAGE.md) · [Agent skill](skills/draw-architecture/SKILL.md)
 
-## What you get
+![A selection from the original 100-figure monochrome atlas](gallery/atlas/overview.png)
 
-- **A portable agent skill:** evidence extraction, architecture-specific recipes, backend selection, rendering, visual review, and an explicit handoff.
-- **An original Python renderer:** JSON to editable SVG and standalone TikZ, using the standard library. Optional Inkscape PNG/PDF exports and TeX verification.
-- **Six worked architectures in three themes:** Paper, Midnight, and Blueprint; each with JSON, SVG, TikZ, PNG, and PDF files.
-- **Three native TikZ templates:** mathematical self-attention, cross-attention, and a neuron-level multilayer perceptron.
-- **Geometry checks:** overlapping blocks, approximate text fit, bounds, routes through unrelated nodes, and label collisions. These support visual review; they do not replace it.
-- **A browsable Hugging Face Space:** choose an example/theme, zoom, download source, and compose a prompt for your own agent.
-- **A pinned catalog of all 11 unique requested references:** contribution areas and file-level license observations, with no upstream source or images vendored.
+## What is included
 
-This is a skill and figure toolkit. It does not contain model weights, train a diagram model, or guarantee architectural correctness from arbitrary code. Its value comes from a concrete workflow, editable assets, deterministic rendering, and review.
+| Family | Figures | Examples |
+|---|---:|---|
+| Vision | 20 | U-Net, FPN, ViT, Swin, MAE, VAE, diffusion, DETR, detection |
+| Language and sequences | 20 | Decoder towers, attention, GQA, KV cache, RoPE, SwiGLU, MoE, LoRA, state-space models |
+| Audio and speech | 20 | STFT, CTC, RNN-T, Conformer, Whisper, wav2vec2, TTS, vocoders, neural codecs |
+| Multimodal and video | 15 | CLIP, vision-language bridges, resamplers, video time encoding, audiovisual fusion, document models |
+| Agentic systems | 15 | ReAct, planning, tools, reflection, orchestration, RAG, memory, approval, execution, serving |
+| Robotics and graphs | 10 | Control loops, MPC, sim-to-real, sensor fusion, message passing, GAT, heterogeneous and temporal graphs |
+| **Total** | **100** | **100 standalone editable TikZ masters** |
 
-## Install
+Each atlas figure has a TikZ master, vector PDF, SVG preview, PNG, primary-source links, and explicit assumptions. The diagrams are original **conceptual schematics**, rather than claims that every checkpoint uses precisely the pictured implementation.
 
-```bash
+The installable skill adds evidence extraction, template search, architecture recipes, semantic review, geometry checks, compilation, and visual inspection. It also includes an original JSON-to-SVG/TikZ renderer for work that needs editable SVG text.
+
+## Install the skill
+
+~~~bash
 git clone https://github.com/Hisernberg/archdiagram-studio.git
 cd archdiagram-studio
 python scripts/install_skill.py --agent codex
-```
+~~~
 
-For Claude, use `--agent claude`. For another assistant, copy the complete `skills/draw-architecture` folder or point it at that folder's `SKILL.md`. See [installation details](docs/USAGE.md), including custom destinations and host refresh behavior.
+Use <code>--agent claude</code> for Claude or <code>--dest /your/skills</code> for another location. The installer preserves a different existing skill unless replacement is explicitly requested. Other assistants can read the complete <code>skills/draw-architecture</code> folder.
 
-Then ask:
+Ask your agent:
 
-> Use $draw-architecture to turn my model code into a technical architecture diagram. Keep text editable, verify tensor labels and residual paths, inspect the rendered result, and deliver SVG, JSON, TikZ, and a short caption with assumptions.
+> Use $draw-architecture to diagram my architecture in black and white. Search the 100-figure atlas for a starting point, use my code or paper as evidence, preserve real mathematical notation, inspect the compiled figure, and return editable source plus a caption and assumptions.
 
-No API key is needed by this repository's renderer or static gallery. Your chosen agent supplies the reasoning and code inspection.
+## Find, copy, and compile a template
 
-## Render without an agent
+~~~bash
+python skills/draw-architecture/scripts/atlas.py find "cross attention"
+python skills/draw-architecture/scripts/atlas.py list --family vision
+python skills/draw-architecture/scripts/atlas.py copy \
+  --id text_05_cross_attention --out output/figure.tex
+pdflatex -no-shell-escape -halt-on-error \
+  -output-directory output output/figure.tex
+~~~
 
-```bash
+The atlas masters are self-contained .tex files. Compile with PGF/TikZ, standalone, Latin Modern, and amsmath/amssymb installed. PDF/PNG/SVG export builds additionally use Poppler. Searching/copying templates needs Python 3.10+ only.
+
+For a custom editable-text SVG, use the separate JSON scene renderer:
+
+~~~bash
 python skills/draw-architecture/scripts/archdiagram.py render \
   skills/draw-architecture/assets/examples/agentic-research.json \
   --out output/my-agent --formats svg,tex --theme paper --strict
-```
+~~~
 
-SVG and TeX source need **Python 3.10+ only**. Add `png,pdf` to `--formats` when **Inkscape** is installed. Add `--compile-tex` for a separate `.tikz.pdf` compiled by local **LuaLaTeX/pdfLaTeX**. The compiler tries available engines and records which succeeds. See [TeX, fonts, and export](skills/draw-architecture/references/tikz.md) for dependencies, non-Latin text, and differences between PDF routes.
+The paper theme is monochrome. Atlas SVG previews are derived from PDFs and use **outlined glyphs**; edit their native TikZ source. The JSON renderer preserves SVG text. [Format and font details](skills/draw-architecture/references/tikz.md) · [Native authoring guide](skills/draw-architecture/references/atlas-authoring.md).
 
-```bash
-python skills/draw-architecture/scripts/archdiagram.py validate your-diagram.json --strict
+## All 100 README demos
+
+Expand a family. Every thumbnail links to a full-resolution figure; each caption also links to the editable TikZ master and PDF.
+
+<details>
+<summary><strong>Vision — 20 original diagrams</strong></summary>
+
+| Figure | Figure |
+|---|---|
+| [![Spatial convolution: one local response](gallery/atlas/vision-convolution.png)](gallery/atlas/vision-convolution.svg)<br>**Spatial convolution: one local response**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-convolution.tex) · [PDF](gallery/atlas/vision-convolution.pdf) · [PNG](gallery/atlas/vision-convolution.png) | [![Residual block: preserve an identity route](gallery/atlas/vision-residual-block.png)](gallery/atlas/vision-residual-block.svg)<br>**Residual block: preserve an identity route**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-residual-block.tex) · [PDF](gallery/atlas/vision-residual-block.pdf) · [PNG](gallery/atlas/vision-residual-block.png) |
+| [![Dense block: accumulate earlier feature maps](gallery/atlas/vision-dense-block.png)](gallery/atlas/vision-dense-block.svg)<br>**Dense block: accumulate earlier feature maps**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-dense-block.tex) · [PDF](gallery/atlas/vision-dense-block.pdf) · [PNG](gallery/atlas/vision-dense-block.png) | [![U-Net: contract for context, expand for localization](gallery/atlas/vision-unet.png)](gallery/atlas/vision-unet.svg)<br>**U-Net: contract for context, expand for localization**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-unet.tex) · [PDF](gallery/atlas/vision-unet.pdf) · [PNG](gallery/atlas/vision-unet.png) |
+| [![Feature pyramid: bottom-up detail, top-down semantics](gallery/atlas/vision-feature-pyramid.png)](gallery/atlas/vision-feature-pyramid.svg)<br>**Feature pyramid: bottom-up detail, top-down semantics**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-feature-pyramid.tex) · [PDF](gallery/atlas/vision-feature-pyramid.pdf) · [PNG](gallery/atlas/vision-feature-pyramid.png) | [![Vision Transformer: an image becomes a token sequence](gallery/atlas/vision-vision-transformer.png)](gallery/atlas/vision-vision-transformer.svg)<br>**Vision Transformer: an image becomes a token sequence**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-vision-transformer.tex) · [PDF](gallery/atlas/vision-vision-transformer.pdf) · [PNG](gallery/atlas/vision-vision-transformer.png) |
+| [![Shifted-window attention: connect neighboring windows](gallery/atlas/vision-shifted-windows.png)](gallery/atlas/vision-shifted-windows.svg)<br>**Shifted-window attention: connect neighboring windows**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-shifted-windows.tex) · [PDF](gallery/atlas/vision-shifted-windows.pdf) · [PNG](gallery/atlas/vision-shifted-windows.png) | [![Masked autoencoder: encode only visible image patches](gallery/atlas/vision-masked-autoencoder.png)](gallery/atlas/vision-masked-autoencoder.svg)<br>**Masked autoencoder: encode only visible image patches**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-masked-autoencoder.tex) · [PDF](gallery/atlas/vision-masked-autoencoder.pdf) · [PNG](gallery/atlas/vision-masked-autoencoder.png) |
+| [![Deterministic autoencoder: compress and reconstruct](gallery/atlas/vision-deterministic-autoencoder.png)](gallery/atlas/vision-deterministic-autoencoder.svg)<br>**Deterministic autoencoder: compress and reconstruct**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-deterministic-autoencoder.tex) · [PDF](gallery/atlas/vision-deterministic-autoencoder.pdf) · [PNG](gallery/atlas/vision-deterministic-autoencoder.png) | [![Variational autoencoder: a distribution at the bottleneck](gallery/atlas/vision-variational-autoencoder.png)](gallery/atlas/vision-variational-autoencoder.svg)<br>**Variational autoencoder: a distribution at the bottleneck**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-variational-autoencoder.tex) · [PDF](gallery/atlas/vision-variational-autoencoder.pdf) · [PNG](gallery/atlas/vision-variational-autoencoder.png) |
+| [![Adversarial generation: two models, one learning game](gallery/atlas/vision-gan.png)](gallery/atlas/vision-gan.svg)<br>**Adversarial generation: two models, one learning game**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-gan.tex) · [PDF](gallery/atlas/vision-gan.pdf) · [PNG](gallery/atlas/vision-gan.png) | [![Denoising diffusion: corrupt forward, learn the reverse](gallery/atlas/vision-ddpm.png)](gallery/atlas/vision-ddpm.svg)<br>**Denoising diffusion: corrupt forward, learn the reverse**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-ddpm.tex) · [PDF](gallery/atlas/vision-ddpm.pdf) · [PNG](gallery/atlas/vision-ddpm.png) |
+| [![Latent diffusion: denoise a compressed image representation](gallery/atlas/vision-latent-diffusion.png)](gallery/atlas/vision-latent-diffusion.svg)<br>**Latent diffusion: denoise a compressed image representation**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-latent-diffusion.tex) · [PDF](gallery/atlas/vision-latent-diffusion.pdf) · [PNG](gallery/atlas/vision-latent-diffusion.png) | [![DETR: object queries predict an unordered set](gallery/atlas/vision-detr.png)](gallery/atlas/vision-detr.svg)<br>**DETR: object queries predict an unordered set**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-detr.tex) · [PDF](gallery/atlas/vision-detr.pdf) · [PNG](gallery/atlas/vision-detr.png) |
+| [![Two-stage detection: propose regions, then recognize them](gallery/atlas/vision-two-stage-detector.png)](gallery/atlas/vision-two-stage-detector.svg)<br>**Two-stage detection: propose regions, then recognize them**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-two-stage-detector.tex) · [PDF](gallery/atlas/vision-two-stage-detector.pdf) · [PNG](gallery/atlas/vision-two-stage-detector.png) | [![One-stage dense detection: predictions at every pyramid level](gallery/atlas/vision-one-stage-detector.png)](gallery/atlas/vision-one-stage-detector.svg)<br>**One-stage dense detection: predictions at every pyramid level**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-one-stage-detector.tex) · [PDF](gallery/atlas/vision-one-stage-detector.pdf) · [PNG](gallery/atlas/vision-one-stage-detector.png) |
+| [![Siamese image similarity: compare two shared representations](gallery/atlas/vision-siamese-similarity.png)](gallery/atlas/vision-siamese-similarity.svg)<br>**Siamese image similarity: compare two shared representations**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-siamese-similarity.tex) · [PDF](gallery/atlas/vision-siamese-similarity.pdf) · [PNG](gallery/atlas/vision-siamese-similarity.png) | [![Depthwise separable convolution: split spatial and channel mixing](gallery/atlas/vision-depthwise-separable.png)](gallery/atlas/vision-depthwise-separable.svg)<br>**Depthwise separable convolution: split spatial and channel mixing**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-depthwise-separable.tex) · [PDF](gallery/atlas/vision-depthwise-separable.pdf) · [PNG](gallery/atlas/vision-depthwise-separable.png) |
+| [![Atrous spatial pyramid pooling: parallel scales of context](gallery/atlas/vision-atrous-segmentation.png)](gallery/atlas/vision-atrous-segmentation.svg)<br>**Atrous spatial pyramid pooling: parallel scales of context**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-atrous-segmentation.tex) · [PDF](gallery/atlas/vision-atrous-segmentation.pdf) · [PNG](gallery/atlas/vision-atrous-segmentation.png) | [![Hierarchical patch merging: trade resolution for channels](gallery/atlas/vision-patch-merging.png)](gallery/atlas/vision-patch-merging.svg)<br>**Hierarchical patch merging: trade resolution for channels**<br>[TikZ](skills/draw-architecture/assets/atlas/vision/vision-patch-merging.tex) · [PDF](gallery/atlas/vision-patch-merging.pdf) · [PNG](gallery/atlas/vision-patch-merging.png) |
+
+</details>
+
+<details>
+<summary><strong>Language and sequence models — 20 original diagrams</strong></summary>
+
+| Figure | Figure |
+|---|---|
+| [![Subword tokenization and embedding lookup](gallery/atlas/text_01_token_embedding.png)](gallery/atlas/text_01_token_embedding.svg)<br>**Subword tokenization and embedding lookup**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_01_token_embedding.tex) · [PDF](gallery/atlas/text_01_token_embedding.pdf) · [PNG](gallery/atlas/text_01_token_embedding.png) | [![Causal decoder with pre-normalized residual blocks](gallery/atlas/text_02_causal_decoder.png)](gallery/atlas/text_02_causal_decoder.svg)<br>**Causal decoder with pre-normalized residual blocks**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_02_causal_decoder.tex) · [PDF](gallery/atlas/text_02_causal_decoder.pdf) · [PNG](gallery/atlas/text_02_causal_decoder.png) |
+| [![Encoder--decoder Transformer](gallery/atlas/text_03_encoder_decoder.png)](gallery/atlas/text_03_encoder_decoder.svg)<br>**Encoder--decoder Transformer**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_03_encoder_decoder.tex) · [PDF](gallery/atlas/text_03_encoder_decoder.pdf) · [PNG](gallery/atlas/text_03_encoder_decoder.png) | [![Scaled dot-product self-attention](gallery/atlas/text_04_scaled_self_attention.png)](gallery/atlas/text_04_scaled_self_attention.svg)<br>**Scaled dot-product self-attention**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_04_scaled_self_attention.tex) · [PDF](gallery/atlas/text_04_scaled_self_attention.pdf) · [PNG](gallery/atlas/text_04_scaled_self_attention.png) |
+| [![Cross-attention with a query-stream residual](gallery/atlas/text_05_cross_attention.png)](gallery/atlas/text_05_cross_attention.svg)<br>**Cross-attention with a query-stream residual**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_05_cross_attention.tex) · [PDF](gallery/atlas/text_05_cross_attention.pdf) · [PNG](gallery/atlas/text_05_cross_attention.png) | [![Multi-head attention: separate projections, joined outputs](gallery/atlas/text_06_multi_head_attention.png)](gallery/atlas/text_06_multi_head_attention.svg)<br>**Multi-head attention: separate projections, joined outputs**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_06_multi_head_attention.tex) · [PDF](gallery/atlas/text_06_multi_head_attention.pdf) · [PNG](gallery/atlas/text_06_multi_head_attention.png) |
+| [![Grouped-query attention: several queries share keys and values](gallery/atlas/text_07_grouped_query_attention.png)](gallery/atlas/text_07_grouped_query_attention.svg)<br>**Grouped-query attention: several queries share keys and values**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_07_grouped_query_attention.tex) · [PDF](gallery/atlas/text_07_grouped_query_attention.pdf) · [PNG](gallery/atlas/text_07_grouped_query_attention.png) | [![Autoregressive decoding with a per-layer KV cache](gallery/atlas/text_08_kv_cache.png)](gallery/atlas/text_08_kv_cache.svg)<br>**Autoregressive decoding with a per-layer KV cache**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_08_kv_cache.tex) · [PDF](gallery/atlas/text_08_kv_cache.pdf) · [PNG](gallery/atlas/text_08_kv_cache.png) |
+| [![Rotary positions act on query and key feature pairs](gallery/atlas/text_09_rotary_positions.png)](gallery/atlas/text_09_rotary_positions.svg)<br>**Rotary positions act on query and key feature pairs**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_09_rotary_positions.tex) · [PDF](gallery/atlas/text_09_rotary_positions.pdf) · [PNG](gallery/atlas/text_09_rotary_positions.png) | [![SwiGLU feed-forward network](gallery/atlas/text_10_swiglu_ffn.png)](gallery/atlas/text_10_swiglu_ffn.svg)<br>**SwiGLU feed-forward network**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_10_swiglu_ffn.tex) · [PDF](gallery/atlas/text_10_swiglu_ffn.pdf) · [PNG](gallery/atlas/text_10_swiglu_ffn.png) |
+| [![Sparse mixture-of-experts decoder and routing detail](gallery/atlas/text_11_sparse_moe.png)](gallery/atlas/text_11_sparse_moe.svg)<br>**Sparse mixture-of-experts decoder and routing detail**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_11_sparse_moe.tex) · [PDF](gallery/atlas/text_11_sparse_moe.pdf) · [PNG](gallery/atlas/text_11_sparse_moe.png) | [![LoRA: a frozen dense path plus a trainable low-rank update](gallery/atlas/text_12_lora.png)](gallery/atlas/text_12_lora.svg)<br>**LoRA: a frozen dense path plus a trainable low-rank update**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_12_lora.tex) · [PDF](gallery/atlas/text_12_lora.pdf) · [PNG](gallery/atlas/text_12_lora.png) |
+| [![QLoRA: quantized base storage, higher-precision computation](gallery/atlas/text_13_qlora.png)](gallery/atlas/text_13_qlora.svg)<br>**QLoRA: quantized base storage, higher-precision computation**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_13_qlora.tex) · [PDF](gallery/atlas/text_13_qlora.pdf) · [PNG](gallery/atlas/text_13_qlora.png) | [![Beam search expands prefixes, then prunes globally](gallery/atlas/text_14_beam_search.png)](gallery/atlas/text_14_beam_search.svg)<br>**Beam search expands prefixes, then prunes globally**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_14_beam_search.tex) · [PDF](gallery/atlas/text_14_beam_search.pdf) · [PNG](gallery/atlas/text_14_beam_search.png) |
+| [![Speculative decoding: propose, verify, accept a prefix](gallery/atlas/text_15_speculative_decoding.png)](gallery/atlas/text_15_speculative_decoding.svg)<br>**Speculative decoding: propose, verify, accept a prefix**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_15_speculative_decoding.tex) · [PDF](gallery/atlas/text_15_speculative_decoding.pdf) · [PNG](gallery/atlas/text_15_speculative_decoding.png) | [![Selective state-space recurrence](gallery/atlas/text_16_selective_state_space.png)](gallery/atlas/text_16_selective_state_space.svg)<br>**Selective state-space recurrence**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_16_selective_state_space.tex) · [PDF](gallery/atlas/text_16_selective_state_space.pdf) · [PNG](gallery/atlas/text_16_selective_state_space.png) |
+| [![Hybrid sequence layer: recurrence and local attention](gallery/atlas/text_17_hybrid_attention_ssm.png)](gallery/atlas/text_17_hybrid_attention_ssm.svg)<br>**Hybrid sequence layer: recurrence and local attention**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_17_hybrid_attention_ssm.tex) · [PDF](gallery/atlas/text_17_hybrid_attention_ssm.pdf) · [PNG](gallery/atlas/text_17_hybrid_attention_ssm.png) | [![Recurrent sequence-to-sequence model](gallery/atlas/text_18_rnn_seq2seq.png)](gallery/atlas/text_18_rnn_seq2seq.svg)<br>**Recurrent sequence-to-sequence model**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_18_rnn_seq2seq.tex) · [PDF](gallery/atlas/text_18_rnn_seq2seq.pdf) · [PNG](gallery/atlas/text_18_rnn_seq2seq.png) |
+| [![Bidirectional LSTM with aligned token readouts](gallery/atlas/text_19_bidirectional_lstm.png)](gallery/atlas/text_19_bidirectional_lstm.svg)<br>**Bidirectional LSTM with aligned token readouts**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_19_bidirectional_lstm.tex) · [PDF](gallery/atlas/text_19_bidirectional_lstm.pdf) · [PNG](gallery/atlas/text_19_bidirectional_lstm.png) | [![Cross-encoder reranker jointly encodes query and document](gallery/atlas/text_20_cross_encoder_reranker.png)](gallery/atlas/text_20_cross_encoder_reranker.svg)<br>**Cross-encoder reranker jointly encodes query and document**<br>[TikZ](skills/draw-architecture/assets/atlas/text/text_20_cross_encoder_reranker.tex) · [PDF](gallery/atlas/text_20_cross_encoder_reranker.pdf) · [PNG](gallery/atlas/text_20_cross_encoder_reranker.png) |
+
+</details>
+
+<details>
+<summary><strong>Audio and speech — 20 original diagrams</strong></summary>
+
+| Figure | Figure |
+|---|---|
+| [![Waveform framing and windowing](gallery/atlas/audio-01-waveform-framing.png)](gallery/atlas/audio-01-waveform-framing.svg)<br>**Waveform framing and windowing**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-01-waveform-framing.tex) · [PDF](gallery/atlas/audio-01-waveform-framing.pdf) · [PNG](gallery/atlas/audio-01-waveform-framing.png) | [![Short-time Fourier transform](gallery/atlas/audio-02-stft-spectrogram.png)](gallery/atlas/audio-02-stft-spectrogram.svg)<br>**Short-time Fourier transform**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-02-stft-spectrogram.tex) · [PDF](gallery/atlas/audio-02-stft-spectrogram.pdf) · [PNG](gallery/atlas/audio-02-stft-spectrogram.png) |
+| [![Spectrogram convolutional classifier](gallery/atlas/audio-03-spectrogram-cnn.png)](gallery/atlas/audio-03-spectrogram-cnn.svg)<br>**Spectrogram convolutional classifier**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-03-spectrogram-cnn.tex) · [PDF](gallery/atlas/audio-03-spectrogram-cnn.pdf) · [PNG](gallery/atlas/audio-03-spectrogram-cnn.png) | [![CTC speech recognition](gallery/atlas/audio-04-ctc-recognition.png)](gallery/atlas/audio-04-ctc-recognition.svg)<br>**CTC speech recognition**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-04-ctc-recognition.tex) · [PDF](gallery/atlas/audio-04-ctc-recognition.pdf) · [PNG](gallery/atlas/audio-04-ctc-recognition.png) |
+| [![RNN-T transducer](gallery/atlas/audio-05-rnnt-transducer.png)](gallery/atlas/audio-05-rnnt-transducer.svg)<br>**RNN-T transducer**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-05-rnnt-transducer.tex) · [PDF](gallery/atlas/audio-05-rnnt-transducer.pdf) · [PNG](gallery/atlas/audio-05-rnnt-transducer.png) | [![Attention-based speech recognition](gallery/atlas/audio-06-attention-asr.png)](gallery/atlas/audio-06-attention-asr.svg)<br>**Attention-based speech recognition**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-06-attention-asr.tex) · [PDF](gallery/atlas/audio-06-attention-asr.pdf) · [PNG](gallery/atlas/audio-06-attention-asr.png) |
+| [![Conformer encoder block](gallery/atlas/audio-07-conformer-block.png)](gallery/atlas/audio-07-conformer-block.svg)<br>**Conformer encoder block**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-07-conformer-block.tex) · [PDF](gallery/atlas/audio-07-conformer-block.pdf) · [PNG](gallery/atlas/audio-07-conformer-block.png) | [![Whisper-style encoder--decoder](gallery/atlas/audio-08-whisper-encoder-decoder.png)](gallery/atlas/audio-08-whisper-encoder-decoder.svg)<br>**Whisper-style encoder--decoder**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-08-whisper-encoder-decoder.tex) · [PDF](gallery/atlas/audio-08-whisper-encoder-decoder.pdf) · [PNG](gallery/atlas/audio-08-whisper-encoder-decoder.png) |
+| [![wav2vec 2.0 pretraining](gallery/atlas/audio-09-wav2vec2-pretraining.png)](gallery/atlas/audio-09-wav2vec2-pretraining.svg)<br>**wav2vec 2.0 pretraining**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-09-wav2vec2-pretraining.tex) · [PDF](gallery/atlas/audio-09-wav2vec2-pretraining.pdf) · [PNG](gallery/atlas/audio-09-wav2vec2-pretraining.png) | [![HuBERT masked-unit pretraining](gallery/atlas/audio-10-hubert-pretraining.png)](gallery/atlas/audio-10-hubert-pretraining.svg)<br>**HuBERT masked-unit pretraining**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-10-hubert-pretraining.tex) · [PDF](gallery/atlas/audio-10-hubert-pretraining.pdf) · [PNG](gallery/atlas/audio-10-hubert-pretraining.png) |
+| [![Speaker embedding with statistics pooling](gallery/atlas/audio-11-speaker-embedding.png)](gallery/atlas/audio-11-speaker-embedding.svg)<br>**Speaker embedding with statistics pooling**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-11-speaker-embedding.tex) · [PDF](gallery/atlas/audio-11-speaker-embedding.pdf) · [PNG](gallery/atlas/audio-11-speaker-embedding.png) | [![Speaker diarization by embedding clustering](gallery/atlas/audio-12-speaker-diarization.png)](gallery/atlas/audio-12-speaker-diarization.svg)<br>**Speaker diarization by embedding clustering**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-12-speaker-diarization.tex) · [PDF](gallery/atlas/audio-12-speaker-diarization.pdf) · [PNG](gallery/atlas/audio-12-speaker-diarization.png) |
+| [![Text-to-speech: two-stage synthesis](gallery/atlas/audio-13-tts-overview.png)](gallery/atlas/audio-13-tts-overview.svg)<br>**Text-to-speech: two-stage synthesis**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-13-tts-overview.tex) · [PDF](gallery/atlas/audio-13-tts-overview.pdf) · [PNG](gallery/atlas/audio-13-tts-overview.png) | [![Tacotron-style attention TTS](gallery/atlas/audio-14-tacotron-attention-tts.png)](gallery/atlas/audio-14-tacotron-attention-tts.svg)<br>**Tacotron-style attention TTS**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-14-tacotron-attention-tts.tex) · [PDF](gallery/atlas/audio-14-tacotron-attention-tts.pdf) · [PNG](gallery/atlas/audio-14-tacotron-attention-tts.png) |
+| [![FastSpeech 2-style variance adaptor](gallery/atlas/audio-15-fastspeech2-variance.png)](gallery/atlas/audio-15-fastspeech2-variance.svg)<br>**FastSpeech 2-style variance adaptor**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-15-fastspeech2-variance.tex) · [PDF](gallery/atlas/audio-15-fastspeech2-variance.pdf) · [PNG](gallery/atlas/audio-15-fastspeech2-variance.png) | [![VITS conceptual training and inference](gallery/atlas/audio-16-vits-conceptual.png)](gallery/atlas/audio-16-vits-conceptual.svg)<br>**VITS conceptual training and inference**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-16-vits-conceptual.tex) · [PDF](gallery/atlas/audio-16-vits-conceptual.pdf) · [PNG](gallery/atlas/audio-16-vits-conceptual.png) |
+| [![HiFi-GAN neural vocoder](gallery/atlas/audio-17-hifigan-vocoder.png)](gallery/atlas/audio-17-hifigan-vocoder.svg)<br>**HiFi-GAN neural vocoder**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-17-hifigan-vocoder.tex) · [PDF](gallery/atlas/audio-17-hifigan-vocoder.pdf) · [PNG](gallery/atlas/audio-17-hifigan-vocoder.png) | [![Diffusion vocoder](gallery/atlas/audio-18-diffusion-vocoder.png)](gallery/atlas/audio-18-diffusion-vocoder.svg)<br>**Diffusion vocoder**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-18-diffusion-vocoder.tex) · [PDF](gallery/atlas/audio-18-diffusion-vocoder.pdf) · [PNG](gallery/atlas/audio-18-diffusion-vocoder.png) |
+| [![Complex-mask speech enhancement](gallery/atlas/audio-19-speech-enhancement.png)](gallery/atlas/audio-19-speech-enhancement.svg)<br>**Complex-mask speech enhancement**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-19-speech-enhancement.tex) · [PDF](gallery/atlas/audio-19-speech-enhancement.pdf) · [PNG](gallery/atlas/audio-19-speech-enhancement.png) | [![Residual vector-quantized audio codec](gallery/atlas/audio-20-residual-vq-codec.png)](gallery/atlas/audio-20-residual-vq-codec.svg)<br>**Residual vector-quantized audio codec**<br>[TikZ](skills/draw-architecture/assets/atlas/audio/audio-20-residual-vq-codec.tex) · [PDF](gallery/atlas/audio-20-residual-vq-codec.pdf) · [PNG](gallery/atlas/audio-20-residual-vq-codec.png) |
+
+</details>
+
+<details>
+<summary><strong>Multimodal and video — 15 original diagrams</strong></summary>
+
+| Figure | Figure |
+|---|---|
+| [![CLIP contrastive dual encoder](gallery/atlas/multimodal-01-clip-dual-encoder.png)](gallery/atlas/multimodal-01-clip-dual-encoder.svg)<br>**CLIP contrastive dual encoder**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-01-clip-dual-encoder.tex) · [PDF](gallery/atlas/multimodal-01-clip-dual-encoder.pdf) · [PNG](gallery/atlas/multimodal-01-clip-dual-encoder.png) | [![Visual question answering](gallery/atlas/multimodal-02-visual-question-answering.png)](gallery/atlas/multimodal-02-visual-question-answering.svg)<br>**Visual question answering**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-02-visual-question-answering.tex) · [PDF](gallery/atlas/multimodal-02-visual-question-answering.pdf) · [PNG](gallery/atlas/multimodal-02-visual-question-answering.png) |
+| [![Attention-based image captioning](gallery/atlas/multimodal-03-image-captioning.png)](gallery/atlas/multimodal-03-image-captioning.svg)<br>**Attention-based image captioning**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-03-image-captioning.tex) · [PDF](gallery/atlas/multimodal-03-image-captioning.pdf) · [PNG](gallery/atlas/multimodal-03-image-captioning.png) | [![Vision-language projection bridge](gallery/atlas/multimodal-04-vision-language-projector.png)](gallery/atlas/multimodal-04-vision-language-projector.svg)<br>**Vision-language projection bridge**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-04-vision-language-projector.tex) · [PDF](gallery/atlas/multimodal-04-vision-language-projector.pdf) · [PNG](gallery/atlas/multimodal-04-vision-language-projector.png) |
+| [![Resampling with gated visual cross-attention](gallery/atlas/multimodal-05-resampler-cross-attention.png)](gallery/atlas/multimodal-05-resampler-cross-attention.svg)<br>**Resampling with gated visual cross-attention**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-05-resampler-cross-attention.tex) · [PDF](gallery/atlas/multimodal-05-resampler-cross-attention.pdf) · [PNG](gallery/atlas/multimodal-05-resampler-cross-attention.png) | [![Audio-text contrastive learning and zero-shot scoring](gallery/atlas/multimodal-06-clap-audio-text.png)](gallery/atlas/multimodal-06-clap-audio-text.svg)<br>**Audio-text contrastive learning and zero-shot scoring**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-06-clap-audio-text.tex) · [PDF](gallery/atlas/multimodal-06-clap-audio-text.pdf) · [PNG](gallery/atlas/multimodal-06-clap-audio-text.png) |
+| [![Speech-to-language-model bridge](gallery/atlas/multimodal-07-speech-language-bridge.png)](gallery/atlas/multimodal-07-speech-language-bridge.svg)<br>**Speech-to-language-model bridge**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-07-speech-language-bridge.tex) · [PDF](gallery/atlas/multimodal-07-speech-language-bridge.pdf) · [PNG](gallery/atlas/multimodal-07-speech-language-bridge.png) | [![Video temporal encoder](gallery/atlas/multimodal-08-video-temporal-encoder.png)](gallery/atlas/multimodal-08-video-temporal-encoder.svg)<br>**Video temporal encoder**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-08-video-temporal-encoder.tex) · [PDF](gallery/atlas/multimodal-08-video-temporal-encoder.pdf) · [PNG](gallery/atlas/multimodal-08-video-temporal-encoder.png) |
+| [![Audio-visual speech fusion](gallery/atlas/multimodal-09-audiovisual-speech-fusion.png)](gallery/atlas/multimodal-09-audiovisual-speech-fusion.svg)<br>**Audio-visual speech fusion**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-09-audiovisual-speech-fusion.tex) · [PDF](gallery/atlas/multimodal-09-audiovisual-speech-fusion.pdf) · [PNG](gallery/atlas/multimodal-09-audiovisual-speech-fusion.png) | [![Early fusion versus late fusion](gallery/atlas/multimodal-10-early-versus-late-fusion.png)](gallery/atlas/multimodal-10-early-versus-late-fusion.svg)<br>**Early fusion versus late fusion**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-10-early-versus-late-fusion.tex) · [PDF](gallery/atlas/multimodal-10-early-versus-late-fusion.pdf) · [PNG](gallery/atlas/multimodal-10-early-versus-late-fusion.png) |
+| [![Vision-language-action policy](gallery/atlas/multimodal-11-vision-language-action.png)](gallery/atlas/multimodal-11-vision-language-action.svg)<br>**Vision-language-action policy**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-11-vision-language-action.tex) · [PDF](gallery/atlas/multimodal-11-vision-language-action.pdf) · [PNG](gallery/atlas/multimodal-11-vision-language-action.png) | [![RGB-depth fusion at multiple scales](gallery/atlas/multimodal-12-rgb-depth-fusion.png)](gallery/atlas/multimodal-12-rgb-depth-fusion.svg)<br>**RGB-depth fusion at multiple scales**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-12-rgb-depth-fusion.tex) · [PDF](gallery/atlas/multimodal-12-rgb-depth-fusion.pdf) · [PNG](gallery/atlas/multimodal-12-rgb-depth-fusion.png) |
+| [![Document language-layout-vision fusion](gallery/atlas/multimodal-13-document-layout-language-vision.png)](gallery/atlas/multimodal-13-document-layout-language-vision.svg)<br>**Document language-layout-vision fusion**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-13-document-layout-language-vision.tex) · [PDF](gallery/atlas/multimodal-13-document-layout-language-vision.pdf) · [PNG](gallery/atlas/multimodal-13-document-layout-language-vision.png) | [![Retrieval-augmented multimodal generation](gallery/atlas/multimodal-14-retrieval-augmented-generation.png)](gallery/atlas/multimodal-14-retrieval-augmented-generation.svg)<br>**Retrieval-augmented multimodal generation**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-14-retrieval-augmented-generation.tex) · [PDF](gallery/atlas/multimodal-14-retrieval-augmented-generation.pdf) · [PNG](gallery/atlas/multimodal-14-retrieval-augmented-generation.png) |
+| [![Multimodal mixture-of-experts routing](gallery/atlas/multimodal-15-mixture-of-experts.png)](gallery/atlas/multimodal-15-mixture-of-experts.svg)<br>**Multimodal mixture-of-experts routing**<br>[TikZ](skills/draw-architecture/assets/atlas/multimodal/multimodal-15-mixture-of-experts.tex) · [PDF](gallery/atlas/multimodal-15-mixture-of-experts.pdf) · [PNG](gallery/atlas/multimodal-15-mixture-of-experts.png) |  |
+
+</details>
+
+<details>
+<summary><strong>Agentic systems — 15 original diagrams</strong></summary>
+
+| Figure | Figure |
+|---|---|
+| [![ReAct: interleaved reasoning, action, and observation](gallery/atlas/agents-01-react-loop.png)](gallery/atlas/agents-01-react-loop.svg)<br>**ReAct: interleaved reasoning, action, and observation**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-01-react-loop.tex) · [PDF](gallery/atlas/agents-01-react-loop.pdf) · [PNG](gallery/atlas/agents-01-react-loop.png) | [![Plan and execute with progress-aware replanning](gallery/atlas/agents-02-plan-execute.png)](gallery/atlas/agents-02-plan-execute.svg)<br>**Plan and execute with progress-aware replanning**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-02-plan-execute.tex) · [PDF](gallery/atlas/agents-02-plan-execute.pdf) · [PNG](gallery/atlas/agents-02-plan-execute.png) |
+| [![Tool-call and result protocol](gallery/atlas/agents-03-tool-protocol.png)](gallery/atlas/agents-03-tool-protocol.svg)<br>**Tool-call and result protocol**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-03-tool-protocol.tex) · [PDF](gallery/atlas/agents-03-tool-protocol.pdf) · [PNG](gallery/atlas/agents-03-tool-protocol.png) | [![Bounded reflection and revision](gallery/atlas/agents-04-bounded-reflection.png)](gallery/atlas/agents-04-bounded-reflection.svg)<br>**Bounded reflection and revision**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-04-bounded-reflection.tex) · [PDF](gallery/atlas/agents-04-bounded-reflection.pdf) · [PNG](gallery/atlas/agents-04-bounded-reflection.png) |
+| [![Supervisor with tool-wrapped specialist agents](gallery/atlas/agents-05-supervisor.png)](gallery/atlas/agents-05-supervisor.svg)<br>**Supervisor with tool-wrapped specialist agents**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-05-supervisor.tex) · [PDF](gallery/atlas/agents-05-supervisor.pdf) · [PNG](gallery/atlas/agents-05-supervisor.png) | [![Parallel research with evidence reduction](gallery/atlas/agents-06-parallel-research.png)](gallery/atlas/agents-06-parallel-research.svg)<br>**Parallel research with evidence reduction**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-06-parallel-research.tex) · [PDF](gallery/atlas/agents-06-parallel-research.pdf) · [PNG](gallery/atlas/agents-06-parallel-research.png) |
+| [![Debate with an explicit adjudicator](gallery/atlas/agents-07-debate-adjudicator.png)](gallery/atlas/agents-07-debate-adjudicator.svg)<br>**Debate with an explicit adjudicator**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-07-debate-adjudicator.tex) · [PDF](gallery/atlas/agents-07-debate-adjudicator.pdf) · [PNG](gallery/atlas/agents-07-debate-adjudicator.png) | [![RAG: separate indexing from per-query generation](gallery/atlas/agents-08-rag-lifecycles.png)](gallery/atlas/agents-08-rag-lifecycles.svg)<br>**RAG: separate indexing from per-query generation**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-08-rag-lifecycles.tex) · [PDF](gallery/atlas/agents-08-rag-lifecycles.pdf) · [PNG](gallery/atlas/agents-08-rag-lifecycles.png) |
+| [![Hybrid retrieval with reciprocal rank fusion](gallery/atlas/agents-09-hybrid-fusion.png)](gallery/atlas/agents-09-hybrid-fusion.svg)<br>**Hybrid retrieval with reciprocal rank fusion**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-09-hybrid-fusion.tex) · [PDF](gallery/atlas/agents-09-hybrid-fusion.pdf) · [PNG](gallery/atlas/agents-09-hybrid-fusion.png) | [![Corrective RAG with route-dependent evidence](gallery/atlas/agents-10-corrective-rag.png)](gallery/atlas/agents-10-corrective-rag.svg)<br>**Corrective RAG with route-dependent evidence**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-10-corrective-rag.tex) · [PDF](gallery/atlas/agents-10-corrective-rag.pdf) · [PNG](gallery/atlas/agents-10-corrective-rag.png) |
+| [![Thread state and cross-session memory](gallery/atlas/agents-11-memory-scopes.png)](gallery/atlas/agents-11-memory-scopes.svg)<br>**Thread state and cross-session memory**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-11-memory-scopes.tex) · [PDF](gallery/atlas/agents-11-memory-scopes.pdf) · [PNG](gallery/atlas/agents-11-memory-scopes.png) | [![Event-driven agent workflow with durable state](gallery/atlas/agents-12-event-workflow.png)](gallery/atlas/agents-12-event-workflow.svg)<br>**Event-driven agent workflow with durable state**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-12-event-workflow.tex) · [PDF](gallery/atlas/agents-12-event-workflow.pdf) · [PNG](gallery/atlas/agents-12-event-workflow.png) |
+| [![Human approval checkpoint before side effects](gallery/atlas/agents-13-human-approval.png)](gallery/atlas/agents-13-human-approval.svg)<br>**Human approval checkpoint before side effects**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-13-human-approval.tex) · [PDF](gallery/atlas/agents-13-human-approval.pdf) · [PNG](gallery/atlas/agents-13-human-approval.png) | [![Sandboxed code execution with explicit result capture](gallery/atlas/agents-14-sandbox-execution.png)](gallery/atlas/agents-14-sandbox-execution.svg)<br>**Sandboxed code execution with explicit result capture**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-14-sandbox-execution.tex) · [PDF](gallery/atlas/agents-14-sandbox-execution.pdf) · [PNG](gallery/atlas/agents-14-sandbox-execution.png) |
+| [![Distributed inference with tensor-parallel serving](gallery/atlas/agents-15-distributed-serving.png)](gallery/atlas/agents-15-distributed-serving.svg)<br>**Distributed inference with tensor-parallel serving**<br>[TikZ](skills/draw-architecture/assets/atlas/agents/agents-15-distributed-serving.tex) · [PDF](gallery/atlas/agents-15-distributed-serving.pdf) · [PNG](gallery/atlas/agents-15-distributed-serving.png) |  |
+
+</details>
+
+<details>
+<summary><strong>Robotics and graph learning — 10 original diagrams</strong></summary>
+
+| Figure | Figure |
+|---|---|
+| [![Perception--action closed loop](gallery/atlas/rg01-perception-action-loop.png)](gallery/atlas/rg01-perception-action-loop.svg)<br>**Perception--action closed loop**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg01-perception-action-loop.tex) · [PDF](gallery/atlas/rg01-perception-action-loop.pdf) · [PNG](gallery/atlas/rg01-perception-action-loop.png) | [![Hierarchical robot policy](gallery/atlas/rg02-hierarchical-policy.png)](gallery/atlas/rg02-hierarchical-policy.svg)<br>**Hierarchical robot policy**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg02-hierarchical-policy.tex) · [PDF](gallery/atlas/rg02-hierarchical-policy.pdf) · [PNG](gallery/atlas/rg02-hierarchical-policy.png) |
+| [![Model-predictive control](gallery/atlas/rg03-model-predictive-control.png)](gallery/atlas/rg03-model-predictive-control.svg)<br>**Model-predictive control**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg03-model-predictive-control.tex) · [PDF](gallery/atlas/rg03-model-predictive-control.pdf) · [PNG](gallery/atlas/rg03-model-predictive-control.png) | [![Simulation training and robot deployment](gallery/atlas/rg04-sim-to-real.png)](gallery/atlas/rg04-sim-to-real.svg)<br>**Simulation training and robot deployment**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg04-sim-to-real.tex) · [PDF](gallery/atlas/rg04-sim-to-real.pdf) · [PNG](gallery/atlas/rg04-sim-to-real.png) |
+| [![Robot sensor fusion](gallery/atlas/rg05-sensor-fusion.png)](gallery/atlas/rg05-sensor-fusion.svg)<br>**Robot sensor fusion**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg05-sensor-fusion.tex) · [PDF](gallery/atlas/rg05-sensor-fusion.pdf) · [PNG](gallery/atlas/rg05-sensor-fusion.png) | [![Graph message passing](gallery/atlas/rg06-graph-message-passing.png)](gallery/atlas/rg06-graph-message-passing.svg)<br>**Graph message passing**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg06-graph-message-passing.tex) · [PDF](gallery/atlas/rg06-graph-message-passing.pdf) · [PNG](gallery/atlas/rg06-graph-message-passing.png) |
+| [![Graph attention](gallery/atlas/rg07-graph-attention.png)](gallery/atlas/rg07-graph-attention.svg)<br>**Graph attention**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg07-graph-attention.tex) · [PDF](gallery/atlas/rg07-graph-attention.pdf) · [PNG](gallery/atlas/rg07-graph-attention.png) | [![Graph-level readout](gallery/atlas/rg08-graph-readout.png)](gallery/atlas/rg08-graph-readout.svg)<br>**Graph-level readout**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg08-graph-readout.tex) · [PDF](gallery/atlas/rg08-graph-readout.pdf) · [PNG](gallery/atlas/rg08-graph-readout.png) |
+| [![Heterogeneous graph network](gallery/atlas/rg09-heterogeneous-graph.png)](gallery/atlas/rg09-heterogeneous-graph.svg)<br>**Heterogeneous graph network**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg09-heterogeneous-graph.tex) · [PDF](gallery/atlas/rg09-heterogeneous-graph.pdf) · [PNG](gallery/atlas/rg09-heterogeneous-graph.png) | [![Spatiotemporal graph forecasting](gallery/atlas/rg10-spatiotemporal-graph.png)](gallery/atlas/rg10-spatiotemporal-graph.svg)<br>**Spatiotemporal graph forecasting**<br>[TikZ](skills/draw-architecture/assets/atlas/robotics-graphs/rg10-spatiotemporal-graph.tex) · [PDF](gallery/atlas/rg10-spatiotemporal-graph.pdf) · [PNG](gallery/atlas/rg10-spatiotemporal-graph.png) |
+
+</details>
+
+## Design and provenance
+
+Sebastian Raschka's architecture explanations informed the emphasis on clear main streams, correct residual origins, repeated-block braces, and separated detail callouts. The user requested a primarily black-and-white LaTeX treatment, so this atlas uses its own original monochrome drawings. It does not include Raschka's original image collection, seals, or watermarks and is not affiliated with him. [Study and source notes](skills/draw-architecture/references/sources.md) · [Monochrome design guide](skills/draw-architecture/references/monochrome-design.md).
+
+The catalog also covers all 11 unique originally requested projects: NNTikZ, PlotNeuralNet, awesome-latex-drawing, awesome-tikz, PetarV-/TikZ, nndiagram, pytorch2tikz, transformer-verif, tikz-codes, Tikz_graphs, and nn_graphics. They are linked with pinned revisions and observed licenses, rather than bundled indiscriminately. The custom academic/non-commercial pytorch2tikz license and unclear image licenses are documented.
+
+Every atlas figure records its own primary technical sources and assumptions in the family index and downloadable metadata. Study downloads remain separate from the publishable original assets.
+
+## Build and verification
+
+~~~bash
 python -m unittest discover -s tests -v
 python scripts/build_gallery.py --compile-tex
-```
+python scripts/build_atlas.py --jobs 4
+python scripts/build_contact_sheets.py
+~~~
 
-The JSON format supports explicit or grid coordinates, five shape kinds, eight semantic color roles, container groups, separate data/control/feedback line patterns, side-relative port offsets, and manual polyline waypoints. Automatic layout is a starting grid; it is not an obstacle-avoiding graph optimizer. The [complete specification](skills/draw-architecture/references/specification.md) describes the supported fields and limits.
+The atlas build compiles all 100 native masters, rejects overfull TeX boxes and missing glyphs, and exports the gallery. It verifies PNG payloads, SVG XML, source hashes, metadata, and PDF end markers, including cached files. It caches by source SHA-256; use <code>--force</code> for a clean rebuild. Contact-sheet generation additionally needs Pillow. The six family generators can reproduce the initial masters; regenerating can overwrite subsequent manual edits.
 
-## Architecture gallery
+Six agents independently authored and reviewed their assigned families. Figures were compiled and inspected through contact sheets and detailed reviews of complex routing, equations, grids, residuals, and objectives. Automated checks support review; they do not prove semantic correctness. [Actual validation record](docs/VALIDATION.md).
 
-All examples below are original, illustrative designs. Adapt them to actual code or system evidence.
-
-| Architecture | What it makes explicit | Editable source |
-|---|---|---|
-| [Agentic research](gallery/agentic-research.svg) | Tool calls/results, context reads, verification, revision | [JSON](skills/draw-architecture/assets/examples/agentic-research.json) · [TikZ](gallery/agentic-research.tex) |
-| [RAG pipeline](gallery/rag-pipeline.svg) | Indexing and query-time evidence paths | [JSON](skills/draw-architecture/assets/examples/rag-pipeline.json) · [TikZ](gallery/rag-pipeline.tex) |
-| [Pre-norm transformer](gallery/transformer-layer.svg) | Two distinct residual origins and causal attention | [JSON](skills/draw-architecture/assets/examples/transformer-layer.json) · [TikZ](gallery/transformer-layer.tex) |
-| [CNN classifier](gallery/cnn-classifier.svg) | Feature shapes, spatial reduction, pooling, logits | [JSON](skills/draw-architecture/assets/examples/cnn-classifier.json) · [TikZ](gallery/cnn-classifier.tex) |
-| [Robot control](gallery/robot-control.svg) | Observation, estimated state, command, physical dynamics | [JSON](skills/draw-architecture/assets/examples/robot-control.json) · [TikZ](gallery/robot-control.tex) |
-| [GNN message passing](gallery/gnn-message-passing.svg) | Messages, aggregation, node updates, readout | [JSON](skills/draw-architecture/assets/examples/gnn-message-passing.json) · [TikZ](gallery/gnn-message-passing.tex) |
-
-### Mathematical and neuron-level figures
-
-![Single-head cross-attention with decoder queries and encoder keys and values](gallery/cross-attention.png)
-
-[Cross-attention source](skills/draw-architecture/assets/templates/cross-attention.tex) · [Self-attention source](skills/draw-architecture/assets/templates/transformer-attention.tex) · [MLP source](skills/draw-architecture/assets/templates/mlp.tex)
-
-### One architecture, three themes
-
-![Agentic research system in the Midnight theme](gallery/agentic-research.midnight.png)
-
-Use `--theme paper`, `--theme midnight`, or `--theme blueprint`. Theme affects appearance, not the architecture. The gallery downloads match the selected theme.
-
-## The agent workflow
-
-1. **Establish the contract.** Identify the audience, architecture question, abstraction level, final width, and evidence.
-2. **Inventory components and edges.** Confirm data/control semantics, boundaries, repeats, dimensions, and unknowns.
-3. **Choose the representation.** Use JSON/SVG for system topology, perspective tensor nodes for CNNs, and native TikZ for equations or neuron diagrams.
-4. **Render and check.** Run geometry checks, inspect the actual image at full and final display sizes, correct problems, and compare back to the evidence.
-5. **Deliver source with the figure.** Include editable files, caption, assumptions, and the checks actually performed.
-
-See the [quality rubric](skills/draw-architecture/references/quality.md), [architecture recipes](skills/draw-architecture/references/recipes.md), and [code-to-diagram guide](skills/draw-architecture/references/code-to-diagram.md).
-
-## Requested ecosystem, carefully cataloged
-
-The catalog covers [NNTikZ](https://github.com/fraserlove/nntikz), [PlotNeuralNet](https://github.com/harisiqbal88/PlotNeuralNet), [awesome-latex-drawing](https://github.com/xinychen/awesome-latex-drawing), [awesome-tikz](https://github.com/xiaohanyu/awesome-tikz), [PetarV-/TikZ](https://github.com/PetarV-/TikZ), [nndiagram](https://github.com/ccfang2/nndiagram), [pytorch2tikz](https://github.com/FraunhoferHHI/pytorch2tikz), [transformer-verif](https://github.com/pzeina/transformer-verif), [tikz-codes](https://github.com/shrenikvz/tikz-codes), [Tikz_graphs](https://github.com/LIVazquezS/Tikz_graphs), and [nn_graphics](https://github.com/mvoelk/nn_graphics).
-
-These are **reference-only entries**, with pinned commits and observed licenses. The duplicate awesome-tikz link was deduplicated. The unqualified `nn_graphics` name was interpreted as mvoelk/nn_graphics. In particular, pytorch2tikz uses a custom academic/non-commercial license, and several repositories have no clear repository license. They are not bundled or automatically installed. See [sources and attribution](skills/draw-architecture/references/sources.md) and the [machine-readable catalog](skills/draw-architecture/references/source-catalog.json).
-
-## Validation and limits
-
-The portable tests exercise validation, escaped text, deterministic source output, geometry diagnostics, the CLI, and safe installer behavior. The gallery build renders 18 themed scenes, compiles all six paper-theme TikZ scenes, and compiles the three native templates. Two fresh agent tasks also exercised a new RAG revision loop and cross-attention adaptation. [Validation notes](docs/VALIDATION.md) distinguish these checks from hosted CI and from architectural proof.
-
-The linter uses approximate text metrics and rectangular bounds. It does not infer a complete execution graph, prove semantic correctness, detect every ambiguous line crossing, or guarantee readable text after arbitrary downscaling. Fonts must exist on the viewer/exporter; CJK TeX needs additional configuration. Native templates are the route for mathematical notation because JSON text is escaped literally.
-
-## Repository map
+## Repository layout
 
 | Path | Contents |
 |---|---|
-| `skills/draw-architecture/` | Complete installable skill, renderer, references, JSON examples, native TeX |
-| `scripts/` | Installer and gallery builder |
-| `gallery/` | Reproducible source, rendered figures, reports, manifest |
-| `index.html`, `app/` | Static gallery and local prompt composer |
-| `tests/` | Portable standard-library tests |
-| `docs/` | Human usage and actual validation notes |
+| skills/draw-architecture/assets/atlas/ | 100 standalone TikZ masters and six family source indexes |
+| skills/draw-architecture/scripts/ | Template search/copy, original TikZ primitives, JSON renderer |
+| skills/draw-architecture/references/ | Architecture, source, notation, typography, and review guides |
+| gallery/atlas/ | 100 compiled figures, reports, metadata, contact sheets |
+| docs/ATLAS.md | Complete figure/download catalog |
+| scripts/ | Installation, reproducible build, and gallery maintenance |
+| index.html, app/ | Searchable static gallery and local agent-prompt composer |
 
-The Hugging Face Space is a static gallery and downloadable repository, not a model inference endpoint. The same source is available on [GitHub](https://github.com/Hisernberg/archdiagram-studio) and [Hugging Face](https://huggingface.co/spaces/Nabidnur/archdiagram-studio/tree/main).
+The Hugging Face repository is a static gallery and downloadable skill repository. It does not require a GPU, model API key, or inference endpoint. The same original sources are on [GitHub](https://github.com/Hisernberg/archdiagram-studio) and [Hugging Face](https://huggingface.co/spaces/Nabidnur/archdiagram-studio/tree/main).
 
-## License and citation
-
-Original code, templates, diagrams, and prose: **MIT**, copyright 2026 URAD. External projects retain their own licenses and authorship. No affiliation or endorsement is implied. See [LICENSE](LICENSE), [CITATION.cff](CITATION.cff), and [contribution guidance](CONTRIBUTING.md).
+Original code, diagrams, templates, and prose: **MIT**, copyright 2026 URAD. External work retains its authorship and licensing. [LICENSE](LICENSE) · [CITATION.cff](CITATION.cff) · [Contributing](CONTRIBUTING.md).

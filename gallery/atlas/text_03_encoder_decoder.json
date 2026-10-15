@@ -1,0 +1,24 @@
+{
+  "id": "text_03_encoder_decoder",
+  "title": "Encoder--decoder Transformer",
+  "family": "text",
+  "description": "Paired encoder and autoregressive decoder stacks with source memory connected only to decoder cross-attention keys and values.",
+  "caption": "Encoder memory supplies keys and values to every decoder cross-attention layer.",
+  "sources": [
+    "https://arxiv.org/abs/1706.03762"
+  ],
+  "assumptions": [
+    "Original post-norm ordering is summarized in labels; residual wires are not expanded.",
+    "Layer repeat counts are symbolic."
+  ],
+  "tags": [
+    "transformer",
+    "encoder-decoder",
+    "cross-attention"
+  ],
+  "nodes": 12,
+  "edges": 10,
+  "source_file": "text_03_encoder_decoder.tex",
+  "width_cm": 16,
+  "height_cm": 10
+}

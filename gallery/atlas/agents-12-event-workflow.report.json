@@ -1,0 +1,11 @@
+{
+  "id": "agents-12-event-workflow",
+  "sha256": "fbad7aed30f3cb429da94821c90f57bb6eb4693898a5ba3eaa32c68997247e03",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-12-event-workflow.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -10,43 +10,43 @@
 \fi
 \usepackage{amsmath}
 \usetikzlibrary{arrows.meta}
-\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\familydefault}{\rmdefault}
 \definecolor{adbg}{HTML}{FFFFFF}
-\definecolor{adfg}{HTML}{14263D}
-\definecolor{admuted}{HTML}{52627A}
-\definecolor{adline}{HTML}{52627A}
-\definecolor{adgroup}{HTML}{F8FAFC}
-\definecolor{adborder}{HTML}{CBD5E1}
-\definecolor{adinput}{HTML}{2563EB}
-\definecolor{adinputfill}{HTML}{EFF6FF}
-\definecolor{adcompute}{HTML}{0F766E}
-\definecolor{adcomputefill}{HTML}{F0FDFA}
-\definecolor{admodel}{HTML}{6D28D9}
-\definecolor{admodelfill}{HTML}{F5F3FF}
-\definecolor{admemory}{HTML}{0369A1}
-\definecolor{admemoryfill}{HTML}{F0F9FF}
-\definecolor{adtool}{HTML}{B45309}
-\definecolor{adtoolfill}{HTML}{FFFBEB}
-\definecolor{adcontrol}{HTML}{475569}
-\definecolor{adcontrolfill}{HTML}{F1F5F9}
-\definecolor{adoutput}{HTML}{047857}
-\definecolor{adoutputfill}{HTML}{ECFDF5}
-\definecolor{adneutral}{HTML}{475569}
-\definecolor{adneutralfill}{HTML}{F8FAFC}
+\definecolor{adfg}{HTML}{141414}
+\definecolor{admuted}{HTML}{505050}
+\definecolor{adline}{HTML}{303030}
+\definecolor{adgroup}{HTML}{FAFAFA}
+\definecolor{adborder}{HTML}{AAAAAA}
+\definecolor{adinput}{HTML}{222222}
+\definecolor{adinputfill}{HTML}{FFFFFF}
+\definecolor{adcompute}{HTML}{222222}
+\definecolor{adcomputefill}{HTML}{FFFFFF}
+\definecolor{admodel}{HTML}{222222}
+\definecolor{admodelfill}{HTML}{F7F7F7}
+\definecolor{admemory}{HTML}{222222}
+\definecolor{admemoryfill}{HTML}{F7F7F7}
+\definecolor{adtool}{HTML}{222222}
+\definecolor{adtoolfill}{HTML}{FFFFFF}
+\definecolor{adcontrol}{HTML}{222222}
+\definecolor{adcontrolfill}{HTML}{FFFFFF}
+\definecolor{adoutput}{HTML}{222222}
+\definecolor{adoutputfill}{HTML}{FFFFFF}
+\definecolor{adneutral}{HTML}{222222}
+\definecolor{adneutralfill}{HTML}{FFFFFF}
 \begin{document}
 \begin{tikzpicture}[x=1pt,y=-1pt,inner sep=0pt,outer sep=0pt]
 \path[use as bounding box] (0,0) rectangle (950,1200);
 \fill[adbg] (0,0) rectangle (950,1200);
-\node[anchor=base west,text=adfg,font={\sffamily\fontsize{29}{34.8}\selectfont\bfseries}] at (48,50) {Pre-norm transformer layer};
-\node[anchor=base west,text=admuted,font={\sffamily\fontsize{13}{15.6}\selectfont}] at (48,77) {Residual streams, causal self-attention, and position-wise feed-forward computation.};
+\node[anchor=base west,text=adfg,font={\rmfamily\fontsize{29}{34.8}\selectfont\bfseries}] at (48,50) {Pre-norm transformer layer};
+\node[anchor=base west,text=admuted,font={\rmfamily\fontsize{13}{15.6}\selectfont}] at (48,77) {Residual streams, causal self-attention, and position-wise feed-forward computation.};
 \draw[adline,line width=1.4pt] (48,104) -- (76,104);
-\node[anchor=base west,text=admuted,font={\sffamily\fontsize{10.5}{12.6}\selectfont}] at (84,108) {Data flow};
+\node[anchor=base west,text=admuted,font={\rmfamily\fontsize{10.5}{12.6}\selectfont}] at (84,108) {Data flow};
 \draw[adline,line width=1.4pt,dashed] (188,104) -- (216,104);
-\node[anchor=base west,text=admuted,font={\sffamily\fontsize{10.5}{12.6}\selectfont}] at (224,108) {Control};
+\node[anchor=base west,text=admuted,font={\rmfamily\fontsize{10.5}{12.6}\selectfont}] at (224,108) {Control};
 \draw[adline,line width=1.4pt,dotted] (316,104) -- (344,104);
-\node[anchor=base west,text=admuted,font={\sffamily\fontsize{10.5}{12.6}\selectfont}] at (352,108) {Feedback};
+\node[anchor=base west,text=admuted,font={\rmfamily\fontsize{10.5}{12.6}\selectfont}] at (352,108) {Feedback};
 \draw[fill=adgroup,draw=adborder,dashed,rounded corners=10pt] (280,245) rectangle (840,1020);
-\node[anchor=base west,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont\bfseries}] at (298,270) {One decoder-style block / repeat N times};
+\node[anchor=base west,text=admuted,font={\rmfamily\fontsize{11}{13.2}\selectfont\bfseries}] at (298,270) {One decoder-style block / repeat N times};
 \draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round] (475,220) -- (475,255) -- (475,290);
 \draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round] (475,360) -- (475,385) -- (475,410);
 \draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round] (475,500) -- (475,527.5) -- (475,555);
@@ -58,36 +58,36 @@
 \draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round] (500,580) -- (810,580) -- (810,955) -- (500,955);
 \draw[draw=adinput,fill=adinputfill,line width=1.2pt,rounded corners=8pt] (330,150) rectangle (620,220);
 \draw[adinput,line width=2.2pt,line cap=round] (342,164) -- (342,206);
-\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,178.5) {Residual stream};
-\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,202.5) {B x T x d\_model};
+\node[anchor=base,text=adfg,font={\rmfamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,178.5) {Residual stream};
+\node[anchor=base,text=admuted,font={\rmfamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,202.5) {B x T x d\_model};
 \draw[draw=adcompute,fill=adcomputefill,line width=1.2pt,rounded corners=8pt] (330,290) rectangle (620,360);
 \draw[adcompute,line width=2.2pt,line cap=round] (342,304) -- (342,346);
-\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,318.5) {Layer normalization};
-\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,342.5) {Normalize the last dimension};
+\node[anchor=base,text=adfg,font={\rmfamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,318.5) {Layer normalization};
+\node[anchor=base,text=admuted,font={\rmfamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,342.5) {Normalize the last dimension};
 \draw[draw=admodel,fill=admodelfill,line width=1.2pt,rounded corners=8pt] (330,410) rectangle (620,500);
 \draw[admodel,line width=2.2pt,line cap=round] (342,424) -- (342,486);
-\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,448.5) {Causal self-attention};
-\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,472.5) {Multi-head attention + projection};
+\node[anchor=base,text=adfg,font={\rmfamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,448.5) {Causal self-attention};
+\node[anchor=base,text=admuted,font={\rmfamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,472.5) {Multi-head attention + projection};
 \draw[draw=adcontrol,fill=adcontrolfill,line width=1.2pt] (475,580) ellipse [x radius=25pt,y radius=25pt];
-\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,585) {+};
+\node[anchor=base,text=adfg,font={\rmfamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,585) {+};
 \draw[draw=adcompute,fill=adcomputefill,line width=1.2pt,rounded corners=8pt] (330,660) rectangle (620,730);
 \draw[adcompute,line width=2.2pt,line cap=round] (342,674) -- (342,716);
-\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,688.5) {Layer normalization};
-\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,712.5) {Normalize the last dimension};
+\node[anchor=base,text=adfg,font={\rmfamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,688.5) {Layer normalization};
+\node[anchor=base,text=admuted,font={\rmfamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,712.5) {Normalize the last dimension};
 \draw[draw=admodel,fill=admodelfill,line width=1.2pt,rounded corners=8pt] (330,780) rectangle (620,870);
 \draw[admodel,line width=2.2pt,line cap=round] (342,794) -- (342,856);
-\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,818.5) {Feed-forward network};
-\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,842.5) {d\_model -> d\_ff -> d\_model};
+\node[anchor=base,text=adfg,font={\rmfamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,818.5) {Feed-forward network};
+\node[anchor=base,text=admuted,font={\rmfamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,842.5) {d\_model -> d\_ff -> d\_model};
 \draw[draw=adcontrol,fill=adcontrolfill,line width=1.2pt] (475,955) ellipse [x radius=25pt,y radius=25pt];
-\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,960) {+};
+\node[anchor=base,text=adfg,font={\rmfamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,960) {+};
 \draw[draw=adoutput,fill=adoutputfill,line width=1.2pt,rounded corners=8pt] (330,1050) rectangle (620,1120);
 \draw[adoutput,line width=2.2pt,line cap=round] (342,1064) -- (342,1106);
-\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,1078.5) {Updated residual};
-\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,1102.5) {B x T x d\_model};
+\node[anchor=base,text=adfg,font={\rmfamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,1078.5) {Updated residual};
+\node[anchor=base,text=admuted,font={\rmfamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,1102.5) {B x T x d\_model};
 \fill[adbg,rounded corners=4pt] (731.8,341) rectangle (798.2,361);
-\node[anchor=base,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (765,355) {residual};
+\node[anchor=base,text=admuted,font={\rmfamily\fontsize{11}{13.2}\selectfont}] at (765,355) {residual};
 \fill[adbg,rounded corners=4pt] (776.8,797) rectangle (843.2,817);
-\node[anchor=base,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (810,811) {residual};
-\node[anchor=base west,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (48,1178) {Pre-norm variant. Dropout, positional encoding, and the output language-model head are omitted.};
+\node[anchor=base,text=admuted,font={\rmfamily\fontsize{11}{13.2}\selectfont}] at (810,811) {residual};
+\node[anchor=base west,text=admuted,font={\rmfamily\fontsize{11}{13.2}\selectfont}] at (48,1178) {Pre-norm variant. Dropout, positional encoding, and the output language-model head are omitted.};
 \end{tikzpicture}
 \end{document}

@@ -1,0 +1,24 @@
+{
+  "id": "text_09_rotary_positions",
+  "title": "Rotary positions act on query and key feature pairs",
+  "family": "text",
+  "description": "Separate position-indexed rotations of query and key feature pairs and their relative-position dot-product identity.",
+  "caption": "Position rotations change query--key dot products through relative position; values follow their ordinary projection path.",
+  "sources": [
+    "https://arxiv.org/abs/2104.09864"
+  ],
+  "assumptions": [
+    "Column-vector convention is used in this figure; model-wide row-vector notation is equivalent after transposition.",
+    "Pair-specific frequencies theta_a are symbolic; value rotation is not shown."
+  ],
+  "tags": [
+    "RoPE",
+    "position",
+    "rotation"
+  ],
+  "nodes": 9,
+  "edges": 6,
+  "source_file": "text_09_rotary_positions.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

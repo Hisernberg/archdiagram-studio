@@ -1,0 +1,26 @@
+{
+  "id": "rg04-sim-to-real",
+  "title": "Simulation training and robot deployment",
+  "family": "robotics-graphs",
+  "description": "A grid of randomized simulators feeds a learner; only a checkpoint crosses into the isolated physical deployment loop.",
+  "caption": "Conceptual sim-to-real separation after Peng et al. (2018); randomized training does not guarantee successful physical transfer.",
+  "sources": [
+    "https://arxiv.org/abs/1710.06537"
+  ],
+  "assumptions": [
+    "Parallel simulator grid and a frozen checkpoint are conceptual implementation choices.",
+    "The figure omits the source method's recurrent policy, omniscient critic, and task-specific training details.",
+    "No physical transfer, reliability, timing, or safety guarantee is implied."
+  ],
+  "tags": [
+    "robotics",
+    "sim-to-real",
+    "domain-randomization",
+    "training-deployment"
+  ],
+  "nodes": 9,
+  "edges": 12,
+  "source_file": "rg04-sim-to-real.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

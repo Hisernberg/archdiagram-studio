@@ -1,0 +1,24 @@
+{
+  "id": "audio-20-residual-vq-codec",
+  "title": "Residual vector-quantized audio codec",
+  "family": "audio",
+  "description": "A SoundStream-inspired neural codec with expanded residual quantization, subtraction paths, and code-vector summation.",
+  "caption": "Each codebook quantizes the previous residual; summed code vectors reconstruct the encoder latent.",
+  "sources": [
+    "https://arxiv.org/abs/2107.03312"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "Three codebooks illustrate the recurrence. Codec bandwidth, codebook size, and actual number of stages are unspecified."
+  ],
+  "tags": [
+    "codec",
+    "residual VQ",
+    "SoundStream"
+  ],
+  "nodes": 13,
+  "edges": 14,
+  "source_file": "audio-20-residual-vq-codec.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

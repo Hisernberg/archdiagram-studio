@@ -1,0 +1,11 @@
+{
+  "id": "text_18_rnn_seq2seq",
+  "sha256": "747d41df5d9dc72d21f36c9d0b9044e0ef664a512163f12cd2abf3b417d284f8",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_18_rnn_seq2seq.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

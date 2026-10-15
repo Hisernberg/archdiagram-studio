@@ -1,0 +1,26 @@
+{
+  "id": "agents-01-react-loop",
+  "title": "ReAct: interleaved reasoning, action, and observation",
+  "family": "agents",
+  "description": "A ReAct-style agent explicitly feeds tool observations back into its trajectory context, with a separate finish path.",
+  "caption": "Each observation updates the trajectory before another action or a final response is selected.",
+  "sources": [
+    "https://arxiv.org/abs/2210.03629"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "The diagram abstracts the paper's thought/action/observation sequence and does not expose or prescribe private model reasoning.",
+    "The finish criterion is task dependent; no convergence or correctness guarantee is implied."
+  ],
+  "tags": [
+    "agent",
+    "ReAct",
+    "feedback",
+    "tools"
+  ],
+  "nodes": 7,
+  "edges": 7,
+  "source_file": "agents-01-react-loop.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

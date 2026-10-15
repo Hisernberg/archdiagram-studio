@@ -1,0 +1,24 @@
+{
+  "id": "vision-unet",
+  "title": "U-Net: contract for context, expand for localization",
+  "family": "vision",
+  "description": "A reduced U-Net hierarchy with contracting and expanding paths and aligned skip concatenations.",
+  "caption": "Skip features are aligned and concatenated with the upsampled decoder stream at matching scales.",
+  "sources": [
+    "https://arxiv.org/abs/1505.04597"
+  ],
+  "assumptions": [
+    "Two resolution changes illustrate the topology rather than reproduce the depth of a published checkpoint.",
+    "Alignment represents the cropping required by the original valid-convolution formulation."
+  ],
+  "tags": [
+    "segmentation",
+    "unet",
+    "encoder-decoder"
+  ],
+  "nodes": 7,
+  "edges": 8,
+  "source_file": "vision-unet.tex",
+  "width_cm": 18,
+  "height_cm": 10
+}

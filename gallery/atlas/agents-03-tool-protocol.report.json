@@ -1,0 +1,11 @@
+{
+  "id": "agents-03-tool-protocol",
+  "sha256": "9a301e072d28250512f4e2127020de261544578012f3173207decebaf784882a",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-03-tool-protocol.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "agents-02-plan-execute",
+  "sha256": "2f8473f68cfcceceba2a6649eddb578b3a575448999f1cb7f78b6dd1957c29dd",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-02-plan-execute.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "agents-05-supervisor",
+  "title": "Supervisor with tool-wrapped specialist agents",
+  "family": "agents",
+  "description": "An original supervisor-centered topology showing scoped specialist invocation, result returns, main-agent conversation state, and local tool boundaries.",
+  "caption": "The supervisor supplies scoped tasks and combines returned results; specialists do not directly answer the user.",
+  "sources": [
+    "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "Specialists are tool wrapped and return to the supervisor; no direct specialist-to-user path is shown.",
+    "Local tool-call/result detail is abstracted; specialties are illustrative."
+  ],
+  "tags": [
+    "multi-agent",
+    "supervisor",
+    "state",
+    "boundaries"
+  ],
+  "nodes": 10,
+  "edges": 13,
+  "source_file": "agents-05-supervisor.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

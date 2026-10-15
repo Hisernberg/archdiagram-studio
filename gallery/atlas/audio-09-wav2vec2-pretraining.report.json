@@ -1,0 +1,11 @@
+{
+  "id": "audio-09-wav2vec2-pretraining",
+  "sha256": "1c88174768f64f2bc3d8541985010c5e2f3866743c9e4da3447179b7f4ddf05f",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/audio/audio-09-wav2vec2-pretraining.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

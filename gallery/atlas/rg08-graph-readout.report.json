@@ -1,0 +1,11 @@
+{
+  "id": "rg08-graph-readout",
+  "sha256": "e6d329e46946a0b7727eb6c20e90ea22910d2f21f001532f4dd927d236582aec",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg08-graph-readout.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

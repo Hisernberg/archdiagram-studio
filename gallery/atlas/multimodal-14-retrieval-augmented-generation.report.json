@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-14-retrieval-augmented-generation",
+  "sha256": "c122793d9a3a35923c0b3a48f14809641af6aae77664d3acf29faf75df5eadd1",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-14-retrieval-augmented-generation.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-10-early-versus-late-fusion",
+  "sha256": "33de735a4c642ecd9f07796f6bd8b0ae88a4ef5775e3bd9ba9d259620a0c03a3",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-10-early-versus-late-fusion.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

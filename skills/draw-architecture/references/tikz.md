@@ -11,7 +11,7 @@ python scripts/archdiagram.py render diagram.json --out output/diagram \
 
 SVG and TeX source require only Python 3.10+. PNG/PDF conversion requires Inkscape. TikZ verification requires LuaLaTeX or pdfLaTeX plus PGF/TikZ, standalone, iftex, amsmath, and fonts. Ubuntu packages typically include `inkscape texlive-latex-extra texlive-luatex texlive-fonts-recommended`. Install packages using the environment's authorized package manager.
 
-The CLI tries LuaLaTeX with DejaVu Sans, then falls back to pdfLaTeX with Latin Modern if that installation fails. The report records the successful engine. The `.pdf` export comes from SVG; `.tikz.pdf` comes from TeX. Small differences in font metrics and storage-shape drawing can occur. Inspect both before choosing a publication master. The SVG text is editable; PDF converters may outline text. Keep SVG/JSON or native TeX alongside any PDF.
+The paper theme uses serif LaTeX typography. The CLI tries LuaLaTeX (Latin Modern Roman for paper; DejaVu Sans for optional sans-serif themes), then falls back to pdfLaTeX with Latin Modern if that installation fails. The report records the successful engine. The `.pdf` export comes from SVG; `.tikz.pdf` comes from TeX. Small differences in font metrics and storage-shape drawing can occur. Inspect both before choosing a publication master. The SVG text is editable; PDF converters may outline text. Keep SVG/JSON or native TeX alongside any PDF.
 
 ## Native templates
 

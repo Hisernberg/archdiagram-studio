@@ -1,0 +1,25 @@
+{
+  "id": "rg08-graph-readout",
+  "title": "Graph-level readout",
+  "family": "robotics-graphs",
+  "description": "An encoded graph is treated as an unordered set of node states and pooled into a graph embedding and graph-level output.",
+  "caption": "Conceptual graph readout after Gilmer et al. (2017); a symmetric set aggregation produces one graph representation.",
+  "sources": [
+    "https://arxiv.org/abs/1704.01212"
+  ],
+  "assumptions": [
+    "The sum-of-transformed-states readout is an illustrative invariant instance, not the complete readout used in every MPNN.",
+    "Only node states are visualized; tasks may also use edge or global attributes."
+  ],
+  "tags": [
+    "graph-learning",
+    "readout",
+    "graph-level",
+    "permutation-invariance"
+  ],
+  "nodes": 12,
+  "edges": 12,
+  "source_file": "rg08-graph-readout.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

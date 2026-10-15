@@ -1,0 +1,11 @@
+{
+  "id": "vision-patch-merging",
+  "sha256": "b94653056779870cfe69fe629471a070a366290774205aea4050a760d98022b3",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-patch-merging.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

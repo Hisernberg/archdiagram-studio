@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-04-vision-language-projector",
+  "sha256": "ffb1d5c750dffaa64b460e92178caf09630baee2f7b45ac8c05d1430765d3844",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-04-vision-language-projector.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

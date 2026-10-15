@@ -1,0 +1,23 @@
+{
+  "id": "vision-detr",
+  "title": "DETR: object queries predict an unordered set",
+  "family": "vision",
+  "description": "A DETR concept with spatial encodings, learned object queries, class/box set prediction and bipartite matching supervision.",
+  "caption": "Learned queries attend to encoded image features; bipartite matching assigns predictions to target objects.",
+  "sources": [
+    "https://arxiv.org/abs/2005.12872"
+  ],
+  "assumptions": [
+    "Conceptual schematic; dimensions and details vary by implementation."
+  ],
+  "tags": [
+    "detection",
+    "detr",
+    "set-prediction"
+  ],
+  "nodes": 11,
+  "edges": 10,
+  "source_file": "vision-detr.tex",
+  "width_cm": 18,
+  "height_cm": 10
+}

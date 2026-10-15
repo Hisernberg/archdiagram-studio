@@ -1,0 +1,26 @@
+{
+  "id": "multimodal-13-document-layout-language-vision",
+  "title": "Document language-layout-vision fusion",
+  "family": "multimodal",
+  "description": "OCR words and segment boxes plus linear image patches are fused by a shared document transformer with three pretraining heads.",
+  "caption": "Text, patch, and word-patch objectives train one multimodal encoder while layout coordinates remain available.",
+  "sources": [
+    "https://arxiv.org/abs/2204.08387",
+    "https://arxiv.org/html/2204.08387v3"
+  ],
+  "assumptions": [
+    "Conceptual LayoutLMv3-style graph; image targets are discrete visual tokens and WPA predicts corresponding patch masking.",
+    "Mask selection and visual tokenizer target generation are omitted; all dimensions are symbolic."
+  ],
+  "tags": [
+    "document-AI",
+    "LayoutLMv3",
+    "layout",
+    "pretraining"
+  ],
+  "nodes": 10,
+  "edges": 11,
+  "source_file": "multimodal-13-document-layout-language-vision.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

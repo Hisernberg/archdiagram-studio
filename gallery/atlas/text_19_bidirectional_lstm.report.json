@@ -1,0 +1,11 @@
+{
+  "id": "text_19_bidirectional_lstm",
+  "sha256": "9ff1e33b6e997296843210c765bb586de3b5bc2feadb129d5be7f404bf09b17f",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_19_bidirectional_lstm.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

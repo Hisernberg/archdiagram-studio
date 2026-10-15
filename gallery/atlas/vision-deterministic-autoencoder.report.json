@@ -1,0 +1,11 @@
+{
+  "id": "vision-deterministic-autoencoder",
+  "sha256": "498f90d19f176f5363926bc77d17d3bce447f023c1eb5b082678d3d93ec6df64",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-deterministic-autoencoder.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

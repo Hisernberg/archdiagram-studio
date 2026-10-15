@@ -1,0 +1,26 @@
+{
+  "id": "rg09-heterogeneous-graph",
+  "title": "Heterogeneous graph network",
+  "family": "robotics-graphs",
+  "description": "A typed author/paper/venue graph is paired with three relation-specific message channels and a self-term node update.",
+  "caption": "Conceptual relational GNN after Schlichtkrull et al. (2018); each relation has its own transform before node aggregation.",
+  "sources": [
+    "https://arxiv.org/abs/1703.06103"
+  ],
+  "assumptions": [
+    "The author/paper/venue schema is an original illustrative graph, not a source benchmark.",
+    "Inverse published-in relations are explicitly assumed to permit venue-to-paper messages.",
+    "Relation normalization c_(i,r) is symbolic and each sum is restricted to the named incoming relation; basis decomposition and training objectives are omitted."
+  ],
+  "tags": [
+    "graph-learning",
+    "heterogeneous-graph",
+    "relations",
+    "rgcn"
+  ],
+  "nodes": 9,
+  "edges": 8,
+  "source_file": "rg09-heterogeneous-graph.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

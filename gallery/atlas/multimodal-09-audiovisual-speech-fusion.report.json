@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-09-audiovisual-speech-fusion",
+  "sha256": "4056ee1ec741242f1fe95861f85147e5e8cde58dece289203ea8fa1328848006",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-09-audiovisual-speech-fusion.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

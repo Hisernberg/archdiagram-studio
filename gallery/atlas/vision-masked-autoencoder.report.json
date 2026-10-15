@@ -1,0 +1,11 @@
+{
+  "id": "vision-masked-autoencoder",
+  "sha256": "588c0f6c827709de4a9ebf1fc51b154aacf241ca81a35ba648e0777b318cff05",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-masked-autoencoder.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

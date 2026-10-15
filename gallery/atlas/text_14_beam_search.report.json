@@ -1,0 +1,11 @@
+{
+  "id": "text_14_beam_search",
+  "sha256": "6ed8286e5a2171da2878133d0e3af55cd82a364ff2ed405628a64c04bb7ae0c2",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_14_beam_search.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

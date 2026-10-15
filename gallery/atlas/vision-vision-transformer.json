@@ -1,0 +1,23 @@
+{
+  "id": "vision-vision-transformer",
+  "title": "Vision Transformer: an image becomes a token sequence",
+  "family": "vision",
+  "description": "A ViT concept showing a patch grid, embeddings, class and position tokens, repeated encoder, and class readout.",
+  "caption": "Patch embeddings and a learned class token receive positions before repeated global attention blocks.",
+  "sources": [
+    "https://arxiv.org/abs/2010.11929"
+  ],
+  "assumptions": [
+    "Conceptual schematic; dimensions and details vary by implementation."
+  ],
+  "tags": [
+    "transformer",
+    "vit",
+    "patches"
+  ],
+  "nodes": 8,
+  "edges": 7,
+  "source_file": "vision-vision-transformer.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

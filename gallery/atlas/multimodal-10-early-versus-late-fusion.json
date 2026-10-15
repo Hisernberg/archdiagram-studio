@@ -1,0 +1,25 @@
+{
+  "id": "multimodal-10-early-versus-late-fusion",
+  "title": "Early fusion versus late fusion",
+  "family": "multimodal",
+  "description": "Side-by-side comparison of aligned input fusion before a joint model and weighted probability fusion after unimodal models.",
+  "caption": "Early fusion exposes cross-modal interactions to one model; late fusion combines independently produced decision values.",
+  "sources": [
+    "https://arxiv.org/abs/1705.09406",
+    "https://ai.stanford.edu/~ang/papers/icml11-MultimodalDeepLearning.pdf"
+  ],
+  "assumptions": [
+    "Conceptual fusion comparison; concatenation and weighted averaging are illustrative design choices, with 0 <= lambda <= 1.",
+    "Inputs are assumed aligned when early concatenation requires correspondence."
+  ],
+  "tags": [
+    "early-fusion",
+    "late-fusion",
+    "comparison"
+  ],
+  "nodes": 10,
+  "edges": 8,
+  "source_file": "multimodal-10-early-versus-late-fusion.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

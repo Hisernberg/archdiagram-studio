@@ -1,0 +1,55 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb}
+\usetikzlibrary{arrows.meta,calc,positioning,fit,backgrounds,shapes.geometric,matrix,decorations.pathreplacing,patterns}
+\definecolor{ink}{gray}{0.08}
+\definecolor{wash}{gray}{0.965}
+\definecolor{soft}{gray}{0.45}
+\tikzset{box/.style={draw=ink,line width=.65pt,fill=white,align=center,inner sep=4pt,outer sep=0pt,font=\small},flow/.style={draw=ink,line width=.65pt,-{Latex[length=1.8mm,width=1.3mm]},rounded corners=2pt},annotation/.style={font=\scriptsize,text=soft,align=center},groupbox/.style={draw=soft,dashed,line width=.45pt,fill=wash}}
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=-1cm,font=\rmfamily,text=ink]
+
+\path[use as bounding box] (0,0) rectangle (16,9);
+\node[anchor=west,font=\large\bfseries] at (.2,.4) {Supervisor with tool-wrapped specialist agents};
+\node[anchor=west,font=\footnotesize,text=soft] at (.2,.85) {Conceptual centralized orchestration | each specialist has a separate local context};
+\begin{pgfonlayer}{background}
+\draw[groupbox] (3.25,1.6) rectangle (6.95,7.699999999999999);
+\node[anchor=west,font=\scriptsize,fill=white,inner sep=2pt] at (3.4,1.6) {Main-agent state};
+\draw[groupbox] (8.35,1.5999999999999999) rectangle (15.45,3.2);
+\node[anchor=west,font=\scriptsize,fill=white,inner sep=2pt] at (8.5,1.5999999999999999) {Specialist 1 boundary};
+\draw[groupbox] (8.35,3.8) rectangle (15.45,5.4);
+\node[anchor=west,font=\scriptsize,fill=white,inner sep=2pt] at (8.5,3.8) {Specialist 2 boundary};
+\draw[groupbox] (8.35,6.0) rectangle (15.45,7.6);
+\node[anchor=west,font=\scriptsize,fill=white,inner sep=2pt] at (8.5,6.0) {Specialist 3 boundary};
+\end{pgfonlayer}
+\node[box,minimum width=2.25cm,minimum height=0.8cm,text width=2.0cm] (user) at (1.45,3.25) {User request};
+\node[box,minimum width=2.25cm,minimum height=0.8cm,text width=2.0cm] (answer) at (1.45,5.65) {User response};
+\node[box,minimum width=2.9cm,minimum height=1.2cm,text width=2.65cm] (supervisor) at (5.1,4.45) {Supervisor\\route and synthesize};
+\node[box,fill=wash,minimum width=2.9cm,minimum height=1.0cm,text width=2.65cm] (state) at (5.1,6.9) {Conversation and\\coordination state};
+\node[box,minimum width=2.8cm,minimum height=0.9cm,text width=2.55cm] (agent1) at (10.0,2.4) {Research specialist};
+\node[box,minimum width=2.7cm,minimum height=0.9cm,text width=2.45cm] (tool1) at (13.65,2.4) {Search / sources};
+\node[box,minimum width=2.8cm,minimum height=0.9cm,text width=2.55cm] (agent2) at (10.0,4.6) {Data specialist};
+\node[box,minimum width=2.7cm,minimum height=0.9cm,text width=2.45cm] (tool2) at (13.65,4.6) {Query tools};
+\node[box,minimum width=2.8cm,minimum height=0.9cm,text width=2.55cm] (agent3) at (10.0,6.8) {Code specialist};
+\node[box,minimum width=2.7cm,minimum height=0.9cm,text width=2.45cm] (tool3) at (13.65,6.8) {Execution tools};
+\begin{pgfonlayer}{background}
+\draw[flow,dashed] (agent1.east) -- (tool1.west);
+\draw[flow,dashed] (agent2.east) -- (tool2.west);
+\draw[flow,dashed] (agent3.east) -- (tool3.west);
+\draw[flow] (user.east) -- (3.0,3.25) -- (5.1,3.25) -- (supervisor.north);
+\draw[flow] (supervisor.west) -- (3.0,4.45) -- (3.0,5.65) -- (answer.east);
+\end{pgfonlayer}
+\draw[flow] (4.8,5.05) -- (4.8,6.4);
+\node[font=\scriptsize,fill=white,inner sep=1.5pt,anchor=east] at (4.7,5.85) {update};
+\draw[flow] (5.4,6.4) -- (5.4,5.05);
+\node[font=\scriptsize,fill=white,inner sep=1.5pt,anchor=west] at (5.5,5.85) {read};
+\draw[flow,dashed] (6.55,3.98) -- (7.3,3.98) -- (7.3,2.1999999999999997) -- (8.6,2.1999999999999997);
+\draw[flow] (8.6,2.6) -- (7.95,2.6) -- (7.95,4.13) -- (6.55,4.13);
+\draw[flow,dashed] (6.55,4.45) -- (7.65,4.45) -- (7.65,4.3999999999999995) -- (8.6,4.3999999999999995);
+\draw[flow] (8.6,4.8) -- (7.95,4.8) -- (7.95,4.7) -- (6.55,4.7);
+\draw[flow,dashed] (6.55,4.93) -- (7.3,4.93) -- (7.3,6.6) -- (8.6,6.6);
+\draw[flow] (8.6,7.0) -- (7.95,7.0) -- (7.95,4.99) -- (6.55,4.99);
+\node[annotation,anchor=center,text width=9.5cm] at (10.6,8.1) {Dashed: scoped task invocation. Solid return paths: specialist results. Local tool results are abstracted inside each boundary.};
+\node[anchor=west,align=left,font=\scriptsize,text=soft,text width=15.6cm] at (.2,8.75) {The supervisor supplies scoped tasks and combines returned results; specialists do not directly answer the user.};
+\end{tikzpicture}
+\end{document}

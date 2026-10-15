@@ -1,0 +1,11 @@
+{
+  "id": "agents-15-distributed-serving",
+  "sha256": "0906185edada323f3c9dcb034c9dd7daa3bc034db3bd4ecbf432d46fef661ce3",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-15-distributed-serving.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "text_06_multi_head_attention",
+  "title": "Multi-head attention: separate projections, joined outputs",
+  "family": "text",
+  "description": "Parallel head-specific query/key/value projections and attention maps followed by feature concatenation and output projection.",
+  "caption": "Each head computes its own attention map; concatenation precedes the shared output projection.",
+  "sources": [
+    "https://arxiv.org/abs/1706.03762"
+  ],
+  "assumptions": [
+    "Representative heads 1, i, and h stand for an arbitrary number of heads.",
+    "Feature widths are symbolic and need not be assigned numeric values."
+  ],
+  "tags": [
+    "multi-head",
+    "attention",
+    "parallel-branches"
+  ],
+  "nodes": 13,
+  "edges": 13,
+  "source_file": "text_06_multi_head_attention.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

@@ -1,0 +1,24 @@
+{
+  "id": "text_19_bidirectional_lstm",
+  "title": "Bidirectional LSTM with aligned token readouts",
+  "family": "text",
+  "description": "Two oppositely directed LSTM state chains share aligned inputs and feed per-position concatenation/readout functions.",
+  "caption": "Forward and backward recurrences run in opposite directions; each readout combines states aligned to the same input.",
+  "sources": [
+    "https://www.cs.toronto.edu/~graves/nn_2005.pdf"
+  ],
+  "assumptions": [
+    "Representative positions are drawn; ellipsis edges summarize intermediate steps.",
+    "Cell states and LSTM gates are contained inside the LSTM blocks; this is a noncausal sequence encoder."
+  ],
+  "tags": [
+    "bidirectional",
+    "LSTM",
+    "sequence-labeling"
+  ],
+  "nodes": 16,
+  "edges": 22,
+  "source_file": "text_19_bidirectional_lstm.tex",
+  "width_cm": 16,
+  "height_cm": 10
+}

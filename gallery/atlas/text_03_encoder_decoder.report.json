@@ -1,0 +1,11 @@
+{
+  "id": "text_03_encoder_decoder",
+  "sha256": "a02fa55e79ba05d33e93c0f467c7af3885f2f43ff50556781954ab7e198d0448",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_03_encoder_decoder.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

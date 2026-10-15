@@ -1,0 +1,27 @@
+{
+  "id": "agents-12-event-workflow",
+  "title": "Event-driven agent workflow with durable state",
+  "family": "agents",
+  "description": "An original asynchronous agent coordinator with event inbox, deduplication identity, append-only log, state checkpoint, task outbox, worker, and completion-event feedback.",
+  "caption": "Events drive state transitions and task dispatch; deduplication and recovery depend on persistence and worker semantics.",
+  "sources": [
+    "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing",
+    "https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "An original event-driven agent design informed by event-sourcing and asynchronous request/reply patterns; no exactly-once guarantee is claimed.",
+    "The figure does not prescribe a distributed transaction between event log, checkpoint, and outbox; consistency and retry behavior require implementation choices."
+  ],
+  "tags": [
+    "agent",
+    "events",
+    "asynchronous",
+    "durable state"
+  ],
+  "nodes": 10,
+  "edges": 11,
+  "source_file": "agents-12-event-workflow.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

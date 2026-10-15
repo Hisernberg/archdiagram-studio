@@ -1,0 +1,27 @@
+{
+  "id": "agents-02-plan-execute",
+  "title": "Plan and execute with progress-aware replanning",
+  "family": "agents",
+  "description": "An original U-shaped view of the official plan-and-execute pattern, separating planner, ordered plan, executor, and progress-based replanning.",
+  "caption": "An explicit plan drives execution; completed-step evidence supports either replanning or a final response.",
+  "sources": [
+    "https://www.langchain.com/blog/planning-agents",
+    "https://arxiv.org/abs/2305.04091"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "Illustrates serial plan steps, not a dependency scheduler.",
+    "Progress is passed to a replan/finish controller; criteria and iteration bounds are application choices."
+  ],
+  "tags": [
+    "agent",
+    "planning",
+    "execution",
+    "state"
+  ],
+  "nodes": 8,
+  "edges": 8,
+  "source_file": "agents-02-plan-execute.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

@@ -1,0 +1,24 @@
+{
+  "id": "audio-06-attention-asr",
+  "title": "Attention-based speech recognition",
+  "family": "audio",
+  "description": "A LAS-inspired listener, attention memory, and recurrent character speller.",
+  "caption": "A listener encodes audio; the speller queries its memory for each output character.",
+  "sources": [
+    "https://arxiv.org/abs/1508.01211"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "The listener is conceptual; its pyramid depth and temporal reduction factor are omitted."
+  ],
+  "tags": [
+    "ASR",
+    "attention",
+    "LAS"
+  ],
+  "nodes": 8,
+  "edges": 9,
+  "source_file": "audio-06-attention-asr.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

@@ -1,0 +1,23 @@
+{
+  "id": "multimodal-03-image-captioning",
+  "title": "Attention-based image captioning",
+  "family": "multimodal",
+  "description": "Image captioning with recurrent visual attention, a token likelihood objective, and an autoregressive word feedback loop.",
+  "caption": "Visual memory is reused at each token step; the hidden state controls attention and sampled words feed the decoder.",
+  "sources": [
+    "https://proceedings.mlr.press/v37/xuc15.html"
+  ],
+  "assumptions": [
+    "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+  ],
+  "tags": [
+    "captioning",
+    "autoregressive",
+    "visual-attention"
+  ],
+  "nodes": 9,
+  "edges": 10,
+  "source_file": "multimodal-03-image-captioning.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

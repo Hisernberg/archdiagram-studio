@@ -1,0 +1,402 @@
+[
+  {
+    "id": "agents-01-react-loop",
+    "title": "ReAct: interleaved reasoning, action, and observation",
+    "family": "agents",
+    "description": "A ReAct-style agent explicitly feeds tool observations back into its trajectory context, with a separate finish path.",
+    "caption": "Each observation updates the trajectory before another action or a final response is selected.",
+    "sources": [
+      "https://arxiv.org/abs/2210.03629"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "The diagram abstracts the paper's thought/action/observation sequence and does not expose or prescribe private model reasoning.",
+      "The finish criterion is task dependent; no convergence or correctness guarantee is implied."
+    ],
+    "tags": [
+      "agent",
+      "ReAct",
+      "feedback",
+      "tools"
+    ],
+    "nodes": 7,
+    "edges": 7,
+    "source_file": "agents-01-react-loop.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-02-plan-execute",
+    "title": "Plan and execute with progress-aware replanning",
+    "family": "agents",
+    "description": "An original U-shaped view of the official plan-and-execute pattern, separating planner, ordered plan, executor, and progress-based replanning.",
+    "caption": "An explicit plan drives execution; completed-step evidence supports either replanning or a final response.",
+    "sources": [
+      "https://www.langchain.com/blog/planning-agents",
+      "https://arxiv.org/abs/2305.04091"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "Illustrates serial plan steps, not a dependency scheduler.",
+      "Progress is passed to a replan/finish controller; criteria and iteration bounds are application choices."
+    ],
+    "tags": [
+      "agent",
+      "planning",
+      "execution",
+      "state"
+    ],
+    "nodes": 8,
+    "edges": 8,
+    "source_file": "agents-02-plan-execute.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-03-tool-protocol",
+    "title": "Tool-call and result protocol",
+    "family": "agents",
+    "description": "An original three-lane sequence diagram of the OpenAI function-call/output contract, with application-side execution authority and call-id linkage.",
+    "caption": "The application executes the function and returns output linked to the model's call identifier.",
+    "sources": [
+      "https://developers.openai.com/api/docs/guides/function-calling"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "Uses generic names for a single illustrative function call; concrete API item types differ by API.",
+      "Validation and execution policy are application responsibilities and are shown as explicit application steps."
+    ],
+    "tags": [
+      "protocol",
+      "tool calling",
+      "sequence",
+      "application boundary"
+    ],
+    "nodes": 3,
+    "edges": 6,
+    "source_file": "agents-03-tool-protocol.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-04-bounded-reflection",
+    "title": "Bounded reflection and revision",
+    "family": "agents",
+    "description": "An original bounded refinement controller inspired by Self-Refine, with candidate, self-feedback, revision, and explicit stop/budget paths.",
+    "caption": "Feedback can guide a revision, while a stopping rule or revision budget bounds the loop; feedback may itself be wrong.",
+    "sources": [
+      "https://arxiv.org/abs/2303.17651"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "The finite revision budget and recorded stop reason are explicit design additions, not claimed paper guarantees.",
+      "Task and rubric remain available to generation, feedback, and revision; arrows emphasize changing artifacts."
+    ],
+    "tags": [
+      "agent",
+      "self-refine",
+      "reflection",
+      "bounded loop"
+    ],
+    "nodes": 7,
+    "edges": 8,
+    "source_file": "agents-04-bounded-reflection.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-05-supervisor",
+    "title": "Supervisor with tool-wrapped specialist agents",
+    "family": "agents",
+    "description": "An original supervisor-centered topology showing scoped specialist invocation, result returns, main-agent conversation state, and local tool boundaries.",
+    "caption": "The supervisor supplies scoped tasks and combines returned results; specialists do not directly answer the user.",
+    "sources": [
+      "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "Specialists are tool wrapped and return to the supervisor; no direct specialist-to-user path is shown.",
+      "Local tool-call/result detail is abstracted; specialties are illustrative."
+    ],
+    "tags": [
+      "multi-agent",
+      "supervisor",
+      "state",
+      "boundaries"
+    ],
+    "nodes": 10,
+    "edges": 13,
+    "source_file": "agents-05-supervisor.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-06-parallel-research",
+    "title": "Parallel research with evidence reduction",
+    "family": "agents",
+    "description": "An original fan-out/fan-in research design with scoped parallel workers, explicit evidence packets, and a reducer before final synthesis.",
+    "caption": "Scoped research branches return source-linked claims; the reducer checks coverage and resolves conflicts before synthesis.",
+    "sources": [
+      "https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/",
+      "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "Applies map/reduce and orchestrator/worker ideas to research; this is not a reproduction of the MapReduce system architecture.",
+      "Coverage checks and conflict resolution are application steps; shared source bias can remain."
+    ],
+    "tags": [
+      "multi-agent",
+      "parallel",
+      "research",
+      "reducer"
+    ],
+    "nodes": 10,
+    "edges": 11,
+    "source_file": "agents-06-parallel-research.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-07-debate-adjudicator",
+    "title": "Debate with an explicit adjudicator",
+    "family": "agents",
+    "description": "An original two-round debate topology with transcript exchange followed by a distinct adjudicator, rather than assuming consensus is correct.",
+    "caption": "Agents revise after reading both arguments; a separate adjudicator records a decision and any unresolved disagreement.",
+    "sources": [
+      "https://arxiv.org/abs/2305.14325"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "A separate adjudicator and explicit disagreement output are design additions inspired by the debate pattern.",
+      "Two rounds are illustrative; correlated mistakes and adjudicator errors remain possible."
+    ],
+    "tags": [
+      "multi-agent",
+      "debate",
+      "adjudication",
+      "transcript"
+    ],
+    "nodes": 7,
+    "edges": 8,
+    "source_file": "agents-07-debate-adjudicator.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-08-rag-lifecycles",
+    "title": "RAG: separate indexing from per-query generation",
+    "family": "agents",
+    "description": "An original two-lane RAG architecture separating document indexing from query-time encoding, retrieval, and generation, including an explicit query-to-generator path.",
+    "caption": "Indexing writes document representations; a query retrieves passages that condition the generator alongside the query.",
+    "sources": [
+      "https://arxiv.org/abs/2005.11401"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "Uses a dense retrieval abstraction; training, index refresh, ranking, and passage storage implementations are omitted.",
+      "Linked passages are included in the retrieval-index abstraction; no index size or exact tensor dimension is asserted."
+    ],
+    "tags": [
+      "RAG",
+      "indexing",
+      "retrieval",
+      "generation"
+    ],
+    "nodes": 9,
+    "edges": 11,
+    "source_file": "agents-08-rag-lifecycles.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-09-hybrid-fusion",
+    "title": "Hybrid retrieval with reciprocal rank fusion",
+    "family": "agents",
+    "description": "An original two-branch hybrid retrieval diagram that fuses lexical and vector rank lists with the reciprocal-rank formula and a document-id merge.",
+    "caption": "Fuse document ranks from lexical and dense retrieval, deduplicate by document id, then select the context window.",
+    "sources": [
+      "https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion",
+      "https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "Two equal-weight child lists and illustrative document ids are shown; retrieval scores are not added directly.",
+      "The rank constant and rank-window sizes are implementation choices; no quality guarantee is implied."
+    ],
+    "tags": [
+      "retrieval",
+      "hybrid",
+      "RRF",
+      "fusion"
+    ],
+    "nodes": 9,
+    "edges": 9,
+    "source_file": "agents-09-hybrid-fusion.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-10-corrective-rag",
+    "title": "Corrective RAG with route-dependent evidence",
+    "family": "agents",
+    "description": "An original CRAG logic view with a retrieval evaluator controlling refined-corpus, web-search, and combined-evidence paths into generation.",
+    "caption": "The evaluator selects refined retrieved evidence, web evidence, or both; its routing decisions can still be wrong.",
+    "sources": [
+      "https://arxiv.org/abs/2401.15884",
+      "https://arxiv.org/html/2401.15884v3"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "Correct/incorrect/ambiguous route semantics follow CRAG; evaluator internals and knowledge-refinement internals are abstracted.",
+      "The query is shared request context for evaluation, rewriting, and generation; branch arrows emphasize evidence and route control.",
+      "Evidence assembly consumes only route-selected inputs; it does not wait for a branch that was not executed."
+    ],
+    "tags": [
+      "RAG",
+      "CRAG",
+      "corrective retrieval",
+      "conditional control"
+    ],
+    "nodes": 8,
+    "edges": 8,
+    "source_file": "agents-10-corrective-rag.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-11-memory-scopes",
+    "title": "Thread state and cross-session memory",
+    "family": "agents",
+    "description": "An original two-boundary memory diagram showing current-thread state reads and feedback updates, plus selected writes and cross-session reads of a namespaced long-term store.",
+    "caption": "Thread-scoped history supports the current run; namespaced long-term memory is read and updated across sessions.",
+    "sources": [
+      "https://docs.langchain.com/oss/python/concepts/memory",
+      "https://arxiv.org/abs/2310.08560"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "The memory write policy is an illustrative application component, not an automatic guarantee of accurate memories.",
+      "Memory recall is an explicit data retrieval operation; no online model training is shown."
+    ],
+    "tags": [
+      "agent",
+      "memory",
+      "state",
+      "session boundaries"
+    ],
+    "nodes": 7,
+    "edges": 8,
+    "source_file": "agents-11-memory-scopes.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-12-event-workflow",
+    "title": "Event-driven agent workflow with durable state",
+    "family": "agents",
+    "description": "An original asynchronous agent coordinator with event inbox, deduplication identity, append-only log, state checkpoint, task outbox, worker, and completion-event feedback.",
+    "caption": "Events drive state transitions and task dispatch; deduplication and recovery depend on persistence and worker semantics.",
+    "sources": [
+      "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing",
+      "https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "An original event-driven agent design informed by event-sourcing and asynchronous request/reply patterns; no exactly-once guarantee is claimed.",
+      "The figure does not prescribe a distributed transaction between event log, checkpoint, and outbox; consistency and retry behavior require implementation choices."
+    ],
+    "tags": [
+      "agent",
+      "events",
+      "asynchronous",
+      "durable state"
+    ],
+    "nodes": 10,
+    "edges": 11,
+    "source_file": "agents-12-event-workflow.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-13-human-approval",
+    "title": "Human approval checkpoint before side effects",
+    "family": "agents",
+    "description": "An original pause-and-resume approval architecture with persisted proposal state, a human review boundary, and explicit approve/execute and reject/cancel paths.",
+    "caption": "Persist the proposal and paused state, obtain a human decision, then resume to execute or cancel.",
+    "sources": [
+      "https://docs.langchain.com/oss/python/langgraph/interrupts"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "Illustrates a workflow configured to interrupt before the side effect; the checkpoint is not a general guarantee of all tool safety.",
+      "Authentication, proposal freshness, and replay/side-effect idempotency are application concerns beyond this conceptual figure."
+    ],
+    "tags": [
+      "agent",
+      "human in the loop",
+      "approval",
+      "checkpoint"
+    ],
+    "nodes": 8,
+    "edges": 8,
+    "source_file": "agents-13-human-approval.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-14-sandbox-execution",
+    "title": "Sandboxed code execution with explicit result capture",
+    "family": "agents",
+    "description": "An original execution-service workflow with request validation, configured runtime launch, resource/access policy, sandboxed process, ephemeral files, and captured-result feedback.",
+    "caption": "Validate and launch code under an explicit runtime policy; return captured outputs and deliberately exported artifacts.",
+    "sources": [
+      "https://gvisor.dev/docs/architecture_guide/intro/",
+      "https://gvisor.dev/docs/user_guide/quick_start/docker/"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "The generic workflow is informed by gVisor's runtime isolation boundary; it is not a diagram of the Sentry/Gofer internals.",
+      "Resource limits, mounts, network access, and artifact export are illustrative configured controls; no perfect-containment guarantee is implied."
+    ],
+    "tags": [
+      "agent",
+      "sandbox",
+      "code execution",
+      "security boundary"
+    ],
+    "nodes": 7,
+    "edges": 9,
+    "source_file": "agents-14-sandbox-execution.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "agents-15-distributed-serving",
+    "title": "Distributed inference with tensor-parallel serving",
+    "family": "agents",
+    "description": "An original distributed inference serving topology with a request queue, active-batch scheduler, a two-rank tensor-parallel replica, per-rank KV state, collective communication, and a client response stream.",
+    "caption": "A scheduler dispatches active sequences to a tensor-parallel replica; local KV state supports iterative token generation.",
+    "sources": [
+      "https://docs.vllm.ai/en/latest/serving/parallelism_scaling/",
+      "https://arxiv.org/abs/2309.06180"
+    ],
+    "assumptions": [
+      "Conceptual original schematic; implementation details and dimensions vary.",
+      "Two ranks are illustrative; exact placement, parallelism degree, batch policy, and KV-cache management vary.",
+      "A representative leader output path is shown; sampling/detokenization and backend-specific control/data exchange are abstracted.",
+      "KV state arrows indicate state access, not a claim that one rank only reads while another only writes."
+    ],
+    "tags": [
+      "serving",
+      "distributed inference",
+      "tensor parallelism",
+      "KV cache"
+    ],
+    "nodes": 9,
+    "edges": 11,
+    "source_file": "agents-15-distributed-serving.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  }
+]

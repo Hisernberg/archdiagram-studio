@@ -1,0 +1,24 @@
+{
+  "id": "audio-15-fastspeech2-variance",
+  "title": "FastSpeech 2-style variance adaptor",
+  "family": "audio",
+  "description": "Parallel duration, pitch, and energy prediction with explicit length expansion.",
+  "caption": "Duration expands token states into frames; pitch and energy embeddings enrich the acoustic representation.",
+  "sources": [
+    "https://arxiv.org/abs/2006.04558"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "This phoneme-level variance-adaptor abstraction does not prescribe every pitch or energy granularity choice."
+  ],
+  "tags": [
+    "TTS",
+    "FastSpeech2",
+    "duration"
+  ],
+  "nodes": 11,
+  "edges": 13,
+  "source_file": "audio-15-fastspeech2-variance.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

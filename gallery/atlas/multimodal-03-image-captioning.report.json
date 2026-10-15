@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-03-image-captioning",
+  "sha256": "3523a60569ae1fdf8c6bea4ed84c887ce48ebcf344c71a2137b18ba002ef2ebe",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-03-image-captioning.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

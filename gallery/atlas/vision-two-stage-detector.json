@@ -1,0 +1,23 @@
+{
+  "id": "vision-two-stage-detector",
+  "title": "Two-stage detection: propose regions, then recognize them",
+  "family": "vision",
+  "description": "A Faster R-CNN concept with shared image features, proposal generation/selection, RoI pooling, and two prediction branches.",
+  "caption": "The region proposal network and RoI feature extraction share a backbone feature map.",
+  "sources": [
+    "https://arxiv.org/abs/1506.01497"
+  ],
+  "assumptions": [
+    "RoI pooling follows the original Faster R-CNN concept; implementation-specific backbone and anchor counts are omitted."
+  ],
+  "tags": [
+    "detection",
+    "faster-rcnn",
+    "proposals"
+  ],
+  "nodes": 11,
+  "edges": 11,
+  "source_file": "vision-two-stage-detector.tex",
+  "width_cm": 18,
+  "height_cm": 9.5
+}

@@ -1,0 +1,23 @@
+{
+  "id": "vision-residual-block",
+  "title": "Residual block: preserve an identity route",
+  "family": "vision",
+  "description": "A post-activation two-convolution residual block with an explicit identity shortcut.",
+  "caption": "The residual branch learns a correction; an identity shortcut reaches the same addition node.",
+  "sources": [
+    "https://arxiv.org/abs/1512.03385"
+  ],
+  "assumptions": [
+    "An identity shortcut assumes matching tensor shapes; projection shortcuts are outside this concept view."
+  ],
+  "tags": [
+    "cnn",
+    "residual",
+    "identity"
+  ],
+  "nodes": 6,
+  "edges": 6,
+  "source_file": "vision-residual-block.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

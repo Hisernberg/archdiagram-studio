@@ -1,0 +1,11 @@
+{
+  "id": "vision-variational-autoencoder",
+  "sha256": "c8650d6798e4564784debcb61867ff7905617350cfe238c7766b0313ef74899b",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-variational-autoencoder.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

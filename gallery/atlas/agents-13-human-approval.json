@@ -1,0 +1,26 @@
+{
+  "id": "agents-13-human-approval",
+  "title": "Human approval checkpoint before side effects",
+  "family": "agents",
+  "description": "An original pause-and-resume approval architecture with persisted proposal state, a human review boundary, and explicit approve/execute and reject/cancel paths.",
+  "caption": "Persist the proposal and paused state, obtain a human decision, then resume to execute or cancel.",
+  "sources": [
+    "https://docs.langchain.com/oss/python/langgraph/interrupts"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "Illustrates a workflow configured to interrupt before the side effect; the checkpoint is not a general guarantee of all tool safety.",
+    "Authentication, proposal freshness, and replay/side-effect idempotency are application concerns beyond this conceptual figure."
+  ],
+  "tags": [
+    "agent",
+    "human in the loop",
+    "approval",
+    "checkpoint"
+  ],
+  "nodes": 8,
+  "edges": 8,
+  "source_file": "agents-13-human-approval.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

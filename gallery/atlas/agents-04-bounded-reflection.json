@@ -1,0 +1,26 @@
+{
+  "id": "agents-04-bounded-reflection",
+  "title": "Bounded reflection and revision",
+  "family": "agents",
+  "description": "An original bounded refinement controller inspired by Self-Refine, with candidate, self-feedback, revision, and explicit stop/budget paths.",
+  "caption": "Feedback can guide a revision, while a stopping rule or revision budget bounds the loop; feedback may itself be wrong.",
+  "sources": [
+    "https://arxiv.org/abs/2303.17651"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "The finite revision budget and recorded stop reason are explicit design additions, not claimed paper guarantees.",
+    "Task and rubric remain available to generation, feedback, and revision; arrows emphasize changing artifacts."
+  ],
+  "tags": [
+    "agent",
+    "self-refine",
+    "reflection",
+    "bounded loop"
+  ],
+  "nodes": 7,
+  "edges": 8,
+  "source_file": "agents-04-bounded-reflection.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

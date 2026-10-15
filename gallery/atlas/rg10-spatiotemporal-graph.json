@@ -1,0 +1,27 @@
+{
+  "id": "rg10-spatiotemporal-graph",
+  "title": "Spatiotemporal graph forecasting",
+  "family": "robotics-graphs",
+  "description": "A graph-by-time lattice feeds an encoder state, a recurrent decoder, and a node-by-horizon forecast grid.",
+  "caption": "Conceptual graph-recurrent forecasting after Li et al. (2018); topology and temporal state inform node forecasts.",
+  "sources": [
+    "https://arxiv.org/abs/1707.01926"
+  ],
+  "assumptions": [
+    "The three-node chain, three observed times, and two forecast steps are illustrative and not DCRNN's reported dimensions.",
+    "Cells denote hidden states; per-time observation injection, diffusion filters, gates, and scheduled sampling are omitted.",
+    "Undirected vertical lines abstract spatial neighborhoods; the source DCRNN uses directed-graph diffusion.",
+    "This is a conceptual family diagram rather than an exact DCRNN computational graph."
+  ],
+  "tags": [
+    "graph-learning",
+    "spatiotemporal",
+    "forecasting",
+    "graph-recurrent"
+  ],
+  "nodes": 17,
+  "edges": 16,
+  "source_file": "rg10-spatiotemporal-graph.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

@@ -1,0 +1,25 @@
+{
+  "id": "rg01-perception-action-loop",
+  "title": "Perception--action closed loop",
+  "family": "robotics-graphs",
+  "description": "A closed physical feedback cycle with an external task reference and an explicit actuation boundary.",
+  "caption": "Conceptual sensing, estimation, control, and physical feedback; ROS control documentation informs the control interface.",
+  "sources": [
+    "https://control.ros.org/jazzy/doc/getting_started/getting_started.html"
+  ],
+  "assumptions": [
+    "Perception and estimation are conceptual additions around the documented controller/hardware interface.",
+    "Discrete-time notation is illustrative; no timing, stability, or safety guarantee is implied."
+  ],
+  "tags": [
+    "robotics",
+    "feedback",
+    "perception",
+    "control"
+  ],
+  "nodes": 6,
+  "edges": 5,
+  "source_file": "rg01-perception-action-loop.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

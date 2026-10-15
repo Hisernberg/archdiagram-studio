@@ -1,0 +1,11 @@
+{
+  "id": "rg07-graph-attention",
+  "sha256": "c8c15f61a85226459deb27042da7d803d673816040e5349f61e598a68396356e",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg07-graph-attention.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

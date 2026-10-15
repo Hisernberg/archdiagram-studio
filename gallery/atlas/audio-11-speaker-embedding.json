@@ -1,0 +1,24 @@
+{
+  "id": "audio-11-speaker-embedding",
+  "title": "Speaker embedding with statistics pooling",
+  "family": "audio",
+  "description": "An x-vector-style TDNN, temporal statistics pooling, segment embedding, and scoring backend.",
+  "caption": "Frame-level representations become a fixed-size segment embedding through mean and standard-deviation pooling.",
+  "sources": [
+    "https://www.danielpovey.com/files/2018_icassp_xvectors.pdf"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "The diagram does not prescribe a particular scoring backend. The classifier is training-only."
+  ],
+  "tags": [
+    "speaker recognition",
+    "x-vector",
+    "statistics pooling"
+  ],
+  "nodes": 10,
+  "edges": 10,
+  "source_file": "audio-11-speaker-embedding.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

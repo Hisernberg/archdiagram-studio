@@ -1,0 +1,466 @@
+[
+  {
+    "id": "vision-convolution",
+    "title": "Spatial convolution: one local response",
+    "family": "vision",
+    "description": "A shared spatial kernel, its receptive field, and the multi-channel convolution equation.",
+    "caption": "A kernel is reused at each spatial location; channel sums create each output channel.",
+    "sources": [
+      "https://docs.pytorch.org/docs/2.14/generated/torch.nn.Conv2d.html"
+    ],
+    "assumptions": [
+      "The illustrated spatial sizes are pedagogical; no model checkpoint is specified.",
+      "The equation follows the cross-correlation convention used by common deep-learning libraries."
+    ],
+    "tags": [
+      "cnn",
+      "convolution",
+      "receptive-field"
+    ],
+    "nodes": 4,
+    "edges": 0,
+    "source_file": "vision-convolution.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-residual-block",
+    "title": "Residual block: preserve an identity route",
+    "family": "vision",
+    "description": "A post-activation two-convolution residual block with an explicit identity shortcut.",
+    "caption": "The residual branch learns a correction; an identity shortcut reaches the same addition node.",
+    "sources": [
+      "https://arxiv.org/abs/1512.03385"
+    ],
+    "assumptions": [
+      "An identity shortcut assumes matching tensor shapes; projection shortcuts are outside this concept view."
+    ],
+    "tags": [
+      "cnn",
+      "residual",
+      "identity"
+    ],
+    "nodes": 6,
+    "edges": 6,
+    "source_file": "vision-residual-block.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-dense-block",
+    "title": "Dense block: accumulate earlier feature maps",
+    "family": "vision",
+    "description": "A three-layer DenseNet concept with explicit growing feature banks and reuse routes.",
+    "caption": "Each transform reads the complete feature bank; concatenation appends its new channels.",
+    "sources": [
+      "https://arxiv.org/abs/1608.06993"
+    ],
+    "assumptions": [
+      "Conceptual schematic; dimensions and details vary by implementation."
+    ],
+    "tags": [
+      "cnn",
+      "densenet",
+      "concatenation"
+    ],
+    "nodes": 7,
+    "edges": 9,
+    "source_file": "vision-dense-block.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-unet",
+    "title": "U-Net: contract for context, expand for localization",
+    "family": "vision",
+    "description": "A reduced U-Net hierarchy with contracting and expanding paths and aligned skip concatenations.",
+    "caption": "Skip features are aligned and concatenated with the upsampled decoder stream at matching scales.",
+    "sources": [
+      "https://arxiv.org/abs/1505.04597"
+    ],
+    "assumptions": [
+      "Two resolution changes illustrate the topology rather than reproduce the depth of a published checkpoint.",
+      "Alignment represents the cropping required by the original valid-convolution formulation."
+    ],
+    "tags": [
+      "segmentation",
+      "unet",
+      "encoder-decoder"
+    ],
+    "nodes": 7,
+    "edges": 8,
+    "source_file": "vision-unet.tex",
+    "width_cm": 18,
+    "height_cm": 10
+  },
+  {
+    "id": "vision-feature-pyramid",
+    "title": "Feature pyramid: bottom-up detail, top-down semantics",
+    "family": "vision",
+    "description": "A four-scale FPN with lateral 1x1 projections, top-down upsampling, addition, and 3x3 smoothing.",
+    "caption": "Lateral projections combine backbone features with upsampled coarse features before spatial smoothing.",
+    "sources": [
+      "https://arxiv.org/abs/1612.03144"
+    ],
+    "assumptions": [
+      "Conceptual schematic; dimensions and details vary by implementation."
+    ],
+    "tags": [
+      "detection",
+      "fpn",
+      "multiscale"
+    ],
+    "nodes": 16,
+    "edges": 18,
+    "source_file": "vision-feature-pyramid.tex",
+    "width_cm": 18,
+    "height_cm": 10.5
+  },
+  {
+    "id": "vision-vision-transformer",
+    "title": "Vision Transformer: an image becomes a token sequence",
+    "family": "vision",
+    "description": "A ViT concept showing a patch grid, embeddings, class and position tokens, repeated encoder, and class readout.",
+    "caption": "Patch embeddings and a learned class token receive positions before repeated global attention blocks.",
+    "sources": [
+      "https://arxiv.org/abs/2010.11929"
+    ],
+    "assumptions": [
+      "Conceptual schematic; dimensions and details vary by implementation."
+    ],
+    "tags": [
+      "transformer",
+      "vit",
+      "patches"
+    ],
+    "nodes": 8,
+    "edges": 7,
+    "source_file": "vision-vision-transformer.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-shifted-windows",
+    "title": "Shifted-window attention: connect neighboring windows",
+    "family": "vision",
+    "description": "Regular and shifted window grids linked to alternating Swin attention blocks and boundary masking.",
+    "caption": "Alternating regular and shifted partitions creates cross-window communication without global attention.",
+    "sources": [
+      "https://arxiv.org/abs/2103.14030"
+    ],
+    "assumptions": [
+      "An eight-by-eight token grid with four-token windows illustrates the two-token partition shift."
+    ],
+    "tags": [
+      "transformer",
+      "swin",
+      "window-attention"
+    ],
+    "nodes": 4,
+    "edges": 2,
+    "source_file": "vision-shifted-windows.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-masked-autoencoder",
+    "title": "Masked autoencoder: encode only visible image patches",
+    "family": "vision",
+    "description": "An asymmetric masked autoencoder with visible-token encoding, mask-token restoration, and masked-pixel objective.",
+    "caption": "A lightweight decoder restores missing positions; reconstruction loss is evaluated on masked patches.",
+    "sources": [
+      "https://arxiv.org/abs/2111.06377"
+    ],
+    "assumptions": [
+      "Conceptual schematic; dimensions and details vary by implementation."
+    ],
+    "tags": [
+      "self-supervised",
+      "mae",
+      "masking"
+    ],
+    "nodes": 9,
+    "edges": 9,
+    "source_file": "vision-masked-autoencoder.tex",
+    "width_cm": 18,
+    "height_cm": 10
+  },
+  {
+    "id": "vision-deterministic-autoencoder",
+    "title": "Deterministic autoencoder: compress and reconstruct",
+    "family": "vision",
+    "description": "A deterministic encoder-decoder bottleneck with reconstruction paths from input and output into the objective.",
+    "caption": "The compact code is a deterministic function of the input; reconstruction error trains both paths.",
+    "sources": [
+      "https://www.cs.toronto.edu/~hinton/absps/science.pdf"
+    ],
+    "assumptions": [
+      "This general image autoencoder concept does not reproduce the layer widths or pretraining of the cited work."
+    ],
+    "tags": [
+      "autoencoder",
+      "representation",
+      "reconstruction"
+    ],
+    "nodes": 6,
+    "edges": 6,
+    "source_file": "vision-deterministic-autoencoder.tex",
+    "width_cm": 16,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-variational-autoencoder",
+    "title": "Variational autoencoder: a distribution at the bottleneck",
+    "family": "vision",
+    "description": "A VAE with posterior parameters, noise reparameterization, reconstruction likelihood and KL objective paths.",
+    "caption": "Reparameterized samples connect reconstruction learning to a posterior regularized toward the prior.",
+    "sources": [
+      "https://arxiv.org/abs/1312.6114"
+    ],
+    "assumptions": [
+      "A diagonal Gaussian posterior and standard-normal prior are shown; decoder likelihood is abstract."
+    ],
+    "tags": [
+      "vae",
+      "generative",
+      "latent-variable"
+    ],
+    "nodes": 11,
+    "edges": 14,
+    "source_file": "vision-variational-autoencoder.tex",
+    "width_cm": 18,
+    "height_cm": 10
+  },
+  {
+    "id": "vision-gan",
+    "title": "Adversarial generation: two models, one learning game",
+    "family": "vision",
+    "description": "A two-player GAN with shared discriminator calls, real and generated data paths, and generator update feedback.",
+    "caption": "The discriminator shares parameters across real and generated examples; gradient feedback updates both players.",
+    "sources": [
+      "https://arxiv.org/abs/1406.2661"
+    ],
+    "assumptions": [
+      "The original minimax objective is shown; practical generator losses can differ."
+    ],
+    "tags": [
+      "gan",
+      "adversarial",
+      "training"
+    ],
+    "nodes": 9,
+    "edges": 11,
+    "source_file": "vision-gan.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-ddpm",
+    "title": "Denoising diffusion: corrupt forward, learn the reverse",
+    "family": "vision",
+    "description": "A DDPM forward/reverse timeline and noise-prediction training graph with sampled noise and time.",
+    "caption": "Training predicts the sampled noise at a random time; generation repeatedly applies the learned reverse transition.",
+    "sources": [
+      "https://arxiv.org/abs/2006.11239"
+    ],
+    "assumptions": [
+      "Conceptual schematic; dimensions and details vary by implementation."
+    ],
+    "tags": [
+      "diffusion",
+      "ddpm",
+      "denoising"
+    ],
+    "nodes": 10,
+    "edges": 12,
+    "source_file": "vision-ddpm.tex",
+    "width_cm": 18,
+    "height_cm": 10
+  },
+  {
+    "id": "vision-latent-diffusion",
+    "title": "Latent diffusion: denoise a compressed image representation",
+    "family": "vision",
+    "description": "Distinct latent-diffusion training and sampling panels with image compression, conditioning, reverse iteration and decoding.",
+    "caption": "An autoencoder defines latent space; a conditioned denoiser learns there and its reverse process feeds the decoder.",
+    "sources": [
+      "https://arxiv.org/abs/2112.10752"
+    ],
+    "assumptions": [
+      "This is a generic latent diffusion concept, not a particular Stable Diffusion checkpoint or conditioning encoder."
+    ],
+    "tags": [
+      "diffusion",
+      "latent-diffusion",
+      "conditioning"
+    ],
+    "nodes": 13,
+    "edges": 11,
+    "source_file": "vision-latent-diffusion.tex",
+    "width_cm": 18,
+    "height_cm": 10
+  },
+  {
+    "id": "vision-detr",
+    "title": "DETR: object queries predict an unordered set",
+    "family": "vision",
+    "description": "A DETR concept with spatial encodings, learned object queries, class/box set prediction and bipartite matching supervision.",
+    "caption": "Learned queries attend to encoded image features; bipartite matching assigns predictions to target objects.",
+    "sources": [
+      "https://arxiv.org/abs/2005.12872"
+    ],
+    "assumptions": [
+      "Conceptual schematic; dimensions and details vary by implementation."
+    ],
+    "tags": [
+      "detection",
+      "detr",
+      "set-prediction"
+    ],
+    "nodes": 11,
+    "edges": 10,
+    "source_file": "vision-detr.tex",
+    "width_cm": 18,
+    "height_cm": 10
+  },
+  {
+    "id": "vision-two-stage-detector",
+    "title": "Two-stage detection: propose regions, then recognize them",
+    "family": "vision",
+    "description": "A Faster R-CNN concept with shared image features, proposal generation/selection, RoI pooling, and two prediction branches.",
+    "caption": "The region proposal network and RoI feature extraction share a backbone feature map.",
+    "sources": [
+      "https://arxiv.org/abs/1506.01497"
+    ],
+    "assumptions": [
+      "RoI pooling follows the original Faster R-CNN concept; implementation-specific backbone and anchor counts are omitted."
+    ],
+    "tags": [
+      "detection",
+      "faster-rcnn",
+      "proposals"
+    ],
+    "nodes": 11,
+    "edges": 11,
+    "source_file": "vision-two-stage-detector.tex",
+    "width_cm": 18,
+    "height_cm": 9.5
+  },
+  {
+    "id": "vision-one-stage-detector",
+    "title": "One-stage dense detection: predictions at every pyramid level",
+    "family": "vision",
+    "description": "A RetinaNet concept with per-level shared dense heads and separate classification/focal and box-regression objectives.",
+    "caption": "Shared classification and box subnets are applied separately to each feature level; focal loss addresses class imbalance.",
+    "sources": [
+      "https://arxiv.org/abs/1708.02002"
+    ],
+    "assumptions": [
+      "Three pyramid levels illustrate the repeated mapping; they are not the complete RetinaNet scale configuration."
+    ],
+    "tags": [
+      "detection",
+      "retinanet",
+      "focal-loss"
+    ],
+    "nodes": 8,
+    "edges": 11,
+    "source_file": "vision-one-stage-detector.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-siamese-similarity",
+    "title": "Siamese image similarity: compare two shared representations",
+    "family": "vision",
+    "description": "A Siamese image pair architecture with tied CNN weights, absolute feature difference, learned similarity and pair supervision.",
+    "caption": "Both images pass through the same encoder; a learned comparison maps their absolute feature difference to similarity.",
+    "sources": [
+      "https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf"
+    ],
+    "assumptions": [
+      "Conceptual schematic; dimensions and details vary by implementation."
+    ],
+    "tags": [
+      "siamese",
+      "metric-learning",
+      "similarity"
+    ],
+    "nodes": 11,
+    "edges": 11,
+    "source_file": "vision-siamese-similarity.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-depthwise-separable",
+    "title": "Depthwise separable convolution: split spatial and channel mixing",
+    "family": "vision",
+    "description": "A channel-explicit depthwise convolution followed by cross-channel pointwise mixing and its parameter expression.",
+    "caption": "Depthwise filters act independently on input channels; pointwise filters combine the resulting channels.",
+    "sources": [
+      "https://arxiv.org/abs/1704.04861"
+    ],
+    "assumptions": [
+      "Three input channels are drawn as an illustration; channel counts and spatial sizes are symbolic."
+    ],
+    "tags": [
+      "cnn",
+      "mobilenet",
+      "depthwise"
+    ],
+    "nodes": 11,
+    "edges": 10,
+    "source_file": "vision-depthwise-separable.tex",
+    "width_cm": 18,
+    "height_cm": 9
+  },
+  {
+    "id": "vision-atrous-segmentation",
+    "title": "Atrous spatial pyramid pooling: parallel scales of context",
+    "family": "vision",
+    "description": "A DeepLabv3-style ASPP context module with three atrous branches, a 1x1 branch, image pooling, fusion and resizing.",
+    "caption": "Dilated convolutions and image-level pooling gather complementary context before concatenation and dense prediction.",
+    "sources": [
+      "https://arxiv.org/abs/1706.05587"
+    ],
+    "assumptions": [
+      "Dilation rates are symbolic and depend on output stride and implementation."
+    ],
+    "tags": [
+      "segmentation",
+      "deeplab",
+      "aspp",
+      "dilated-convolution"
+    ],
+    "nodes": 11,
+    "edges": 14,
+    "source_file": "vision-atrous-segmentation.tex",
+    "width_cm": 18,
+    "height_cm": 10.5
+  },
+  {
+    "id": "vision-patch-merging",
+    "title": "Hierarchical patch merging: trade resolution for channels",
+    "family": "vision",
+    "description": "A hierarchical patch merging operation with a 2x2 neighborhood grid, 4C concatenation, normalization and 2C projection.",
+    "caption": "Four neighboring tokens are concatenated, normalized, and projected into one token at the next stage.",
+    "sources": [
+      "https://arxiv.org/abs/2103.14030"
+    ],
+    "assumptions": [
+      "H and W are even. The 4C-to-2C projection follows the original Swin patch-merging formulation."
+    ],
+    "tags": [
+      "transformer",
+      "swin",
+      "patch-merging",
+      "hierarchy"
+    ],
+    "nodes": 9,
+    "edges": 7,
+    "source_file": "vision-patch-merging.tex",
+    "width_cm": 18,
+    "height_cm": 10
+  }
+]

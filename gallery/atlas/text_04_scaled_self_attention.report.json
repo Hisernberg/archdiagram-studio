@@ -1,0 +1,11 @@
+{
+  "id": "text_04_scaled_self_attention",
+  "sha256": "e12f4c668c744aeddcb83ccecae23d674786d52bd38c93772f1ee2466c320f60",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_04_scaled_self_attention.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

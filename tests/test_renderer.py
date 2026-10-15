@@ -89,6 +89,30 @@ class RendererTests(unittest.TestCase):
             raw=base();raw['nodes'][0]['label']='many words '*20;d=Path(tmp);(d/'spec.json').write_text(json.dumps(raw))
             result=subprocess.run([sys.executable,str(SKILL/'scripts/archdiagram.py'),'render',str(d/'spec.json'),'--out',str(d/'figure'),'--strict'],capture_output=True)
             self.assertEqual(result.returncode,2);self.assertFalse((d/'figure.svg').exists());self.assertTrue((d/'figure.report.json').exists())
+    def test_paper_svg_is_monochrome(self):
+        import re
+        colors=re.findall(r'#[0-9A-Fa-f]{6}',ad.render_svg(base(),'paper'))
+        self.assertTrue(colors)
+        self.assertTrue(all(c[1:3].lower()==c[3:5].lower()==c[5:7].lower() for c in colors))
+    def test_complete_atlas_inventory(self):
+        expected={'vision':20,'text':20,'audio':20,'multimodal':15,'agents':15,'robotics-graphs':10}
+        identities=[]
+        for family,count in expected.items():
+            folder=SKILL/'assets/atlas'/family;rows=json.loads((folder/'index.json').read_text())
+            self.assertEqual(len(rows),count)
+            for row in rows:
+                self.assertEqual(row['family'],family);self.assertTrue((folder/row['source_file']).is_file())
+                self.assertTrue(row.get('sources'));identities.append(row['id'])
+        self.assertEqual(len(identities),100);self.assertEqual(len(set(identities)),100)
+    def test_atlas_search_and_copy(self):
+        command=[sys.executable,str(SKILL/'scripts/atlas.py')]
+        result=subprocess.run(command+['find','cross attention','--family','text','--json'],capture_output=True,text=True)
+        self.assertEqual(result.returncode,0,result.stderr);rows=json.loads(result.stdout);self.assertTrue(rows)
+        with tempfile.TemporaryDirectory() as tmp:
+            out=Path(tmp)/'figure.tex';result=subprocess.run(command+['copy','--id',rows[0]['id'],'--out',str(out)],capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stderr);self.assertIn('documentclass',out.read_text())
+            out.write_text('user edit');result=subprocess.run(command+['copy','--id',rows[0]['id'],'--out',str(out)],capture_output=True,text=True)
+            self.assertNotEqual(result.returncode,0);self.assertEqual(out.read_text(),'user edit')
     def test_installer_copies_portable_skill(self):
         with tempfile.TemporaryDirectory() as tmp:
             command=[sys.executable,str(ROOT/'scripts/install_skill.py'),'--dest',tmp]

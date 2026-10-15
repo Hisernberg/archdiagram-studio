@@ -1,0 +1,11 @@
+{
+  "id": "vision-unet",
+  "sha256": "6a5db26bb352261e5218f88de982bf10cdc1cdb5bf9a6c743122bc1de32cb475",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-unet.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "agents-01-react-loop",
+  "sha256": "3af7969b8e22784d6451ae8eee612fc350affaddb67345bcd4463529268d9e12",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-01-react-loop.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

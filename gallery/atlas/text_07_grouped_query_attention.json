@@ -1,0 +1,24 @@
+{
+  "id": "text_07_grouped_query_attention",
+  "title": "Grouped-query attention: several queries share keys and values",
+  "family": "text",
+  "description": "Grouped-query attention shows explicitly shared K/V tensors within groups and distinct query-head attention computations.",
+  "caption": "A query head uses the key/value head of its assigned group; head outputs are then concatenated.",
+  "sources": [
+    "https://arxiv.org/abs/2305.13245"
+  ],
+  "assumptions": [
+    "Two representative groups with two representative queries each are a schematic partition, not a fixed model configuration.",
+    "All projections are from the same sequence X."
+  ],
+  "tags": [
+    "GQA",
+    "attention",
+    "shared-KV"
+  ],
+  "nodes": 11,
+  "edges": 8,
+  "source_file": "text_07_grouped_query_attention.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

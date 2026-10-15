@@ -1,0 +1,11 @@
+{
+  "id": "agents-09-hybrid-fusion",
+  "sha256": "b27807accd568bcd409e72fcdb32b596bfba03dc669405f16c371ee5ebdeb3b1",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-09-hybrid-fusion.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

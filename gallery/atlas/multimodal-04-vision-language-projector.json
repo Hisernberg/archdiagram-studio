@@ -1,0 +1,26 @@
+{
+  "id": "multimodal-04-vision-language-projector",
+  "title": "Vision-language projection bridge",
+  "family": "multimodal",
+  "description": "LLaVA-style alignment of image encoder patch features with a causal language model through a learned projection.",
+  "caption": "Projected image tokens and text embeddings enter one causal sequence; response tokens carry the language objective.",
+  "sources": [
+    "https://arxiv.org/abs/2304.08485",
+    "https://github.com/haotian-liu/LLaVA"
+  ],
+  "assumptions": [
+    "Conceptual LLaVA-style bridge; the linear projector follows the initial formulation, while later versions may use an MLP.",
+    "Visual token counts and embedding widths are symbolic; the diagram does not fix training-stage freeze policies."
+  ],
+  "tags": [
+    "LLaVA",
+    "projector",
+    "vision-language",
+    "causal-LM"
+  ],
+  "nodes": 9,
+  "edges": 8,
+  "source_file": "multimodal-04-vision-language-projector.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

@@ -1,0 +1,24 @@
+{
+  "id": "text_13_qlora",
+  "title": "QLoRA: quantized base storage, higher-precision computation",
+  "family": "text",
+  "description": "Conceptual QLoRA base-weight storage and dequantization path, alongside a trainable low-rank adapter branch.",
+  "caption": "Quantized base parameters stay frozen; adapters receive parameter updates while gradients can pass through the computation.",
+  "sources": [
+    "https://arxiv.org/abs/2305.14314"
+  ],
+  "assumptions": [
+    "Quantizer, storage bit width, compute dtype, and optimizer are unspecified in this conceptual view.",
+    "Frozen parameters do not mean that the base matmul blocks gradients to its inputs."
+  ],
+  "tags": [
+    "QLoRA",
+    "quantization",
+    "adapter"
+  ],
+  "nodes": 10,
+  "edges": 9,
+  "source_file": "text_13_qlora.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

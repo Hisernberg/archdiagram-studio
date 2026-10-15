@@ -1,41 +1,42 @@
 # Validation record
 
-Release: 1.0.0. Checks performed during creation on 2026-10-15.
+Release: 2.0.0. Local checks performed on 2026-10-15. Machine-readable results are in [validation.json](validation.json).
 
-## Portable code
+## Portable code and skill
 
-37 standard-library unit tests passed on local Python 3.12. Tests cover valid examples, deterministic SVG/TikZ generation, XML validity, editable/accessibility text, Unicode SVG text, literal TeX escaping, malformed schemas, duplicate IDs, invalid endpoints, coordinate handling, port offsets, geometric diagnostics, CLI exit behavior, and installer preservation of an existing modified skill. Host skill metadata validation also passed.
+**40 standard-library unit tests passed on Python 3.12.** They cover deterministic SVG/TikZ generation, XML validity, accessibility/editable text, Unicode SVG text, literal TeX escaping, malformed schemas, duplicate IDs, invalid endpoints, coordinate/port handling, geometric diagnostics, CLI behavior, installer preservation, the exact 100-figure inventory, atlas search/copy, and the monochrome paper palette. Host skill metadata validation passed.
 
-The workflow in `.github/workflows/ci.yml` adds Linux/Windows and Python 3.10/3.12 jobs plus a figure build. A workflow definition is not a claim that every remote matrix job has already passed. Check the repository's Actions page for the current hosted result.
+The portable search/copy tool needs only Python 3.10+. Native compilation uses TeX, and PDF-to-SVG/PNG conversion uses Poppler. Contact sheets additionally use Pillow. The local LuaLaTeX installation lacked some modules; the JSON renderer's tested fallback used pdfLaTeX. The native atlas uses pdfLaTeX directly with shell escape disabled.
 
-## Figure generation
+## The 100 native atlas figures
 
-The full build generated:
+All **100 standalone TikZ masters** compiled successfully. The build rejected overfull boxes and missing glyphs; none remained. Exact family counts are vision 20, text 20, audio 20, multimodal 15, agents 15, and robotics/graphs 10.
 
-- Six architecture scenes in three themes: 18 SVG, 18 TikZ, 18 PNG, and 18 SVG-derived PDFs.
-- Six additional PDFs compiled from the paper-theme TikZ sources.
-- Three native mathematical/neuron diagrams, each compiled to PDF and rasterized to PNG.
-- Eighteen geometry reports, all with zero warnings/errors under strict validation.
+The artifact audit verified all 500 figure files: 100 each of TikZ, PDF, SVG, PNG, and metadata JSON. It compared source SHA-256 values, copied masters, and current metadata; parsed every SVG as XML; validated PNG chunk lengths, CRCs, compressed-stream completion, and decoding; and checked PDF end markers. Separate pdfinfo checks successfully read every one-page vector PDF. Pixel-channel comparisons confirmed that **every atlas PNG is grayscale**.
 
-SVG masters preserve text and shapes. Every scene report records the JSON SHA-256. The native templates do not use JSON geometry linting; they are reviewed as compiled figures.
+This audit caught three truncated PNG exports and a backslash interpretation problem in an SVG description. The affected exports were rebuilt, metadata was corrected, and payload checks now run on both cached and newly generated exports. Contact-sheet generation also decodes its saved outputs before reporting success.
 
-The local LuaLaTeX binary was present but its installation lacked required modules/packages. The compiler's fallback successfully used pdfLaTeX. Generated paper-theme figures and the native templates compiled successfully with shell escape disabled. That is evidence for the tested TeX path, not a guarantee about arbitrary fonts or TeX installations.
+Atlas SVG previews use outlined glyphs from PDF conversion. The native TikZ is the editable master. The separate JSON renderer preserves SVG text and shapes and supplies six additional system examples. Three further native math/neuron templates are also included.
 
-## Visual review
+## Visual and semantic review
 
-Reviewed the six paper-theme architecture compositions and native figures, including topology, labels, crop, arrows, residual origins, and distinctions between context, tool calls, and results. Reviewed rendered gallery images and the desktop/mobile gallery layout. The initial review prompted separate ports for overlapping agent-system paths and a mobile grid-width correction. Geometry reports are heuristic; the visual and semantic reviews are separate checks.
+Six agents independently authored and reviewed their assigned families. Each compiled and rasterized its sources, checked logs, inspected contact sheets, and examined complex figures at a larger size. The combined review covered topology, labels, crop, residual origins, encoder/decoder input origins, training versus inference, objectives, message directions, waveform/grid semantics, and crossings. The primary agent also inspected family sheets and desktop/mobile gallery screenshots.
+
+Several revisions improved the actual figures: visible background routes, separate tool/result ports, explicit projection or identity assumptions, bounded storage nodes, and separated detail callouts. The diagrams are original conceptual schematics linked to primary technical sources. They are not exact reproductions of every checkpoint, and symbolic signal panels are not measured observations. Neither clean logs nor geometric checks prove architectural correctness.
 
 ## Fresh agent tasks
 
-Two agents received only the skill path and a concrete diagram request, without this implementation history. Each used the skill, created new artifacts, corrected a visual issue discovered during its own inspection, and returned source plus rendered output.
+Two agents used the initial skill with only a concrete task and the skill path. They created and visually checked new artifacts without the implementation history:
 
-1. **Query-time RAG with citation revision.** User question -> query encoder -> hybrid retrieval; an existing document index supplies candidates; passages go through a reranker and generator; a citation checker returns an answer or requests revision. The agent produced eight components and eight relationships, zero strict lint issues, editable SVG/TikZ, PNG, SVG-derived PDF, and TeX-derived PDF. It inspected full/reduced renders and both PDF routes. The indexing pipeline remained outside scope.
-2. **Single-head cross-attention.** Decoder states supply Q; encoder states supply K and V. The agent produced the requested scaled dot-product formula and appropriate sequence dimensions without adding a mask, residual, or output projection. It compiled the native TeX, checked the one-page vector PDF and log, and inspected full and 900 px renders. The reviewed source is included as the cross-attention template.
+1. **Query-time RAG with citation revision:** eight components/eight relationships, an existing document index, retrieval, reranking, generation, citation checking, and an explicit revision route. Strict lint reported zero issues; editable SVG/TikZ, PNG, and both SVG-derived and TeX-derived PDFs were produced.
+2. **Single-head cross-attention:** decoder states supplied Q, encoder states supplied K/V, with the scaled dot-product formula and appropriate sequence dimensions. No unrequested mask, residual, or output projection was introduced. Compiled one-page PDF and raster inspection passed; the reviewed source is included as a native template.
 
-These are concrete transfer checks, not a blind statistical benchmark or a guarantee that all future diagrams will be correct. Architectural evidence and visual inspection remain necessary for every task.
+These are concrete transfer checks rather than a statistical benchmark. A figure still requires evidence and inspection for its actual task.
 
 ## Browser and distribution
 
-The static gallery was exercised with a headless Chromium browser across all six examples and three themes. Checks covered image loading, the four source/export links for each selection (72 link checks), zoom/reset, clipboard installation/prompt actions, and mobile page width. Browser results are recorded in `validation.json`. Screenshots were used for internal review and are not part of the skill.
+A headless Chromium run exercised all **100 selections and 400 download links**. Every SVG loaded. All six family filters returned their expected counts. Matching and empty-result searches, Home/End keyboard navigation, zoom/reset, clipboard installation/prompt actions, and a 390 px mobile viewport passed. No page errors, HTTP failures, or horizontal mobile-page overflow were observed.
 
-All 11 reference repositories have pinned commits and explicit license observations. Original source code, templates, and figures are MIT; no upstream code/images are vendored. A credential-pattern scan of the publishable source was clean. New repositories are published under the account identities authenticated by the supplied tokens; credentials are not included in repository files.
+The historical [v1 hosted CI run](https://github.com/Hisernberg/archdiagram-studio/actions/runs/38686980040) passed four Linux/Windows × Python 3.10/3.12 test jobs plus the figure build for implementation commit 5e4c5d90bc71cbae4fdd4f8b06e217d28f7b100b. It does not establish the result of the expanded v2 build. The current workflow recompiles all 100 native masters; see [Actions](https://github.com/Hisernberg/archdiagram-studio/actions) for subsequent runs.
+
+All 11 originally requested unique repositories have pinned source and license observations. Original code, templates, and figures are MIT. Upstream code and reference-study images are not vendored. Publishing credentials are kept outside the repository.

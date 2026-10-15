@@ -1,0 +1,11 @@
+{
+  "id": "vision-detr",
+  "sha256": "aa5b10ac986ef0dec5d598967e9836ffac83747130cf52eb4db8c832c306aed5",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/vision/vision-detr.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

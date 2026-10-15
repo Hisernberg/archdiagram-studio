@@ -1,0 +1,24 @@
+{
+  "id": "audio-02-stft-spectrogram",
+  "title": "Short-time Fourier transform",
+  "family": "audio",
+  "description": "Windowed Fourier analysis maps time samples into a spectrogram grid.",
+  "caption": "One DFT per windowed frame becomes one column in a time--frequency array.",
+  "sources": [
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "The energy grid is synthetic. The exponent p may be 1 (magnitude) or 2 (power)."
+  ],
+  "tags": [
+    "STFT",
+    "spectrogram",
+    "Fourier"
+  ],
+  "nodes": 3,
+  "edges": 2,
+  "source_file": "audio-02-stft-spectrogram.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

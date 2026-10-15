@@ -1,0 +1,11 @@
+{
+  "id": "multimodal-11-vision-language-action",
+  "sha256": "ff57cf33e1cb3c3849b99e1bca964f0b6f10dffc94a59a24d51bbdaf0ed64e73",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/multimodal/multimodal-11-vision-language-action.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

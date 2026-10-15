@@ -1,0 +1,27 @@
+{
+  "id": "agents-11-memory-scopes",
+  "title": "Thread state and cross-session memory",
+  "family": "agents",
+  "description": "An original two-boundary memory diagram showing current-thread state reads and feedback updates, plus selected writes and cross-session reads of a namespaced long-term store.",
+  "caption": "Thread-scoped history supports the current run; namespaced long-term memory is read and updated across sessions.",
+  "sources": [
+    "https://docs.langchain.com/oss/python/concepts/memory",
+    "https://arxiv.org/abs/2310.08560"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; implementation details and dimensions vary.",
+    "The memory write policy is an illustrative application component, not an automatic guarantee of accurate memories.",
+    "Memory recall is an explicit data retrieval operation; no online model training is shown."
+  ],
+  "tags": [
+    "agent",
+    "memory",
+    "state",
+    "session boundaries"
+  ],
+  "nodes": 7,
+  "edges": 8,
+  "source_file": "agents-11-memory-scopes.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

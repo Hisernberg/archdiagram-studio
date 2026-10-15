@@ -1,0 +1,11 @@
+{
+  "id": "rg04-sim-to-real",
+  "sha256": "3552248a503cc9157eaff3ad0c40fb458a132024360638d7b09211d6a0f370dc",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/robotics-graphs/rg04-sim-to-real.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

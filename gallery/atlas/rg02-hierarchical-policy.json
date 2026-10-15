@@ -1,0 +1,25 @@
+{
+  "id": "rg02-hierarchical-policy",
+  "title": "Hierarchical robot policy",
+  "family": "robotics-graphs",
+  "description": "A three-skill options hierarchy showing discrete option selection, primitive action emission, and termination feedback.",
+  "caption": "Conceptual options hierarchy after Sutton, Precup, and Singh (1999); only the selected option emits primitive actions.",
+  "sources": [
+    "https://doi.org/10.1016/S0004-3702(99)00052-1"
+  ],
+  "assumptions": [
+    "Navigate, Reach, and Grasp are illustrative robot skill names, not a reported system from the source.",
+    "State input to each option is implicit; arrows from options denote mutually exclusive active-option routing."
+  ],
+  "tags": [
+    "robotics",
+    "hierarchical-policy",
+    "options",
+    "temporal-abstraction"
+  ],
+  "nodes": 6,
+  "edges": 8,
+  "source_file": "rg02-hierarchical-policy.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

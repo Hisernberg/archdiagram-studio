@@ -1,0 +1,23 @@
+{
+  "id": "vision-depthwise-separable",
+  "title": "Depthwise separable convolution: split spatial and channel mixing",
+  "family": "vision",
+  "description": "A channel-explicit depthwise convolution followed by cross-channel pointwise mixing and its parameter expression.",
+  "caption": "Depthwise filters act independently on input channels; pointwise filters combine the resulting channels.",
+  "sources": [
+    "https://arxiv.org/abs/1704.04861"
+  ],
+  "assumptions": [
+    "Three input channels are drawn as an illustration; channel counts and spatial sizes are symbolic."
+  ],
+  "tags": [
+    "cnn",
+    "mobilenet",
+    "depthwise"
+  ],
+  "nodes": 11,
+  "edges": 10,
+  "source_file": "vision-depthwise-separable.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

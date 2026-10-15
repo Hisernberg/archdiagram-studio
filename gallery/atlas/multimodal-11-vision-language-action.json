@@ -1,0 +1,26 @@
+{
+  "id": "multimodal-11-vision-language-action",
+  "title": "Vision-language-action policy",
+  "family": "multimodal",
+  "description": "A closed-loop vision-language-action policy with visual and language branches, action-token decoding, and environment feedback.",
+  "caption": "The policy emits discrete action tokens, which are decoded into a control command before the next observation arrives.",
+  "sources": [
+    "https://arxiv.org/abs/2307.15818",
+    "https://proceedings.mlr.press/v229/zitkovich23a.html"
+  ],
+  "assumptions": [
+    "Conceptual RT-2-style inference loop; action symbols are schematic and do not specify exact tokenization or robot degrees of freedom.",
+    "Web-data co-fine-tuning and robotics training trajectories are outside this inference view."
+  ],
+  "tags": [
+    "VLA",
+    "RT-2",
+    "robotics",
+    "closed-loop"
+  ],
+  "nodes": 8,
+  "edges": 8,
+  "source_file": "multimodal-11-vision-language-action.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

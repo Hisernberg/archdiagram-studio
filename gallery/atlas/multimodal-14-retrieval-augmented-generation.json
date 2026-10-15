@@ -1,0 +1,26 @@
+{
+  "id": "multimodal-14-retrieval-augmented-generation",
+  "title": "Retrieval-augmented multimodal generation",
+  "family": "multimodal",
+  "description": "Multimodal retrieval-augmented generation with offline memory keys, payload storage, top-k search, and a direct query context path.",
+  "caption": "Offline keys support nearest-neighbor search; retrieved identifiers fetch multimodal evidence for query-conditioned generation.",
+  "sources": [
+    "https://aclanthology.org/2022.emnlp-main.375/",
+    "https://arxiv.org/abs/2210.02928"
+  ],
+  "assumptions": [
+    "Conceptual MuRAG-inspired system; the key index and payload store are logical roles and may share one implementation.",
+    "The figure describes inference and memory construction; contrastive and generative pretraining objectives are omitted."
+  ],
+  "tags": [
+    "multimodal-RAG",
+    "retrieval",
+    "MuRAG",
+    "memory"
+  ],
+  "nodes": 10,
+  "edges": 11,
+  "source_file": "multimodal-14-retrieval-augmented-generation.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

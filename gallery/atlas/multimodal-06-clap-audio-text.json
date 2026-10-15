@@ -1,0 +1,25 @@
+{
+  "id": "multimodal-06-clap-audio-text",
+  "title": "Audio-text contrastive learning and zero-shot scoring",
+  "family": "multimodal",
+  "description": "Audio-text contrastive pretraining with duration pooling and a distinct zero-shot text-label retrieval panel.",
+  "caption": "Training aligns paired audio and descriptions; zero-shot inference ranks candidate text embeddings by cosine similarity.",
+  "sources": [
+    "https://arxiv.org/abs/2206.04769",
+    "https://www.microsoft.com/en-us/research/publication/clap-learning-audio-concepts-from-natural-language-supervision/"
+  ],
+  "assumptions": [
+    "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+  ],
+  "tags": [
+    "CLAP",
+    "audio-text",
+    "contrastive",
+    "zero-shot"
+  ],
+  "nodes": 11,
+  "edges": 9,
+  "source_file": "multimodal-06-clap-audio-text.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

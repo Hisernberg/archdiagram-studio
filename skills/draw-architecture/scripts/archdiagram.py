@@ -15,7 +15,7 @@ import sys
 import tempfile
 import textwrap
 
-VERSION = '1.0.0'
+VERSION = '2.0.0'
 ROLES = {
     'input': ('#2563EB', '#EFF6FF'), 'compute': ('#0F766E', '#F0FDFA'),
     'model': ('#6D28D9', '#F5F3FF'), 'memory': ('#0369A1', '#F0F9FF'),
@@ -23,7 +23,7 @@ ROLES = {
     'output': ('#047857', '#ECFDF5'), 'neutral': ('#475569', '#F8FAFC'),
 }
 THEMES = {
-    'paper': dict(bg='#FFFFFF', fg='#14263D', muted='#52627A', line='#52627A', group='#F8FAFC', border='#CBD5E1'),
+    'paper': dict(bg='#FFFFFF', fg='#141414', muted='#505050', line='#303030', group='#FAFAFA', border='#AAAAAA'),
     'midnight': dict(bg='#101827', fg='#F1F5F9', muted='#B5C4D9', line='#A9BDD8', group='#172236', border='#435470'),
     'blueprint': dict(bg='#F1F7FC', fg='#123452', muted='#45647D', line='#45647D', group='#E7F0F8', border='#A4BDD1'),
 }
@@ -132,6 +132,7 @@ def normalize(raw):
 
 def color(role,theme):
     stroke,fill=ROLES[role]
+    if theme=='paper': return '#222222', '#F7F7F7' if role in {'model','memory'} else '#FFFFFF'
     if theme=='midnight':
         stroke=dict(input='#93C5FD',compute='#5EEAD4',model='#C4B5FD',memory='#7DD3FC',tool='#FCD34D',control='#CBD5E1',output='#6EE7B7',neutral='#CBD5E1')[role]
         fill='#202E44'
@@ -241,7 +242,7 @@ def render_svg(spec,theme='paper'):
     if theme not in THEMES: raise SpecError(f'unknown theme: {theme}')
     t=THEMES[theme];w,h=s['width'],s['height']
     description=s['subtitle']+'. '+'; '.join(f"{n['id']}: {n['label']} {n['detail']}" for n in s['nodes'])+'. '+'; '.join(f"{e['from']} to {e['to']}: {e['label']} ({e['kind']})" for e in s['edges'])
-    out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{f(w)}" height="{f(h)}" viewBox="0 0 {f(w)} {f(h)}" role="img" aria-labelledby="diagram-title diagram-description">',f'<title id="diagram-title">{xml(s["title"])}</title>',f'<desc id="diagram-description">{xml(description)}</desc>',f'<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="{t["line"]}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>',f'<rect width="100%" height="100%" fill="{t["bg"]}"/>','<g font-family="Inter, DejaVu Sans, Arial, sans-serif">']
+    out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{f(w)}" height="{f(h)}" viewBox="0 0 {f(w)} {f(h)}" role="img" aria-labelledby="diagram-title diagram-description">',f'<title id="diagram-title">{xml(s["title"])}</title>',f'<desc id="diagram-description">{xml(description)}</desc>',f'<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="{t["line"]}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>',f'<rect width="100%" height="100%" fill="{t["bg"]}"/>',('<g font-family="Latin Modern Roman, Times New Roman, serif">' if theme=='paper' else '<g font-family="Inter, DejaVu Sans, Arial, sans-serif">')]
     def text(x,y,content,size=13,fill=None,weight=400,anchor='start'):
         out.append(f'<text x="{f(x)}" y="{f(y)}" fill="{fill or t["fg"]}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">{xml(content)}</text>')
     text(48,50,s['title'],29,weight=700);text(48,77,s['subtitle'],13,t['muted'])
@@ -266,7 +267,7 @@ def render_svg(spec,theme='paper'):
             out.append(f'<path d="M {f(x)} {f(y+10)} A {f(nw/2)} 10 0 0 1 {f(x+nw)} {f(y+10)} V {f(y+nh-10)} A {f(nw/2)} 10 0 0 1 {f(x)} {f(y+nh-10)} Z" fill="{fill}" stroke="{stroke}" stroke-width="1.6"/>')
             out.append(f'<ellipse cx="{f(x+nw/2)}" cy="{f(y+10)}" rx="{f(nw/2)}" ry="10" fill="{fill}" stroke="{stroke}" stroke-width="1.4"/>')
         else:
-            out.append(f'<rect x="{f(x)}" y="{f(y)}" width="{f(nw)}" height="{f(nh)}" rx="10" fill="{fill}" stroke="{stroke}" stroke-width="1.6"/>')
+            out.append(f'<rect x="{f(x)}" y="{f(y)}" width="{f(nw)}" height="{f(nh)}" rx="{0 if theme=='paper' else 10}" fill="{fill}" stroke="{stroke}" stroke-width="1.6"/>')
             out.append(f'<path d="M {f(x+12)} {f(y+14)} v {f(max(10,nh-28))}" stroke="{stroke}" stroke-width="3" stroke-linecap="round"/>')
         labels,details=node_lines(n);total=len(labels)*18+(8+len(details)*15 if details else 0)+(18 if n['tag'] else 0);baseline=y+(nh-total)/2+14
         if n['tag']: text(x+nw/2,baseline,n['tag'].upper(),8.5,stroke,600,'middle');baseline+=18
@@ -289,13 +290,13 @@ def render_tikz(spec,theme='paper'):
     s=normalize(spec)
     if theme not in THEMES: raise SpecError(f'unknown theme: {theme}')
     t=THEMES[theme]
-    out=[r'\documentclass[tikz,border=0pt]{standalone}',r'\usepackage{iftex}',r'\ifLuaTeX',r'\usepackage{fontspec}',r'\setsansfont{DejaVu Sans}',r'\else',r'\usepackage[T1]{fontenc}',r'\usepackage[utf8]{inputenc}',r'\usepackage{lmodern}',r'\fi',r'\usepackage{amsmath}',r'\usetikzlibrary{arrows.meta}',r'\renewcommand{\familydefault}{\sfdefault}']
+    out=[r'\documentclass[tikz,border=0pt]{standalone}',r'\usepackage{iftex}',r'\ifLuaTeX',r'\usepackage{fontspec}',r'\setsansfont{DejaVu Sans}',r'\else',r'\usepackage[T1]{fontenc}',r'\usepackage[utf8]{inputenc}',r'\usepackage{lmodern}',r'\fi',r'\usepackage{amsmath}',r'\usetikzlibrary{arrows.meta}',(r'\renewcommand{\familydefault}{\rmdefault}' if theme=='paper' else r'\renewcommand{\familydefault}{\sfdefault}')]
     for key,value in t.items(): out.append(r'\definecolor{ad'+key+r'}{HTML}{'+value[1:]+'}')
     for role in ROLES:
         stroke,fill=color(role,theme);out.extend([r'\definecolor{ad'+role+r'}{HTML}{'+stroke[1:]+'}',r'\definecolor{ad'+role+r'fill}{HTML}{'+fill[1:]+'}'])
     out.extend([r'\begin{document}',r'\begin{tikzpicture}[x=1pt,y=-1pt,inner sep=0pt,outer sep=0pt]',f"\\path[use as bounding box] (0,0) rectangle ({f(s['width'])},{f(s['height'])});",f"\\fill[adbg] (0,0) rectangle ({f(s['width'])},{f(s['height'])});"])
     def text(x,y,value,size=13,clr='adfg',weight=False,anchor='base west'):
-        font=r'\sffamily\fontsize{'+str(size)+'}{'+str(size*1.2)+r'}\selectfont'+(r'\bfseries' if weight else '')
+        font=(r'\rmfamily\fontsize{' if theme=='paper' else r'\sffamily\fontsize{')+str(size)+'}{'+str(size*1.2)+r'}\selectfont'+(r'\bfseries' if weight else '')
         out.append(f'\\node[anchor={anchor},text={clr},font={{{font}}}] at ({f(x)},{f(y)}) {{{tex_escape(value)}}};')
     text(48,50,s['title'],29,weight=True);text(48,77,s['subtitle'],13,'admuted')
     for x,label,style in ((48,'Data flow',''),(188,'Control',',dashed'),(316,'Feedback',',dotted')):

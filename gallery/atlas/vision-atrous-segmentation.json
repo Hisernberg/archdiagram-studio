@@ -1,0 +1,24 @@
+{
+  "id": "vision-atrous-segmentation",
+  "title": "Atrous spatial pyramid pooling: parallel scales of context",
+  "family": "vision",
+  "description": "A DeepLabv3-style ASPP context module with three atrous branches, a 1x1 branch, image pooling, fusion and resizing.",
+  "caption": "Dilated convolutions and image-level pooling gather complementary context before concatenation and dense prediction.",
+  "sources": [
+    "https://arxiv.org/abs/1706.05587"
+  ],
+  "assumptions": [
+    "Dilation rates are symbolic and depend on output stride and implementation."
+  ],
+  "tags": [
+    "segmentation",
+    "deeplab",
+    "aspp",
+    "dilated-convolution"
+  ],
+  "nodes": 11,
+  "edges": 14,
+  "source_file": "vision-atrous-segmentation.tex",
+  "width_cm": 18,
+  "height_cm": 10.5
+}

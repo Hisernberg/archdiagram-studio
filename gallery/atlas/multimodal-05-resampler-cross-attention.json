@@ -1,0 +1,24 @@
+{
+  "id": "multimodal-05-resampler-cross-attention",
+  "title": "Resampling with gated visual cross-attention",
+  "family": "multimodal",
+  "description": "Flamingo-style learned visual resampling and gated cross-attention inserted between language model blocks.",
+  "caption": "Learned latent queries resample vision features; text queries read those latents through a gated residual path.",
+  "sources": [
+    "https://arxiv.org/abs/2204.14198"
+  ],
+  "assumptions": [
+    "Original conceptual schematic; all dimensions are symbolic and implementation dependent."
+  ],
+  "tags": [
+    "Flamingo",
+    "Perceiver",
+    "cross-attention",
+    "gated-residual"
+  ],
+  "nodes": 11,
+  "edges": 11,
+  "source_file": "multimodal-05-resampler-cross-attention.tex",
+  "width_cm": 18,
+  "height_cm": 9
+}

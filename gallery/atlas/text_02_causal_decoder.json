@@ -1,0 +1,25 @@
+{
+  "id": "text_02_causal_decoder",
+  "title": "Causal decoder with pre-normalized residual blocks",
+  "family": "text",
+  "description": "Pre-normalized causal decoder block with two correctly originated identity residuals and a language-model readout.",
+  "caption": "Each residual starts before its normalization; the block repeats with distinct parameters across layers.",
+  "sources": [
+    "https://arxiv.org/abs/1706.03762",
+    "https://arxiv.org/abs/2002.04745"
+  ],
+  "assumptions": [
+    "Conceptual pre-normalized decoder; no particular model's layer count, norm type, or position method is implied."
+  ],
+  "tags": [
+    "decoder",
+    "causal",
+    "residual",
+    "pre-norm"
+  ],
+  "nodes": 11,
+  "edges": 11,
+  "source_file": "text_02_causal_decoder.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

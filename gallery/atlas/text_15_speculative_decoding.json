@@ -1,0 +1,24 @@
+{
+  "id": "text_15_speculative_decoding",
+  "title": "Speculative decoding: propose, verify, accept a prefix",
+  "family": "text",
+  "description": "Speculative sampling separates draft proposal, target verification, prefix acceptance, corrected rejection sampling, and next-round feedback.",
+  "caption": "Draft proposals are sequential; the target scores their conditional positions together, then corrected sampling preserves its distribution.",
+  "sources": [
+    "https://arxiv.org/abs/2211.17192"
+  ],
+  "assumptions": [
+    "This is the exact sampling form with normalized positive-part correction, rather than a greedy matching variant.",
+    "If all proposals are accepted, the extra token is sampled from p_(gamma+1)."
+  ],
+  "tags": [
+    "speculative",
+    "decoding",
+    "verification"
+  ],
+  "nodes": 9,
+  "edges": 9,
+  "source_file": "text_15_speculative_decoding.tex",
+  "width_cm": 16,
+  "height_cm": 9.5
+}

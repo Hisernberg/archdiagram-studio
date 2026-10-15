@@ -1,0 +1,11 @@
+{
+  "id": "agents-05-supervisor",
+  "sha256": "783b1ed63ae316b0db877657b2560e802e6037aa170e4967837d5759e0923b51",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-05-supervisor.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

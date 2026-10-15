@@ -1,0 +1,25 @@
+{
+  "id": "audio-19-speech-enhancement",
+  "title": "Complex-mask speech enhancement",
+  "family": "audio",
+  "description": "DCCRN-inspired complex spectral masking with encoder skips and a mixture-spectrum multiplication bypass.",
+  "caption": "A complex convolution--recurrent network estimates a mask, then reconstructs the enhanced waveform.",
+  "sources": [
+    "https://arxiv.org/abs/2008.00264",
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html"
+  ],
+  "assumptions": [
+    "Conceptual original schematic; layer counts, widths, and signal lengths are illustrative.",
+    "A single recurrent bottleneck and one skip path stand for repeated implementation-specific layers."
+  ],
+  "tags": [
+    "enhancement",
+    "complex mask",
+    "DCCRN"
+  ],
+  "nodes": 8,
+  "edges": 9,
+  "source_file": "audio-19-speech-enhancement.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

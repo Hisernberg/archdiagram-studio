@@ -1,0 +1,11 @@
+{
+  "id": "audio-03-spectrogram-cnn",
+  "sha256": "49a31038eb5a41b9ae5bcbd8a12f1b9484c480438b94d5031ebe2356d9f808fc",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/audio/audio-03-spectrogram-cnn.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "vision-convolution",
+  "title": "Spatial convolution: one local response",
+  "family": "vision",
+  "description": "A shared spatial kernel, its receptive field, and the multi-channel convolution equation.",
+  "caption": "A kernel is reused at each spatial location; channel sums create each output channel.",
+  "sources": [
+    "https://docs.pytorch.org/docs/2.14/generated/torch.nn.Conv2d.html"
+  ],
+  "assumptions": [
+    "The illustrated spatial sizes are pedagogical; no model checkpoint is specified.",
+    "The equation follows the cross-correlation convention used by common deep-learning libraries."
+  ],
+  "tags": [
+    "cnn",
+    "convolution",
+    "receptive-field"
+  ],
+  "nodes": 4,
+  "edges": 0,
+  "source_file": "vision-convolution.tex",
+  "width_cm": 16,
+  "height_cm": 9
+}

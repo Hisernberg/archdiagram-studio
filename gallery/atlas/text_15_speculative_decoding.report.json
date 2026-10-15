@@ -1,0 +1,11 @@
+{
+  "id": "text_15_speculative_decoding",
+  "sha256": "21997d5c94e7bde310fbdc701bdd06955852e37ceef67ed02a7ca45626dbf851",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/text/text_15_speculative_decoding.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}

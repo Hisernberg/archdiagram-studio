@@ -1,0 +1,11 @@
+{
+  "id": "agents-04-bounded-reflection",
+  "sha256": "43301d77a4097c97ea7cb1f45eeb9777230cde82fa1ecbff9043e89206c96f65",
+  "compiler": "pdflatex",
+  "shell_escape": false,
+  "overfull_or_missing_glyphs": [],
+  "source": "skills/draw-architecture/assets/atlas/agents/agents-04-bounded-reflection.tex",
+  "master": "TikZ",
+  "svg_text": "Glyph outlines from PDF; edit the TikZ master.",
+  "visual_review": "Family author review plus atlas contact-sheet review; see docs/VALIDATION.md."
+}
