@@ -1,7 +1,10 @@
 {
   "release": "2.0.0",
   "checked_on": "2026-10-15",
-  "local_python": "3.12",
+  "local_python": [
+    "3.10.22",
+    "3.12"
+  ],
   "unit_tests_passed": 40,
   "skill_metadata": "passed",
   "atlas": {
@@ -54,17 +57,52 @@
     "Raster waveforms, grids, and spectrograms are illustrative rather than measured data."
   ],
   "hosted_ci": {
-    "release": "1.0.0",
-    "url": "https://github.com/Hisernberg/archdiagram-studio/actions/runs/38686980040",
+    "release": "2.0.0",
+    "url": "https://github.com/Hisernberg/archdiagram-studio/actions/runs/38691061912",
     "result": "success",
     "jobs_passed": 5,
-    "implementation_commit": "5e4c5d90bc71cbae4fdd4f8b06e217d28f7b100b",
-    "note": "Historical v1 result. See Actions for the expanded v2 release build."
+    "implementation_commit": "8dc50c4dbf067316dfc93bb7972fb5fe796b9dde",
+    "jobs": [
+      {
+        "name": "figures",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "portable (ubuntu-latest, 3.12)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "portable (windows-latest, 3.12)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "portable (ubuntu-latest, 3.10)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "portable (windows-latest, 3.10)",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
   },
   "v2_forward_task": {
     "architecture": "Audio/video event scoring with separate temporal alignment and a missing-audio mask",
     "atlas_starting_point": "multimodal-09-audiovisual-speech-fusion",
     "result": "compiled, visually inspected, grayscale, self-contained TikZ",
     "unspecified_training_branches_added": false
+  },
+  "unit_tests_passed_per_python": 40,
+  "historical_v1_ci": {
+    "release": "1.0.0",
+    "url": "https://github.com/Hisernberg/archdiagram-studio/actions/runs/38686980040",
+    "result": "success",
+    "jobs_passed": 5,
+    "implementation_commit": "5e4c5d90bc71cbae4fdd4f8b06e217d28f7b100b",
+    "note": "Historical v1 result. See Actions for the expanded v2 release build."
   }
 }
