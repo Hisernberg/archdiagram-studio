@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "spec_sha256": "d9c6697c2f43e7ce013863b778066028a33124e9b9010cd4bf8377c15a1a2255",
+  "nodes": 8,
+  "edges": 9,
+  "issues": [],
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "This example describes a pre-norm causal block, not every transformer variant."
+  ],
+  "outputs": [
+    "gallery/transformer-layer.midnight.svg",
+    "gallery/transformer-layer.midnight.tex",
+    "gallery/transformer-layer.midnight.png",
+    "gallery/transformer-layer.midnight.pdf"
+  ],
+  "visual_review": "Required: inspect rendered output at target width. Lint is heuristic."
+}

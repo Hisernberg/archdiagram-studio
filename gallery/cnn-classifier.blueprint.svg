@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="660" viewBox="0 0 1320 660" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Convolutional feature hierarchy</title>
+<desc id="diagram-description">Feature-map dimensions are explicit; geometric depth is illustrative.. image: Input image 3 x 224 x 224; conv1: Conv + activation 64 x 112 x 112; pool: Max pool 64 x 56 x 56; conv2: Conv + activation 128 x 28 x 28; poolhead: Global avg pool B x 128; logits: Linear classifier 10 logits. image to conv1: stride 2 (data); conv1 to pool: 2 x 2 (data); pool to conv2: stride 2 (data); conv2 to poolhead:  (data); poolhead to logits: 128 -&gt; 10 (data)</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#45647D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#F1F7FC"/>
+<g font-family="Inter, DejaVu Sans, Arial, sans-serif">
+<text x="48" y="50" fill="#123452" font-size="29" font-weight="700" text-anchor="start">Convolutional feature hierarchy</text>
+<text x="48" y="77" fill="#45647D" font-size="13" font-weight="400" text-anchor="start">Feature-map dimensions are explicit; geometric depth is illustrative.</text>
+<path d="M 48 104 h 28" stroke="#45647D" stroke-width="1.7" fill="none" stroke-dasharray=""/>
+<text x="84" y="108" fill="#45647D" font-size="10.5" font-weight="400" text-anchor="start">Data flow</text>
+<path d="M 188 104 h 28" stroke="#45647D" stroke-width="1.7" fill="none" stroke-dasharray="7 5"/>
+<text x="224" y="108" fill="#45647D" font-size="10.5" font-weight="400" text-anchor="start">Control</text>
+<path d="M 316 104 h 28" stroke="#45647D" stroke-width="1.7" fill="none" stroke-dasharray="2 5"/>
+<text x="352" y="108" fill="#45647D" font-size="10.5" font-weight="400" text-anchor="start">Feedback</text>
+<path d="M 240 315 L 280 315 L 320 315" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 510 315 L 550 315 L 590 315" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 770 315 L 810 315 L 850 315" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1040 315 L 1080 315 L 1120 315" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1200 367 L 1200 426 L 1200 485" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g id="node-image" data-role="input"><title>Input image: 3 x 224 x 224</title>
+<path d="M 60 237 L 72 225 H 240 V 393 L 228 405 H 60 Z" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.6"/>
+<path d="M 60 237 H 228 V 405 M 228 237 L 240 225" fill="none" stroke="#2563EB" stroke-width="1.2"/>
+<text x="150" y="299.5" fill="#2563EB" font-size="8.5" font-weight="600" text-anchor="middle">NCHW / BATCH OMITTED</text>
+<text x="150" y="317.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Input image</text>
+<text x="150" y="341.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">3 x 224 x 224</text>
+</g>
+<g id="node-conv1" data-role="model"><title>Conv + activation: 64 x 112 x 112</title>
+<path d="M 320 257 L 332 245 H 510 V 373 L 498 385 H 320 Z" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+<path d="M 320 257 H 498 V 385 M 498 257 L 510 245" fill="none" stroke="#6D28D9" stroke-width="1.2"/>
+<text x="415" y="308.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Conv + activation</text>
+<text x="415" y="332.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">64 x 112 x 112</text>
+</g>
+<g id="node-pool" data-role="compute"><title>Max pool: 64 x 56 x 56</title>
+<path d="M 590 277 L 602 265 H 770 V 353 L 758 365 H 590 Z" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.6"/>
+<path d="M 590 277 H 758 V 365 M 758 277 L 770 265" fill="none" stroke="#0F766E" stroke-width="1.2"/>
+<text x="680" y="308.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Max pool</text>
+<text x="680" y="332.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">64 x 56 x 56</text>
+</g>
+<g id="node-conv2" data-role="model"><title>Conv + activation: 128 x 28 x 28</title>
+<path d="M 850 257 L 862 245 H 1040 V 373 L 1028 385 H 850 Z" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+<path d="M 850 257 H 1028 V 385 M 1028 257 L 1040 245" fill="none" stroke="#6D28D9" stroke-width="1.2"/>
+<text x="945" y="308.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Conv + activation</text>
+<text x="945" y="332.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">128 x 28 x 28</text>
+</g>
+<g id="node-poolhead" data-role="compute"><title>Global avg pool: B x 128</title>
+<rect x="1120" y="263" width="160" height="104" rx="10" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.6"/>
+<path d="M 1132 277 v 76" stroke="#0F766E" stroke-width="3" stroke-linecap="round"/>
+<text x="1200" y="308.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Global avg pool</text>
+<text x="1200" y="332.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">B x 128</text>
+</g>
+<g id="node-logits" data-role="output"><title>Linear classifier: 10 logits</title>
+<rect x="1120" y="485" width="160" height="94" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.6"/>
+<path d="M 1132 499 v 66" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+<text x="1200" y="516.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Linear</text>
+<text x="1200" y="534.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">classifier</text>
+<text x="1200" y="558.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">10 logits</text>
+</g>
+<rect x="246.8" y="288" width="66.4" height="20" rx="5" fill="#F1F7FC"/>
+<text x="280" y="302" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">stride 2</text>
+<rect x="526.25" y="288" width="47.5" height="20" rx="5" fill="#F1F7FC"/>
+<text x="550" y="302" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">2 x 2</text>
+<rect x="776.8" y="288" width="66.4" height="20" rx="5" fill="#F1F7FC"/>
+<text x="810" y="302" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">stride 2</text>
+<rect x="1163.65" y="416" width="72.7" height="20" rx="5" fill="#F1F7FC"/>
+<text x="1200" y="430" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">128 -&gt; 10</text>
+<text x="48" y="638" fill="#45647D" font-size="11" font-weight="400" text-anchor="start">Spatial dimensions assume suitable padding. This is an illustrative classification network.</text>
+</g></svg>

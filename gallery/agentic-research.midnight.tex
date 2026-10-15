@@ -1,0 +1,102 @@
+\documentclass[tikz,border=0pt]{standalone}
+\usepackage{iftex}
+\ifLuaTeX
+\usepackage{fontspec}
+\setsansfont{DejaVu Sans}
+\else
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\fi
+\usepackage{amsmath}
+\usetikzlibrary{arrows.meta}
+\renewcommand{\familydefault}{\sfdefault}
+\definecolor{adbg}{HTML}{101827}
+\definecolor{adfg}{HTML}{F1F5F9}
+\definecolor{admuted}{HTML}{B5C4D9}
+\definecolor{adline}{HTML}{A9BDD8}
+\definecolor{adgroup}{HTML}{172236}
+\definecolor{adborder}{HTML}{435470}
+\definecolor{adinput}{HTML}{93C5FD}
+\definecolor{adinputfill}{HTML}{202E44}
+\definecolor{adcompute}{HTML}{5EEAD4}
+\definecolor{adcomputefill}{HTML}{202E44}
+\definecolor{admodel}{HTML}{C4B5FD}
+\definecolor{admodelfill}{HTML}{202E44}
+\definecolor{admemory}{HTML}{7DD3FC}
+\definecolor{admemoryfill}{HTML}{202E44}
+\definecolor{adtool}{HTML}{FCD34D}
+\definecolor{adtoolfill}{HTML}{202E44}
+\definecolor{adcontrol}{HTML}{CBD5E1}
+\definecolor{adcontrolfill}{HTML}{202E44}
+\definecolor{adoutput}{HTML}{6EE7B7}
+\definecolor{adoutputfill}{HTML}{202E44}
+\definecolor{adneutral}{HTML}{CBD5E1}
+\definecolor{adneutralfill}{HTML}{202E44}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=-1pt,inner sep=0pt,outer sep=0pt]
+\path[use as bounding box] (0,0) rectangle (1280,760);
+\fill[adbg] (0,0) rectangle (1280,760);
+\node[anchor=base west,text=adfg,font={\sffamily\fontsize{29}{34.8}\selectfont\bfseries}] at (48,50) {Agentic research system};
+\node[anchor=base west,text=admuted,font={\sffamily\fontsize{13}{15.6}\selectfont}] at (48,77) {A bounded plan / act / verify loop with explicit context and tool results.};
+\draw[adline,line width=1.4pt] (48,104) -- (76,104);
+\node[anchor=base west,text=admuted,font={\sffamily\fontsize{10.5}{12.6}\selectfont}] at (84,108) {Data flow};
+\draw[adline,line width=1.4pt,dashed] (188,104) -- (216,104);
+\node[anchor=base west,text=admuted,font={\sffamily\fontsize{10.5}{12.6}\selectfont}] at (224,108) {Control};
+\draw[adline,line width=1.4pt,dotted] (316,104) -- (344,104);
+\node[anchor=base west,text=admuted,font={\sffamily\fontsize{10.5}{12.6}\selectfont}] at (352,108) {Feedback};
+\draw[fill=adgroup,draw=adborder,dashed,rounded corners=10pt] (310,140) rectangle (985,670);
+\node[anchor=base west,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont\bfseries}] at (328,165) {Agent runtime};
+\draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round] (260,273) -- (312.5,273) -- (365,273);
+\draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round,dashed] (585,273) -- (637.5,273) -- (690,273);
+\draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round] (745,225) -- (745,205) -- (519,205) -- (519,225);
+\draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round] (365,513) -- (332,513) -- (332,297) -- (365,297);
+\draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round] (585,273) -- (635,273) -- (635,513) -- (690,513);
+\draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round] (910,513) -- (960,513) -- (1010,513);
+\draw[adline,line width=1.3pt,-{Latex[length=5pt,width=4pt]},line join=round,dotted] (800,561) -- (800,625) -- (958,625) -- (958,180) -- (475,180) -- (475,225);
+\draw[draw=adinput,fill=adinputfill,line width=1.2pt,rounded corners=8pt] (60,225) rectangle (260,321);
+\draw[adinput,line width=2.2pt,line cap=round] (72,239) -- (72,307);
+\node[anchor=base,text=adinput,font={\sffamily\fontsize{8.5}{10.2}\selectfont\bfseries}] at (160,257.5) {INPUT};
+\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (160,275.5) {Research request};
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (160,299.5) {Goal and constraints};
+\draw[draw=admodel,fill=admodelfill,line width=1.2pt,rounded corners=8pt] (365,225) rectangle (585,321);
+\draw[admodel,line width=2.2pt,line cap=round] (377,239) -- (377,307);
+\node[anchor=base,text=admodel,font={\sffamily\fontsize{8.5}{10.2}\selectfont\bfseries}] at (475,257.5) {AGENT};
+\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,275.5) {Planner / reasoner};
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,299.5) {Decompose and draft};
+\draw[draw=adtool,fill=adtoolfill,line width=1.2pt,rounded corners=8pt] (690,225) rectangle (910,321);
+\draw[adtool,line width=2.2pt,line cap=round] (702,239) -- (702,307);
+\node[anchor=base,text=adtool,font={\sffamily\fontsize{8.5}{10.2}\selectfont\bfseries}] at (800,257.5) {ACTIONS};
+\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (800,275.5) {Tool executor};
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (800,299.5) {Search, code, APIs};
+\draw[draw=admemory,fill=admemoryfill,line width=1.2pt,rounded corners=9pt] (365,473) rectangle (585,561);
+\draw[draw=admemory,fill=admemoryfill,line width=1.2pt] (475,475) ellipse [x radius=110pt,y radius=10pt];
+\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (475,506.5) {Context store};
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (475,530.5) {Retrieved evidence};
+\draw[draw=adcontrol,fill=adcontrolfill,line width=1.2pt,rounded corners=8pt] (690,465) rectangle (910,561);
+\draw[adcontrol,line width=2.2pt,line cap=round] (702,479) -- (702,547);
+\node[anchor=base,text=adcontrol,font={\sffamily\fontsize{8.5}{10.2}\selectfont\bfseries}] at (800,497.5) {REVIEW};
+\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (800,515.5) {Evidence verifier};
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (800,539.5) {Check claims and stop};
+\draw[draw=adoutput,fill=adoutputfill,line width=1.2pt,rounded corners=8pt] (1010,465) rectangle (1220,561);
+\draw[adoutput,line width=2.2pt,line cap=round] (1022,479) -- (1022,547);
+\node[anchor=base,text=adoutput,font={\sffamily\fontsize{8.5}{10.2}\selectfont\bfseries}] at (1115,497.5) {OUTPUT};
+\node[anchor=base,text=adfg,font={\sffamily\fontsize{15}{18.0}\selectfont\bfseries}] at (1115,515.5) {Grounded answer};
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11.5}{13.799999999999999}\selectfont}] at (1115,539.5) {Citations and limits};
+\fill[adbg,rounded corners=4pt] (288.4,246) rectangle (329.6,266);
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (309,260) {goal};
+\fill[adbg,rounded corners=4pt] (617.4,246) rectangle (658.6,266);
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (638,260) {call};
+\fill[adbg,rounded corners=4pt] (589.2,184) rectangle (680.8,204);
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (635,198) {tool results};
+\fill[adbg,rounded corners=4pt] (301.95,408) rectangle (362.05,428);
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (332,422) {context};
+\fill[adbg,rounded corners=4pt] (611.25,424) rectangle (658.75,444);
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (635,438) {draft};
+\fill[adbg,rounded corners=4pt] (923.65,486) rectangle (996.35,506);
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (960,500) {validated};
+\fill[adbg,rounded corners=4pt] (931.1,415) rectangle (984.9,435);
+\node[anchor=base,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (958,429) {revise};
+\node[anchor=base west,text=admuted,font={\sffamily\fontsize{11}{13.2}\selectfont}] at (48,738) {Illustrative architecture. A verifier supports review; it does not guarantee correctness.};
+\end{tikzpicture}
+\end{document}

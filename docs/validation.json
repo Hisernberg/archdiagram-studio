@@ -1,0 +1,26 @@
+{
+  "release": "1.0.0",
+  "checked_on": "2026-10-15",
+  "local_python": "3.12",
+  "unit_tests_passed": 37,
+  "skill_metadata": "passed",
+  "themed_scenes": 18,
+  "strict_scene_issues": 0,
+  "paper_tikz_compiles": 6,
+  "native_tikz_compiles": 3,
+  "successful_tex_engine": "pdflatex",
+  "fresh_agent_tasks_completed": 2,
+  "browser": {
+    "page_errors": [],
+    "failed_responses": [],
+    "mobile_overflow": false,
+    "examples": 6,
+    "themes": 3,
+    "download_assets_checked": 72,
+    "clipboard": "install commands and skill prompt copied"
+  },
+  "limits": [
+    "Local rendering and review do not prove architecture correctness.",
+    "Hosted CI status must be checked on GitHub; the workflow file alone is not a passing result."
+  ]
+}

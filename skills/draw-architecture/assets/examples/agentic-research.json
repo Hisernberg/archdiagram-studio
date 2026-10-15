@@ -1,0 +1,235 @@
+{
+  "version": 1,
+  "title": "Agentic research system",
+  "subtitle": "A bounded plan / act / verify loop with explicit context and tool results.",
+  "width": 1280,
+  "height": 760,
+  "nodes": [
+    {
+      "id": "request",
+      "label": "Research request",
+      "x": 60,
+      "y": 225,
+      "width": 200,
+      "height": 96,
+      "role": "input",
+      "kind": "block",
+      "detail": "Goal and constraints",
+      "tag": "Input"
+    },
+    {
+      "id": "planner",
+      "label": "Planner / reasoner",
+      "x": 365,
+      "y": 225,
+      "width": 220,
+      "height": 96,
+      "role": "model",
+      "kind": "block",
+      "detail": "Decompose and draft",
+      "tag": "Agent"
+    },
+    {
+      "id": "tools",
+      "label": "Tool executor",
+      "x": 690,
+      "y": 225,
+      "width": 220,
+      "height": 96,
+      "role": "tool",
+      "kind": "block",
+      "detail": "Search, code, APIs",
+      "tag": "Actions"
+    },
+    {
+      "id": "memory",
+      "label": "Context store",
+      "x": 365,
+      "y": 465,
+      "width": 220,
+      "height": 96,
+      "role": "memory",
+      "kind": "store",
+      "detail": "Retrieved evidence",
+      "tag": ""
+    },
+    {
+      "id": "verifier",
+      "label": "Evidence verifier",
+      "x": 690,
+      "y": 465,
+      "width": 220,
+      "height": 96,
+      "role": "control",
+      "kind": "block",
+      "detail": "Check claims and stop",
+      "tag": "Review"
+    },
+    {
+      "id": "answer",
+      "label": "Grounded answer",
+      "x": 1010,
+      "y": 465,
+      "width": 210,
+      "height": 96,
+      "role": "output",
+      "kind": "block",
+      "detail": "Citations and limits",
+      "tag": "Output"
+    }
+  ],
+  "edges": [
+    {
+      "from": "request",
+      "to": "planner",
+      "label": "goal",
+      "kind": "data",
+      "label_at": [
+        309,
+        256
+      ]
+    },
+    {
+      "from": "planner",
+      "to": "tools",
+      "label": "call",
+      "kind": "control",
+      "label_at": [
+        638,
+        256
+      ]
+    },
+    {
+      "from": "tools",
+      "to": "planner",
+      "label": "tool results",
+      "kind": "data",
+      "from_side": "top",
+      "to_side": "top",
+      "via": [
+        [
+          745,
+          205
+        ],
+        [
+          519,
+          205
+        ]
+      ],
+      "label_at": [
+        635,
+        194
+      ],
+      "from_offset": -0.25,
+      "to_offset": 0.2
+    },
+    {
+      "from": "memory",
+      "to": "planner",
+      "label": "context",
+      "kind": "data",
+      "from_side": "left",
+      "to_side": "left",
+      "via": [
+        [
+          332,
+          513
+        ],
+        [
+          332,
+          297
+        ]
+      ],
+      "label_at": [
+        332,
+        418
+      ],
+      "to_offset": 0.25
+    },
+    {
+      "from": "planner",
+      "to": "verifier",
+      "label": "draft",
+      "kind": "data",
+      "from_side": "right",
+      "to_side": "left",
+      "via": [
+        [
+          635,
+          273
+        ],
+        [
+          635,
+          513
+        ]
+      ],
+      "label_at": [
+        635,
+        434
+      ]
+    },
+    {
+      "from": "verifier",
+      "to": "answer",
+      "label": "validated",
+      "kind": "data",
+      "label_at": [
+        960,
+        496
+      ]
+    },
+    {
+      "from": "verifier",
+      "to": "planner",
+      "label": "revise",
+      "kind": "feedback",
+      "from_side": "bottom",
+      "to_side": "top",
+      "via": [
+        [
+          800,
+          625
+        ],
+        [
+          958,
+          625
+        ],
+        [
+          958,
+          180
+        ],
+        [
+          475,
+          180
+        ]
+      ],
+      "label_at": [
+        958,
+        425
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "runtime",
+      "label": "Agent runtime",
+      "x": 310,
+      "y": 140,
+      "width": 675,
+      "height": 530,
+      "members": [
+        "planner",
+        "tools",
+        "memory",
+        "verifier"
+      ]
+    }
+  ],
+  "footer": "Illustrative architecture. A verifier supports review; it does not guarantee correctness.",
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "Tool execution follows the host permissions. Context retrieval is shown as a read, not autonomous persistent memory."
+  ]
+}

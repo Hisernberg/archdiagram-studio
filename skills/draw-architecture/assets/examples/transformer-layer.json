@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "title": "Pre-norm transformer layer",
+  "subtitle": "Residual streams, causal self-attention, and position-wise feed-forward computation.",
+  "width": 950,
+  "height": 1200,
+  "nodes": [
+    {
+      "id": "input",
+      "label": "Residual stream",
+      "x": 330,
+      "y": 150,
+      "width": 290,
+      "height": 70,
+      "role": "input",
+      "kind": "block",
+      "detail": "B x T x d_model",
+      "tag": ""
+    },
+    {
+      "id": "norm1",
+      "label": "Layer normalization",
+      "x": 330,
+      "y": 290,
+      "width": 290,
+      "height": 70,
+      "role": "compute",
+      "kind": "block",
+      "detail": "Normalize the last dimension",
+      "tag": ""
+    },
+    {
+      "id": "attention",
+      "label": "Causal self-attention",
+      "x": 330,
+      "y": 410,
+      "width": 290,
+      "height": 90,
+      "role": "model",
+      "kind": "block",
+      "detail": "Multi-head attention + projection",
+      "tag": ""
+    },
+    {
+      "id": "add1",
+      "label": "+",
+      "x": 450,
+      "y": 555,
+      "width": 50,
+      "height": 50,
+      "role": "control",
+      "kind": "junction",
+      "detail": "",
+      "tag": ""
+    },
+    {
+      "id": "norm2",
+      "label": "Layer normalization",
+      "x": 330,
+      "y": 660,
+      "width": 290,
+      "height": 70,
+      "role": "compute",
+      "kind": "block",
+      "detail": "Normalize the last dimension",
+      "tag": ""
+    },
+    {
+      "id": "ffn",
+      "label": "Feed-forward network",
+      "x": 330,
+      "y": 780,
+      "width": 290,
+      "height": 90,
+      "role": "model",
+      "kind": "block",
+      "detail": "d_model -> d_ff -> d_model",
+      "tag": ""
+    },
+    {
+      "id": "add2",
+      "label": "+",
+      "x": 450,
+      "y": 930,
+      "width": 50,
+      "height": 50,
+      "role": "control",
+      "kind": "junction",
+      "detail": "",
+      "tag": ""
+    },
+    {
+      "id": "output",
+      "label": "Updated residual",
+      "x": 330,
+      "y": 1050,
+      "width": 290,
+      "height": 70,
+      "role": "output",
+      "kind": "block",
+      "detail": "B x T x d_model",
+      "tag": ""
+    }
+  ],
+  "edges": [
+    {
+      "from": "input",
+      "to": "norm1",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "norm1",
+      "to": "attention",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "attention",
+      "to": "add1",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "add1",
+      "to": "norm2",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "norm2",
+      "to": "ffn",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "ffn",
+      "to": "add2",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "add2",
+      "to": "output",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "input",
+      "to": "add1",
+      "label": "residual",
+      "kind": "data",
+      "from_side": "right",
+      "to_side": "right",
+      "via": [
+        [
+          765,
+          185
+        ],
+        [
+          765,
+          580
+        ]
+      ],
+      "label_at": [
+        765,
+        351
+      ]
+    },
+    {
+      "from": "add1",
+      "to": "add2",
+      "label": "residual",
+      "kind": "data",
+      "from_side": "right",
+      "to_side": "right",
+      "via": [
+        [
+          810,
+          580
+        ],
+        [
+          810,
+          955
+        ]
+      ],
+      "label_at": [
+        810,
+        807
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "layer",
+      "label": "One decoder-style block / repeat N times",
+      "x": 280,
+      "y": 245,
+      "width": 560,
+      "height": 775,
+      "members": [
+        "norm1",
+        "attention",
+        "add1",
+        "norm2",
+        "ffn",
+        "add2"
+      ]
+    }
+  ],
+  "footer": "Pre-norm variant. Dropout, positional encoding, and the output language-model head are omitted.",
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "This example describes a pre-norm causal block, not every transformer variant."
+  ]
+}

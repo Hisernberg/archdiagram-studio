@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "spec_sha256": "25e0030df6ac548c076daf3d0a33613a47fc9f174bee5ddaa71549f955dcb58c",
+  "nodes": 6,
+  "edges": 7,
+  "issues": [],
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "Tool execution follows the host permissions. Context retrieval is shown as a read, not autonomous persistent memory."
+  ],
+  "tex_engine": "pdflatex",
+  "outputs": [
+    "gallery/agentic-research.svg",
+    "gallery/agentic-research.tex",
+    "gallery/agentic-research.png",
+    "gallery/agentic-research.pdf",
+    "gallery/agentic-research.tikz.pdf"
+  ],
+  "visual_review": "Required: inspect rendered output at target width. Lint is heuristic."
+}

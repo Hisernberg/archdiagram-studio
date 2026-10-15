@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "spec_sha256": "3321084d0d006e1a936bd4b6149274d0b61ce17b5dd734f4876658868004dadc",
+  "nodes": 5,
+  "edges": 6,
+  "issues": [],
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "The initial-state path applies to round zero; subsequent rounds use the feedback path."
+  ],
+  "outputs": [
+    "gallery/gnn-message-passing.midnight.svg",
+    "gallery/gnn-message-passing.midnight.tex",
+    "gallery/gnn-message-passing.midnight.png",
+    "gallery/gnn-message-passing.midnight.pdf"
+  ],
+  "visual_review": "Required: inspect rendered output at target width. Lint is heuristic."
+}

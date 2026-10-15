@@ -1,0 +1,4 @@
+interface:
+  display_name: "ArchDiagram Studio"
+  short_description: "Create precise AI architecture and neural diagrams"
+  default_prompt: "Use $draw-architecture to turn my architecture into an editable, publication-ready diagram and verify its labels and connections."

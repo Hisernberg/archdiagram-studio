@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "title": "Message-passing graph network",
+  "subtitle": "Separate edge messages, neighborhood aggregation, and node updates.",
+  "width": 1200,
+  "height": 700,
+  "nodes": [
+    {
+      "id": "graph",
+      "label": "Graph features",
+      "x": 60,
+      "y": 230,
+      "width": 180,
+      "height": 100,
+      "role": "input",
+      "kind": "block",
+      "detail": "Nodes h_i, edges e_ij",
+      "tag": ""
+    },
+    {
+      "id": "messages",
+      "label": "Message function",
+      "x": 350,
+      "y": 230,
+      "width": 230,
+      "height": 100,
+      "role": "model",
+      "kind": "block",
+      "detail": "m_ij = M(h_i, h_j, e_ij)",
+      "tag": ""
+    },
+    {
+      "id": "aggregate",
+      "label": "Aggregate neighbors",
+      "x": 690,
+      "y": 230,
+      "width": 190,
+      "height": 100,
+      "role": "compute",
+      "kind": "block",
+      "detail": "Permutation invariant",
+      "tag": ""
+    },
+    {
+      "id": "update",
+      "label": "Update node state",
+      "x": 350,
+      "y": 460,
+      "width": 230,
+      "height": 100,
+      "role": "model",
+      "kind": "block",
+      "detail": "h_i next = U(h_i, m_i)",
+      "tag": ""
+    },
+    {
+      "id": "readout",
+      "label": "Graph readout",
+      "x": 950,
+      "y": 460,
+      "width": 190,
+      "height": 100,
+      "role": "output",
+      "kind": "block",
+      "detail": "Pool node embeddings",
+      "tag": ""
+    }
+  ],
+  "edges": [
+    {
+      "from": "graph",
+      "to": "messages",
+      "label": "neighbors",
+      "kind": "data",
+      "label_at": [
+        295,
+        263
+      ]
+    },
+    {
+      "from": "messages",
+      "to": "aggregate",
+      "label": "messages",
+      "kind": "data",
+      "label_at": [
+        635,
+        263
+      ]
+    },
+    {
+      "from": "aggregate",
+      "to": "update",
+      "label": "aggregated",
+      "kind": "data",
+      "from_side": "bottom",
+      "to_side": "top",
+      "via": [
+        [
+          785,
+          396
+        ],
+        [
+          465,
+          396
+        ]
+      ],
+      "label_at": [
+        681,
+        380
+      ]
+    },
+    {
+      "from": "graph",
+      "to": "update",
+      "label": "initial h_i",
+      "kind": "data",
+      "from_side": "right",
+      "to_side": "bottom",
+      "via": [
+        [
+          280,
+          280
+        ],
+        [
+          280,
+          585
+        ],
+        [
+          465,
+          585
+        ]
+      ],
+      "label_at": [
+        280,
+        430
+      ]
+    },
+    {
+      "from": "update",
+      "to": "messages",
+      "label": "next round",
+      "kind": "feedback",
+      "from_side": "left",
+      "to_side": "top",
+      "via": [
+        [
+          309,
+          510
+        ],
+        [
+          309,
+          205
+        ],
+        [
+          465,
+          205
+        ]
+      ],
+      "label_at": [
+        309,
+        359
+      ]
+    },
+    {
+      "from": "update",
+      "to": "readout",
+      "label": "node embeddings",
+      "kind": "data",
+      "label_at": [
+        771,
+        492
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "rounds",
+      "label": "Message passing / K rounds",
+      "x": 292,
+      "y": 155,
+      "width": 625,
+      "height": 465,
+      "members": [
+        "messages",
+        "aggregate",
+        "update"
+      ]
+    }
+  ],
+  "footer": "M and U are task-dependent functions; readout can be omitted for node-level prediction.",
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "The initial-state path applies to round zero; subsequent rounds use the feedback path."
+  ]
+}

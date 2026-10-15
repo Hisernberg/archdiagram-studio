@@ -1,0 +1,95 @@
+{
+  "checked_on": "2026-10-15",
+  "method": "GitHub repository API metadata, default-branch commit, README and license inspection",
+  "reuse": "Reference-only. No upstream source code, images, or templates are vendored.",
+  "sources": [
+    {
+      "repository": "fraserlove/nntikz",
+      "url": "https://github.com/fraserlove/nntikz",
+      "revision": "3dc29cfda3bd18db2d1e73830f95b4d0985e050f",
+      "revision_url": "https://github.com/fraserlove/nntikz/tree/3dc29cfda3bd18db2d1e73830f95b4d0985e050f",
+      "license_observation": "MIT",
+      "note": "Academic neural and attention figure consistency."
+    },
+    {
+      "repository": "harisiqbal88/PlotNeuralNet",
+      "url": "https://github.com/harisiqbal88/PlotNeuralNet",
+      "revision": "e96bc852189c2089dd500527a0a01a5a36e8977e",
+      "revision_url": "https://github.com/harisiqbal88/PlotNeuralNet/tree/e96bc852189c2089dd500527a0a01a5a36e8977e",
+      "license_observation": "MIT",
+      "note": "Perspective CNN blocks and named anchor routing."
+    },
+    {
+      "repository": "xinychen/awesome-latex-drawing",
+      "url": "https://github.com/xinychen/awesome-latex-drawing",
+      "revision": "a11dbbb3796fb279790509fb87e0083f8d11fc96",
+      "revision_url": "https://github.com/xinychen/awesome-latex-drawing/tree/a11dbbb3796fb279790509fb87e0083f8d11fc96",
+      "license_observation": "MIT",
+      "note": "Tensor, Bayesian, and mathematical framework examples."
+    },
+    {
+      "repository": "xiaohanyu/awesome-tikz",
+      "url": "https://github.com/xiaohanyu/awesome-tikz",
+      "revision": "8539838ba12a3291f76d84047e804c50134c8254",
+      "revision_url": "https://github.com/xiaohanyu/awesome-tikz/tree/8539838ba12a3291f76d84047e804c50134c8254",
+      "license_observation": "No clear repository license found",
+      "note": "Resource discovery; duplicated user link deduplicated."
+    },
+    {
+      "repository": "PetarV-/TikZ",
+      "url": "https://github.com/PetarV-/TikZ",
+      "revision": "86aee049f5355d77c598b936399e42caf8941e60",
+      "revision_url": "https://github.com/PetarV-/TikZ/tree/86aee049f5355d77c598b936399e42caf8941e60",
+      "license_observation": "MIT",
+      "note": "Broad graph, attention, and neural figure vocabulary."
+    },
+    {
+      "repository": "ccfang2/nndiagram",
+      "url": "https://github.com/ccfang2/nndiagram",
+      "revision": "37e13168c6cf2612fbe85c7b0b33afb720945082",
+      "revision_url": "https://github.com/ccfang2/nndiagram/tree/37e13168c6cf2612fbe85c7b0b33afb720945082",
+      "license_observation": "MIT in LICENSE.md; LICENSE is an R metadata stub",
+      "note": "Neuron-level dense connectivity and selected connections."
+    },
+    {
+      "repository": "FraunhoferHHI/pytorch2tikz",
+      "url": "https://github.com/FraunhoferHHI/pytorch2tikz",
+      "revision": "95d40aa98be99b87c68efa6d6e8ddd531ca1a4f7",
+      "revision_url": "https://github.com/FraunhoferHHI/pytorch2tikz/tree/95d40aa98be99b87c68efa6d6e8ddd531ca1a4f7",
+      "license_observation": "Custom academic/non-commercial license",
+      "note": "Forward-pass-driven architecture capture; do not assume permissive reuse."
+    },
+    {
+      "repository": "pzeina/transformer-verif",
+      "url": "https://github.com/pzeina/transformer-verif",
+      "revision": "05f42826db8ad10584cb127e2408c1b58022d441",
+      "revision_url": "https://github.com/pzeina/transformer-verif/tree/05f42826db8ad10584cb127e2408c1b58022d441",
+      "license_observation": "No clear repository license found",
+      "note": "Specialized hard-attention/mask visualization, not a generic transformer specification."
+    },
+    {
+      "repository": "shrenikvz/tikz-codes",
+      "url": "https://github.com/shrenikvz/tikz-codes",
+      "revision": "16ea51aff7b0cdede563946f14eacbd79879389a",
+      "revision_url": "https://github.com/shrenikvz/tikz-codes/tree/16ea51aff7b0cdede563946f14eacbd79879389a",
+      "license_observation": "Apache-2.0",
+      "note": "Standalone neural figure organization and editable customization."
+    },
+    {
+      "repository": "LIVazquezS/Tikz_graphs",
+      "url": "https://github.com/LIVazquezS/Tikz_graphs",
+      "revision": "171070532505203263c1e73f1a2ff649a39fb74b",
+      "revision_url": "https://github.com/LIVazquezS/Tikz_graphs/tree/171070532505203263c1e73f1a2ff649a39fb74b",
+      "license_observation": "No clear repository license found",
+      "note": "Educational neural figures; README credits other originating sources."
+    },
+    {
+      "repository": "mvoelk/nn_graphics",
+      "url": "https://github.com/mvoelk/nn_graphics",
+      "revision": "22c8ad79645b46f3b7b84d81bc421257cbcae8ae",
+      "revision_url": "https://github.com/mvoelk/nn_graphics/tree/22c8ad79645b46f3b7b84d81bc421257cbcae8ae",
+      "license_observation": "MIT",
+      "note": "Interpreted from the unqualified nn_graphics name; activation/pooling explanation figures."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="760" viewBox="0 0 1250 760" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Perception-to-action control loop</title>
+<desc id="diagram-description">Keep goals, commands, physical dynamics, and observations distinct.. sensors: Sensors Images, depth, encoders; perception: State estimation Perception and fusion; policy: Policy / planner Choose the next action; actuators: Actuators Apply bounded commands; world: Robot + environment Physical state evolves; goal: Task goal Targets and constraints. sensors to perception: observations (data); perception to policy: estimated state (data); policy to actuators: command (control); actuators to world: state change (data); world to sensors: new observation (feedback); goal to policy: objective (control)</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#45647D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#F1F7FC"/>
+<g font-family="Inter, DejaVu Sans, Arial, sans-serif">
+<text x="48" y="50" fill="#123452" font-size="29" font-weight="700" text-anchor="start">Perception-to-action control loop</text>
+<text x="48" y="77" fill="#45647D" font-size="13" font-weight="400" text-anchor="start">Keep goals, commands, physical dynamics, and observations distinct.</text>
+<path d="M 48 104 h 28" stroke="#45647D" stroke-width="1.7" fill="none" stroke-dasharray=""/>
+<text x="84" y="108" fill="#45647D" font-size="10.5" font-weight="400" text-anchor="start">Data flow</text>
+<path d="M 188 104 h 28" stroke="#45647D" stroke-width="1.7" fill="none" stroke-dasharray="7 5"/>
+<text x="224" y="108" fill="#45647D" font-size="10.5" font-weight="400" text-anchor="start">Control</text>
+<path d="M 316 104 h 28" stroke="#45647D" stroke-width="1.7" fill="none" stroke-dasharray="2 5"/>
+<text x="352" y="108" fill="#45647D" font-size="10.5" font-weight="400" text-anchor="start">Feedback</text>
+<g data-group="physical"><rect x="370" y="452" width="675" height="185" rx="14" fill="#E7F0F8" stroke="#A4BDD1" stroke-dasharray="5 5"/>
+<text x="388" y="477" fill="#45647D" font-size="11" font-weight="600" text-anchor="start">Physical system</text>
+</g>
+<path d="M 280 267 L 340 267 L 400 267" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 630 267 L 705 267 L 780 267" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 895 314 L 895 407 L 895 500" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="7 5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 780 547 L 705 547 L 630 547" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 515 500 L 515 380 L 175 380 L 175 314" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="2 5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 175 500 L 175 435 L 685 435 L 685 267 L 780 267" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="7 5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g id="node-sensors" data-role="input"><title>Sensors: Images, depth, encoders</title>
+<rect x="70" y="220" width="210" height="94" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.6"/>
+<path d="M 82 234 v 66" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+<text x="175" y="260.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Sensors</text>
+<text x="175" y="284.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Images, depth, encoders</text>
+</g>
+<g id="node-perception" data-role="model"><title>State estimation: Perception and fusion</title>
+<rect x="400" y="220" width="230" height="94" rx="10" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+<path d="M 412 234 v 66" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+<text x="515" y="260.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">State estimation</text>
+<text x="515" y="284.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Perception and fusion</text>
+</g>
+<g id="node-policy" data-role="model"><title>Policy / planner: Choose the next action</title>
+<rect x="780" y="220" width="230" height="94" rx="10" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+<path d="M 792 234 v 66" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+<text x="895" y="260.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Policy / planner</text>
+<text x="895" y="284.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Choose the next action</text>
+</g>
+<g id="node-actuators" data-role="tool"><title>Actuators: Apply bounded commands</title>
+<rect x="780" y="500" width="230" height="94" rx="10" fill="#FFFBEB" stroke="#B45309" stroke-width="1.6"/>
+<path d="M 792 514 v 66" stroke="#B45309" stroke-width="3" stroke-linecap="round"/>
+<text x="895" y="540.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Actuators</text>
+<text x="895" y="564.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Apply bounded commands</text>
+</g>
+<g id="node-world" data-role="compute"><title>Robot + environment: Physical state evolves</title>
+<rect x="400" y="500" width="230" height="94" rx="10" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.6"/>
+<path d="M 412 514 v 66" stroke="#0F766E" stroke-width="3" stroke-linecap="round"/>
+<text x="515" y="540.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Robot + environment</text>
+<text x="515" y="564.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Physical state evolves</text>
+</g>
+<g id="node-goal" data-role="input"><title>Task goal: Targets and constraints</title>
+<rect x="70" y="500" width="210" height="94" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.6"/>
+<path d="M 82 514 v 66" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+<text x="175" y="540.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Task goal</text>
+<text x="175" y="564.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Targets and constraints</text>
+</g>
+<rect x="294.2" y="240" width="91.6" height="20" rx="5" fill="#F1F7FC"/>
+<text x="340" y="254" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">observations</text>
+<rect x="648.75" y="240" width="110.5" height="20" rx="5" fill="#F1F7FC"/>
+<text x="704" y="254" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">estimated state</text>
+<rect x="864.95" y="395" width="60.1" height="20" rx="5" fill="#F1F7FC"/>
+<text x="895" y="409" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">command</text>
+<rect x="658.2" y="520" width="91.6" height="20" rx="5" fill="#F1F7FC"/>
+<text x="704" y="534" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">state change</text>
+<rect x="289.75" y="353" width="110.5" height="20" rx="5" fill="#F1F7FC"/>
+<text x="345" y="367" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">new observation</text>
+<rect x="443.65" y="408" width="72.7" height="20" rx="5" fill="#F1F7FC"/>
+<text x="480" y="422" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">objective</text>
+<text x="48" y="738" fill="#45647D" font-size="11" font-weight="400" text-anchor="start">Timing, latency, calibration, and safety controllers require system-specific evidence.</text>
+</g></svg>

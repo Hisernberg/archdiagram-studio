@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If this skill or its original figure tooling helps your work, cite this repository and separately cite any upstream resource you actually use."
+title: "ArchDiagram Studio: An Evidence-First Agent Skill for Architecture Diagrams"
+version: 1.0.0
+date-released: 2026-10-15
+url: "https://github.com/Hisernberg/archdiagram-studio"
+authors:
+  - name: "URAD"
+license: MIT
+type: software

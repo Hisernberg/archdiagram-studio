@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="680" viewBox="0 0 1280 680" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Retrieval-augmented generation</title>
+<desc id="diagram-description">Separate indexing from query-time retrieval; keep the evidence path visible.. sources: Source documents Files, pages, records; chunks: Chunk + normalize Preserve source IDs; encoder: Document encoder Map chunks to vectors; index: Vector index Vectors + metadata; query: Query encoder Embed user question; retrieve: Retrieve + rerank Select relevant evidence; generate: Context + generator Answer from evidence; response: Cited response Source-linked answer. sources to chunks:  (data); chunks to encoder:  (data); encoder to index: upsert (data); query to retrieve: query vector (data); index to retrieve: retrieved candidates (data); retrieve to generate: evidence (data); generate to response: answer (data)</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#45647D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="100%" height="100%" fill="#F1F7FC"/>
+<g font-family="Inter, DejaVu Sans, Arial, sans-serif">
+<text x="48" y="50" fill="#123452" font-size="29" font-weight="700" text-anchor="start">Retrieval-augmented generation</text>
+<text x="48" y="77" fill="#45647D" font-size="13" font-weight="400" text-anchor="start">Separate indexing from query-time retrieval; keep the evidence path visible.</text>
+<path d="M 48 104 h 28" stroke="#45647D" stroke-width="1.7" fill="none" stroke-dasharray=""/>
+<text x="84" y="108" fill="#45647D" font-size="10.5" font-weight="400" text-anchor="start">Data flow</text>
+<path d="M 188 104 h 28" stroke="#45647D" stroke-width="1.7" fill="none" stroke-dasharray="7 5"/>
+<text x="224" y="108" fill="#45647D" font-size="10.5" font-weight="400" text-anchor="start">Control</text>
+<path d="M 316 104 h 28" stroke="#45647D" stroke-width="1.7" fill="none" stroke-dasharray="2 5"/>
+<text x="352" y="108" fill="#45647D" font-size="10.5" font-weight="400" text-anchor="start">Feedback</text>
+<path d="M 270 253 L 317.5 253 L 365 253" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 585 253 L 630 253 L 675 253" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 895 253 L 947.5 253 L 1000 253" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 270 513 L 317.5 513 L 365 513" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1105 301 L 1105 382 L 475 382 L 475 465" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 585 513 L 630 513 L 675 513" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 895 513 L 947.5 513 L 1000 513" stroke="#45647D" stroke-width="1.8" fill="none" stroke-dasharray="" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<g id="node-sources" data-role="input"><title>Source documents: Files, pages, records</title>
+<rect x="60" y="205" width="210" height="96" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.6"/>
+<path d="M 72 219 v 68" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+<text x="165" y="237.5" fill="#2563EB" font-size="8.5" font-weight="600" text-anchor="middle">INDEXING</text>
+<text x="165" y="255.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Source documents</text>
+<text x="165" y="279.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Files, pages, records</text>
+</g>
+<g id="node-chunks" data-role="compute"><title>Chunk + normalize: Preserve source IDs</title>
+<rect x="365" y="205" width="220" height="96" rx="10" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.6"/>
+<path d="M 377 219 v 68" stroke="#0F766E" stroke-width="3" stroke-linecap="round"/>
+<text x="475" y="246.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Chunk + normalize</text>
+<text x="475" y="270.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Preserve source IDs</text>
+</g>
+<g id="node-encoder" data-role="model"><title>Document encoder: Map chunks to vectors</title>
+<rect x="675" y="205" width="220" height="96" rx="10" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+<path d="M 687 219 v 68" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+<text x="785" y="246.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Document encoder</text>
+<text x="785" y="270.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Map chunks to vectors</text>
+</g>
+<g id="node-index" data-role="memory"><title>Vector index: Vectors + metadata</title>
+<path d="M 1000 215 A 105 10 0 0 1 1210 215 V 291 A 105 10 0 0 1 1000 291 Z" fill="#F0F9FF" stroke="#0369A1" stroke-width="1.6"/>
+<ellipse cx="1105" cy="215" rx="105" ry="10" fill="#F0F9FF" stroke="#0369A1" stroke-width="1.4"/>
+<text x="1105" y="246.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Vector index</text>
+<text x="1105" y="270.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Vectors + metadata</text>
+</g>
+<g id="node-query" data-role="model"><title>Query encoder: Embed user question</title>
+<rect x="60" y="465" width="210" height="96" rx="10" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+<path d="M 72 479 v 68" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+<text x="165" y="497.5" fill="#6D28D9" font-size="8.5" font-weight="600" text-anchor="middle">QUERY TIME</text>
+<text x="165" y="515.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Query encoder</text>
+<text x="165" y="539.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Embed user question</text>
+</g>
+<g id="node-retrieve" data-role="compute"><title>Retrieve + rerank: Select relevant evidence</title>
+<rect x="365" y="465" width="220" height="96" rx="10" fill="#F0FDFA" stroke="#0F766E" stroke-width="1.6"/>
+<path d="M 377 479 v 68" stroke="#0F766E" stroke-width="3" stroke-linecap="round"/>
+<text x="475" y="506.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Retrieve + rerank</text>
+<text x="475" y="530.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Select relevant evidence</text>
+</g>
+<g id="node-generate" data-role="model"><title>Context + generator: Answer from evidence</title>
+<rect x="675" y="465" width="220" height="96" rx="10" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.6"/>
+<path d="M 687 479 v 68" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
+<text x="785" y="506.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Context + generator</text>
+<text x="785" y="530.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Answer from evidence</text>
+</g>
+<g id="node-response" data-role="output"><title>Cited response: Source-linked answer</title>
+<rect x="1000" y="465" width="210" height="96" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.6"/>
+<path d="M 1012 479 v 68" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+<text x="1105" y="506.5" fill="#123452" font-size="15" font-weight="600" text-anchor="middle">Cited response</text>
+<text x="1105" y="530.5" fill="#45647D" font-size="11.5" font-weight="400" text-anchor="middle">Source-linked answer</text>
+</g>
+<rect x="920.1" y="226" width="53.8" height="20" rx="5" fill="#F1F7FC"/>
+<text x="947" y="240" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">upsert</text>
+<rect x="271.2" y="486" width="91.6" height="20" rx="5" fill="#F1F7FC"/>
+<text x="317" y="500" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">query vector</text>
+<rect x="719" y="355" width="142" height="20" rx="5" fill="#F1F7FC"/>
+<text x="790" y="369" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">retrieved candidates</text>
+<rect x="595.8" y="486" width="66.4" height="20" rx="5" fill="#F1F7FC"/>
+<text x="629" y="500" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">evidence</text>
+<rect x="921.1" y="486" width="53.8" height="20" rx="5" fill="#F1F7FC"/>
+<text x="948" y="500" fill="#45647D" font-size="11" font-weight="500" text-anchor="middle">answer</text>
+<text x="48" y="658" fill="#45647D" font-size="11" font-weight="400" text-anchor="start">Document and query encoders use compatible embedding spaces. Retrieved text remains untrusted input.</text>
+</g></svg>

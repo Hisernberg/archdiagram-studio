@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "title": "Convolutional feature hierarchy",
+  "subtitle": "Feature-map dimensions are explicit; geometric depth is illustrative.",
+  "width": 1320,
+  "height": 660,
+  "nodes": [
+    {
+      "id": "image",
+      "label": "Input image",
+      "x": 60,
+      "y": 225,
+      "width": 180,
+      "height": 180,
+      "role": "input",
+      "kind": "tensor",
+      "detail": "3 x 224 x 224",
+      "tag": "NCHW / batch omitted"
+    },
+    {
+      "id": "conv1",
+      "label": "Conv + activation",
+      "x": 320,
+      "y": 245,
+      "width": 190,
+      "height": 140,
+      "role": "model",
+      "kind": "tensor",
+      "detail": "64 x 112 x 112",
+      "tag": ""
+    },
+    {
+      "id": "pool",
+      "label": "Max pool",
+      "x": 590,
+      "y": 265,
+      "width": 180,
+      "height": 100,
+      "role": "compute",
+      "kind": "tensor",
+      "detail": "64 x 56 x 56",
+      "tag": ""
+    },
+    {
+      "id": "conv2",
+      "label": "Conv + activation",
+      "x": 850,
+      "y": 245,
+      "width": 190,
+      "height": 140,
+      "role": "model",
+      "kind": "tensor",
+      "detail": "128 x 28 x 28",
+      "tag": ""
+    },
+    {
+      "id": "poolhead",
+      "label": "Global avg pool",
+      "x": 1120,
+      "y": 263,
+      "width": 160,
+      "height": 104,
+      "role": "compute",
+      "kind": "block",
+      "detail": "B x 128",
+      "tag": ""
+    },
+    {
+      "id": "logits",
+      "label": "Linear classifier",
+      "x": 1120,
+      "y": 485,
+      "width": 160,
+      "height": 94,
+      "role": "output",
+      "kind": "block",
+      "detail": "10 logits",
+      "tag": ""
+    }
+  ],
+  "edges": [
+    {
+      "from": "image",
+      "to": "conv1",
+      "label": "stride 2",
+      "kind": "data",
+      "label_at": [
+        280,
+        298
+      ]
+    },
+    {
+      "from": "conv1",
+      "to": "pool",
+      "label": "2 x 2",
+      "kind": "data",
+      "label_at": [
+        550,
+        298
+      ]
+    },
+    {
+      "from": "pool",
+      "to": "conv2",
+      "label": "stride 2",
+      "kind": "data",
+      "label_at": [
+        810,
+        298
+      ]
+    },
+    {
+      "from": "conv2",
+      "to": "poolhead",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "poolhead",
+      "to": "logits",
+      "label": "128 -> 10",
+      "kind": "data",
+      "label_at": [
+        1200,
+        426
+      ]
+    }
+  ],
+  "groups": [],
+  "footer": "Spatial dimensions assume suitable padding. This is an illustrative classification network.",
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "Convolutions are assumed to use padding that yields the labeled dimensions."
+  ]
+}

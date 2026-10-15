@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "title": "Perception-to-action control loop",
+  "subtitle": "Keep goals, commands, physical dynamics, and observations distinct.",
+  "width": 1250,
+  "height": 760,
+  "nodes": [
+    {
+      "id": "sensors",
+      "label": "Sensors",
+      "x": 70,
+      "y": 220,
+      "width": 210,
+      "height": 94,
+      "role": "input",
+      "kind": "block",
+      "detail": "Images, depth, encoders",
+      "tag": ""
+    },
+    {
+      "id": "perception",
+      "label": "State estimation",
+      "x": 400,
+      "y": 220,
+      "width": 230,
+      "height": 94,
+      "role": "model",
+      "kind": "block",
+      "detail": "Perception and fusion",
+      "tag": ""
+    },
+    {
+      "id": "policy",
+      "label": "Policy / planner",
+      "x": 780,
+      "y": 220,
+      "width": 230,
+      "height": 94,
+      "role": "model",
+      "kind": "block",
+      "detail": "Choose the next action",
+      "tag": ""
+    },
+    {
+      "id": "actuators",
+      "label": "Actuators",
+      "x": 780,
+      "y": 500,
+      "width": 230,
+      "height": 94,
+      "role": "tool",
+      "kind": "block",
+      "detail": "Apply bounded commands",
+      "tag": ""
+    },
+    {
+      "id": "world",
+      "label": "Robot + environment",
+      "x": 400,
+      "y": 500,
+      "width": 230,
+      "height": 94,
+      "role": "compute",
+      "kind": "block",
+      "detail": "Physical state evolves",
+      "tag": ""
+    },
+    {
+      "id": "goal",
+      "label": "Task goal",
+      "x": 70,
+      "y": 500,
+      "width": 210,
+      "height": 94,
+      "role": "input",
+      "kind": "block",
+      "detail": "Targets and constraints",
+      "tag": ""
+    }
+  ],
+  "edges": [
+    {
+      "from": "sensors",
+      "to": "perception",
+      "label": "observations",
+      "kind": "data",
+      "label_at": [
+        340,
+        250
+      ]
+    },
+    {
+      "from": "perception",
+      "to": "policy",
+      "label": "estimated state",
+      "kind": "data",
+      "label_at": [
+        704,
+        250
+      ]
+    },
+    {
+      "from": "policy",
+      "to": "actuators",
+      "label": "command",
+      "kind": "control",
+      "label_at": [
+        895,
+        405
+      ]
+    },
+    {
+      "from": "actuators",
+      "to": "world",
+      "label": "state change",
+      "kind": "data",
+      "label_at": [
+        704,
+        530
+      ]
+    },
+    {
+      "from": "world",
+      "to": "sensors",
+      "label": "new observation",
+      "kind": "feedback",
+      "from_side": "top",
+      "to_side": "bottom",
+      "via": [
+        [
+          515,
+          380
+        ],
+        [
+          175,
+          380
+        ]
+      ],
+      "label_at": [
+        345,
+        363
+      ]
+    },
+    {
+      "from": "goal",
+      "to": "policy",
+      "label": "objective",
+      "kind": "control",
+      "from_side": "top",
+      "to_side": "left",
+      "via": [
+        [
+          175,
+          435
+        ],
+        [
+          685,
+          435
+        ],
+        [
+          685,
+          267
+        ]
+      ],
+      "label_at": [
+        480,
+        418
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "physical",
+      "label": "Physical system",
+      "x": 370,
+      "y": 452,
+      "width": 675,
+      "height": 185,
+      "members": [
+        "world",
+        "actuators"
+      ]
+    }
+  ],
+  "footer": "Timing, latency, calibration, and safety controllers require system-specific evidence.",
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "The example does not imply real-time guarantees or a validated safety architecture."
+  ]
+}

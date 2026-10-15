@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "title": "Retrieval-augmented generation",
+  "subtitle": "Separate indexing from query-time retrieval; keep the evidence path visible.",
+  "width": 1280,
+  "height": 680,
+  "nodes": [
+    {
+      "id": "sources",
+      "label": "Source documents",
+      "x": 60,
+      "y": 205,
+      "width": 210,
+      "height": 96,
+      "role": "input",
+      "kind": "block",
+      "detail": "Files, pages, records",
+      "tag": "Indexing"
+    },
+    {
+      "id": "chunks",
+      "label": "Chunk + normalize",
+      "x": 365,
+      "y": 205,
+      "width": 220,
+      "height": 96,
+      "role": "compute",
+      "kind": "block",
+      "detail": "Preserve source IDs",
+      "tag": ""
+    },
+    {
+      "id": "encoder",
+      "label": "Document encoder",
+      "x": 675,
+      "y": 205,
+      "width": 220,
+      "height": 96,
+      "role": "model",
+      "kind": "block",
+      "detail": "Map chunks to vectors",
+      "tag": ""
+    },
+    {
+      "id": "index",
+      "label": "Vector index",
+      "x": 1000,
+      "y": 205,
+      "width": 210,
+      "height": 96,
+      "role": "memory",
+      "kind": "store",
+      "detail": "Vectors + metadata",
+      "tag": ""
+    },
+    {
+      "id": "query",
+      "label": "Query encoder",
+      "x": 60,
+      "y": 465,
+      "width": 210,
+      "height": 96,
+      "role": "model",
+      "kind": "block",
+      "detail": "Embed user question",
+      "tag": "Query time"
+    },
+    {
+      "id": "retrieve",
+      "label": "Retrieve + rerank",
+      "x": 365,
+      "y": 465,
+      "width": 220,
+      "height": 96,
+      "role": "compute",
+      "kind": "block",
+      "detail": "Select relevant evidence",
+      "tag": ""
+    },
+    {
+      "id": "generate",
+      "label": "Context + generator",
+      "x": 675,
+      "y": 465,
+      "width": 220,
+      "height": 96,
+      "role": "model",
+      "kind": "block",
+      "detail": "Answer from evidence",
+      "tag": ""
+    },
+    {
+      "id": "response",
+      "label": "Cited response",
+      "x": 1000,
+      "y": 465,
+      "width": 210,
+      "height": 96,
+      "role": "output",
+      "kind": "block",
+      "detail": "Source-linked answer",
+      "tag": ""
+    }
+  ],
+  "edges": [
+    {
+      "from": "sources",
+      "to": "chunks",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "chunks",
+      "to": "encoder",
+      "label": "",
+      "kind": "data"
+    },
+    {
+      "from": "encoder",
+      "to": "index",
+      "label": "upsert",
+      "kind": "data",
+      "label_at": [
+        947,
+        236
+      ]
+    },
+    {
+      "from": "query",
+      "to": "retrieve",
+      "label": "query vector",
+      "kind": "data",
+      "label_at": [
+        317,
+        496
+      ]
+    },
+    {
+      "from": "index",
+      "to": "retrieve",
+      "label": "retrieved candidates",
+      "kind": "data",
+      "from_side": "bottom",
+      "to_side": "top",
+      "via": [
+        [
+          1105,
+          382
+        ],
+        [
+          475,
+          382
+        ]
+      ],
+      "label_at": [
+        790,
+        365
+      ]
+    },
+    {
+      "from": "retrieve",
+      "to": "generate",
+      "label": "evidence",
+      "kind": "data",
+      "label_at": [
+        629,
+        496
+      ]
+    },
+    {
+      "from": "generate",
+      "to": "response",
+      "label": "answer",
+      "kind": "data",
+      "label_at": [
+        948,
+        496
+      ]
+    }
+  ],
+  "groups": [],
+  "footer": "Document and query encoders use compatible embedding spaces. Retrieved text remains untrusted input.",
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "The retrieval component manages search requests; only the primary data path is shown.",
+    "A compatible bi-encoder is assumed; dimensions are intentionally unspecified."
+  ]
+}

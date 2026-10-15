@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "spec_sha256": "ed43533c09dfe95fd4d8e93d0e45b1777b2324bc0540a18df578bba82521ad4f",
+  "nodes": 6,
+  "edges": 6,
+  "issues": [],
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "The example does not imply real-time guarantees or a validated safety architecture."
+  ],
+  "outputs": [
+    "gallery/robot-control.midnight.svg",
+    "gallery/robot-control.midnight.tex",
+    "gallery/robot-control.midnight.png",
+    "gallery/robot-control.midnight.pdf"
+  ],
+  "visual_review": "Required: inspect rendered output at target width. Lint is heuristic."
+}

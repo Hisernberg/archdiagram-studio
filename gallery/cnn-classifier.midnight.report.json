@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "spec_sha256": "3afcfb659ae49a2e98e819511ecec040f2e070bc6d2c32f71464fa5e1e440d41",
+  "nodes": 6,
+  "edges": 5,
+  "issues": [],
+  "evidence": [
+    "Original illustrative architecture, authored for ArchDiagram Studio; not an audited implementation."
+  ],
+  "assumptions": [
+    "Convolutions are assumed to use padding that yields the labeled dimensions."
+  ],
+  "outputs": [
+    "gallery/cnn-classifier.midnight.svg",
+    "gallery/cnn-classifier.midnight.tex",
+    "gallery/cnn-classifier.midnight.png",
+    "gallery/cnn-classifier.midnight.pdf"
+  ],
+  "visual_review": "Required: inspect rendered output at target width. Lint is heuristic."
+}
